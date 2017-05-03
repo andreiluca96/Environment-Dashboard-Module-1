@@ -1,13 +1,34 @@
 package com.EnvironmentDashboardModule1.models;
 
+import javax.persistence.*;
+
 /**
  * Created by Luca Andrei on 5/3/2017.
  */
+@Entity
+@Table(name = "Location")
 public class Location {
-    private double latitude;
-    private double longitude;
 
-    public double getLatitude() {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
+    private Integer id;
+
+    @Column(nullable = false)
+    private Double latitude;
+
+    @Column(nullable = false)
+    private Double longitude;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Double getLatitude() {
         return latitude;
     }
 
@@ -15,7 +36,7 @@ public class Location {
         this.latitude = latitude;
     }
 
-    public double getLongitude() {
+    public Double getLongitude() {
         return longitude;
     }
 
