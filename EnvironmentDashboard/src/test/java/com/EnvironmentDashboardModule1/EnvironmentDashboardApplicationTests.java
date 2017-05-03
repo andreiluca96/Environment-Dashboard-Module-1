@@ -1,4 +1,4 @@
-package com.Environment.Dashboard.Module.1;
+package com.EnvironmentDashboardModule1;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
