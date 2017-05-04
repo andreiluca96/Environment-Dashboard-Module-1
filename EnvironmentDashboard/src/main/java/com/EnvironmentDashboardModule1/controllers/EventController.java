@@ -272,6 +272,100 @@ public class EventController {
                 .getTerroristAttack();
     }
 
+    //tsunami
+    @Autowired
+    private TsunamiService tsunamiService;
 
+    @RequestMapping(value = "/tsunami", method = RequestMethod.GET)
+    public ResponseEntity<List<TsunamiDto>> getTsunami() {
+        List<Tsunami> events = this.tsunamiService.getAll();
+        if (events.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(Lists.transform(events, event -> toDto(event)), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/tsunami", method = RequestMethod.POST)
+    public ResponseEntity<Tsunami> addTsunami(@RequestBody Tsunami event) {
+        Tsunami savedEvent = this.tsunamiService.save(event);
+        return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
+    }
+
+    private TsunamiDto toDto(Tsunami tsunami) {
+        return new TsunamiDto.Builder()
+                .name(tsunami.getName())
+                .latitude(tsunami.getLatitude())
+                .longitude(tsunami.getLongitude())
+                .startingDate(tsunami.getStartingTime())
+                .endingDate(tsunami.getEndingTime())
+                .severity(tsunami.getSeverity())
+                .description(tsunami.getDescription())
+                .hints(tsunami.getHints())
+                .radius(tsunami.getRadius())
+                .maxWaveHeight(tsunami.getMaxWaveHeight());
+    }
+
+    private Tsunami toCreatingModel(CreatingTsunamiDto dto) {
+        return new TsunamiBuilder()
+                .setName(dto.getName())
+                .setLongitude(dto.getLongitude())
+                .setLatitude(dto.getLongitude())
+                .setDescription(dto.getDescription())
+                .setEndingTime(dto.getEndingDate())
+                .setStartingTime(dto.getStartingDate())
+                .setHints(dto.getHints())
+                .setRadius(dto.getRadius())
+                .setSeverity(dto.getSeverity())
+                .setMaxWaveHeight(dto.getMaxWaveHeight())
+                .getTsunami();
+    }
+
+    //flood
+    @Autowired
+    private FloodService floodService;
+
+    @RequestMapping(value = "/flood", method = RequestMethod.GET)
+    public ResponseEntity<List<FloodDto>> getFlood() {
+        List<Flood> events = this.floodService.getAll();
+        if (events.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(Lists.transform(events, event -> toDto(event)), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/flood", method = RequestMethod.POST)
+    public ResponseEntity<Flood> addFlood(@RequestBody Flood event) {
+        Flood savedEvent = this.floodService.save(event);
+        return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
+    }
+
+    private FloodDto toDto(Flood flood) {
+        return new FloodDto.Builder()
+                .name(flood.getName())
+                .latitude(flood.getLatitude())
+                .longitude(flood.getLongitude())
+                .startingDate(flood.getStartingTime())
+                .endingDate(flood.getEndingTime())
+                .severity(flood.getSeverity())
+                .description(flood.getDescription())
+                .hints(flood.getHints())
+                .radius(flood.getRadius())
+                .precipitationLevel(flood.getPrecipitationLevel());
+    }
+
+    private Flood toCreatingModel(CreatingFloodDto dto) {
+        return new FloodBuilder()
+                .setName(dto.getName())
+                .setLongitude(dto.getLongitude())
+                .setLatitude(dto.getLongitude())
+                .setDescription(dto.getDescription())
+                .setEndingTime(dto.getEndingDate())
+                .setStartingTime(dto.getStartingDate())
+                .setHints(dto.getHints())
+                .setRadius(dto.getRadius())
+                .setSeverity(dto.getSeverity())
+                .setPrecipitationLevel(dto.getPrecipitationLevel())
+                .getFlood();
+    }
 
 }

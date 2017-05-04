@@ -11,14 +11,14 @@ import javax.persistence.Table;
 @Table(name = "Flood")
 public class Flood extends Event{
 
-    private Double precipitationLevek;
+    private Double precipitationLevel;
 
-    public Double getPrecipitationLevek() {
-        return precipitationLevek;
+    public Double getPrecipitationLevel() {
+        return precipitationLevel;
     }
 
-    public void setPrecipitationLevek(Double precipitationLevek) {
-        this.precipitationLevek = precipitationLevek;
+    public void setPrecipitationLevel(Double precipitationLevel) {
+        this.precipitationLevek = precipitationLevel;
     }
 
 }
