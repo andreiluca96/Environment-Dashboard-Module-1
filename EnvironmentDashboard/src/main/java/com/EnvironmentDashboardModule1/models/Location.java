@@ -21,7 +21,9 @@ public class Location {
     }
 
     public void setLatitude(double latitude) {
-
+        if (latitude < -85 || latitude > 85) {
+            throw new IllegalArgumentException(Double.toString(latitude));
+        }
         this.latitude = latitude;
     }
 
@@ -30,6 +32,10 @@ public class Location {
     }
 
     public void setLongitude(double longitude) {
+
+        if (longitude < -180 || longitude > 180) {
+            throw new IllegalArgumentException(Double.toString(longitude));
+        }
         this.longitude = longitude;
     }
 }

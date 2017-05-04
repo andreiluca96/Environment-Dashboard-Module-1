@@ -1,4 +1,6 @@
-package com.EnvironmentDashboardModule1.models;
+package com.EnvironmentDashboardModule1.models.Builders;
+
+import com.EnvironmentDashboardModule1.models.MeteoEvent;
 
 /**
  * Created by Ariana on 5/3/2017.
