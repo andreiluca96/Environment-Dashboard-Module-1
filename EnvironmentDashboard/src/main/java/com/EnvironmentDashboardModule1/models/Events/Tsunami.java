@@ -9,7 +9,6 @@ import javax.persistence.Table;
  * Created by Ariana on 5/3/2017.
  */
 @Entity
-@Table(name = "Tsunami")
 public class Tsunami extends Event {
 
     private Double maxWaveHeight;

@@ -9,6 +9,8 @@ import java.util.Date;
  * Created by Luca Andrei on 5/4/2017.
  */
 public class TornadoDto extends CreatingTornadoDto {
+    private Long id;
+
     private TornadoDto() { super(); }
 
     public static class Builder implements IWindspeed, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude {

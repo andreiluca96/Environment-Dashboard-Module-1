@@ -7,7 +7,6 @@ import javax.persistence.Table;
  * Created by Ariana on 5/3/2017.
  */
 @Entity
-@Table(name = "Earthquake")
 public class Earthquake extends Event {
     private Double richterDegree;
 

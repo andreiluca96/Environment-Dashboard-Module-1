@@ -10,7 +10,6 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name = "Fire")
 public class Fire extends Event {
     private Double speed;
 

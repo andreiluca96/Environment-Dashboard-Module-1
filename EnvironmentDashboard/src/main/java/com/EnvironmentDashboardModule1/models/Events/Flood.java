@@ -10,7 +10,6 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name = "Flood")
 public class Flood extends Event {
 
     private Double precipitationLevel;
