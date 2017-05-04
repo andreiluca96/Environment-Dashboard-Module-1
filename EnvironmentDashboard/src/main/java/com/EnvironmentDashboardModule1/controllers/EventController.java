@@ -85,11 +85,45 @@ public class EventController {
     }
 
     @RequestMapping(value = "/earthquake", method = RequestMethod.POST)
-    public ResponseEntity<Earthquake> addTornado(@RequestBody CreatingEarthquakeDto event) {
+    public ResponseEntity<Earthquake> addEarthquake(@RequestBody CreatingEarthquakeDto event) {
         Earthquake earthquake = toCreatingModel(event);
         Earthquake savedEvent = this.earthquakeService.save(earthquake);
         return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
     }
+
+    @RequestMapping(value = "/event/{id}", method = RequestMethod.PUT)
+    public ResponseEntity<EventDto> updateEvent(@PathVariable("id") Long id,@RequestBody CreatingEventDto eventDto){
+        Event event = toCreatingModel(eventDto);
+        Event eventCheck = this.eventService.getById(id);
+        if (eventCheck == null) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        Event updatedEvent = this.eventService.update(event,id);
+        return new ResponseEntity<>(toDto(updatedEvent), HttpStatus.CREATED);
+    }
+
+    @RequestMapping(value = "/earthquake/{id}", method = RequestMethod.PUT)
+    public ResponseEntity<EarthquakeDto> updateEarthquake(@PathVariable("id") Long id,@RequestBody CreatingEarthquakeDto earthquakeDto){
+        Earthquake earthquake = toCreatingModel(earthquakeDto);
+        Earthquake earthquaketCheck = this.earthquakeService.getById(id);
+        if (earthquaketCheck == null) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        Event updatedEarthquake= this.earthquakeService.update(earthquake,id);
+        return new ResponseEntity<>(toDto(updatedEarthquake), HttpStatus.CREATED);
+    }
+
+    @RequestMapping(value = "/tornado/{id}", method = RequestMethod.PUT)
+    public ResponseEntity<TornadoDto> updateTornado(@PathVariable("id") Long id,@RequestBody CreatingTornadoDto tornadoDto){
+        Tornado tornado = toCreatingModel(tornadoDto);
+        Tornado tornadoCheck = this.tornadoService.getById(id);
+        if (tornadoCheck == null) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        Event updatedEarthquake= this.tornadoService.update(tornado,id);
+        return new ResponseEntity<>(toDto(updatedEarthquake), HttpStatus.CREATED);
+    }
+
 
 
     private EventDto toDto(Event event) {
