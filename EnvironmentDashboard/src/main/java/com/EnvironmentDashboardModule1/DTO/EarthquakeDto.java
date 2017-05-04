@@ -13,7 +13,7 @@ public class EarthquakeDto extends CreatingEarthquakeDto {
 
     private EarthquakeDto() { super(); };
 
-    public static class Builder implements IDepth, IDescription, IEndingDate, IHints, ILatitude, ILongitude, IMercaliDegree, IRadius, IRichterDegree, ISeverity, IStartingDate {
+    public static class Builder implements IName, IDepth, IDescription, IEndingDate, IHints, ILatitude, ILongitude, IMercaliDegree, IRadius, IRichterDegree, ISeverity, IStartingDate {
         private EarthquakeDto earthquakeDto = new EarthquakeDto();
 
         @Override
@@ -80,6 +80,12 @@ public class EarthquakeDto extends CreatingEarthquakeDto {
         public EarthquakeDto depth(Integer depth) {
             earthquakeDto.depth = depth;
             return earthquakeDto;
+        }
+
+        @Override
+        public ILatitude name(String name) {
+            earthquakeDto.name = name;
+            return this;
         }
     }
 }

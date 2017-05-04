@@ -1,6 +1,7 @@
 package com.EnvironmentDashboardModule1.services;
 
-import com.EnvironmentDashboardModule1.models.Earthquake.;
+
+import com.EnvironmentDashboardModule1.models.Events.Earthquake;
 
 /**
  * Created by Sfarghiu Andrei on 5/4/2017.
