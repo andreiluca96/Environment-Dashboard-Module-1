@@ -121,4 +121,157 @@ public class EventController {
                 .setWindspeed(dto.getWindspeed())
                 .getTornado();
     }
+
+
+    //earthquake
+    @Autowired
+    private EarthquakeService earthquakeService;
+
+    @RequestMapping(value = "/earthquake", method = RequestMethod.GET)
+    public ResponseEntity<List<EarthquakeDto>> getEarthquake() {
+        List<Earthquake> events = this.earthquakeService.getAll();
+        if (events.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(Lists.transform(events, event -> toDto(event)), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/earthquake", method = RequestMethod.POST)
+    public ResponseEntity<Tornado> addEarthquake(@RequestBody Earthquake event) {
+        Earthquake savedEvent = this.earthquakeService.save(event);
+        return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
+    }
+
+    private EarthquakeDto toDto(Earthquake earthquake) {
+        return new EarthquakeDto.Builder()
+                .name(earthquake.getName())
+                .latitude(earthquake.getLatitude())
+                .longitude(earthquake.getLongitude())
+                .startingDate(earthquake.getStartingTime())
+                .endingDate(earthquake.getEndingTime())
+                .severity(earthquake.getSeverity())
+                .description(earthquake.getDescription())
+                .hints(earthquake.getHints())
+                .radius(earthquake.getRadius())
+                .richterDegree(earthquake.getRichterDegree())
+                .mercalliDegree(earthquake.getMercalliDegree())
+                .depth(earthquake.getDepth());
+    }
+
+    private Earthquake toCreatingModel(CreatingEarthquakeDto dto) {
+        return new EarthquakeBuilder()
+                .setName(dto.getName())
+                .setLongitude(dto.getLongitude())
+                .setLatitude(dto.getLongitude())
+                .setDescription(dto.getDescription())
+                .setEndingTime(dto.getEndingDate())
+                .setStartingTime(dto.getStartingDate())
+                .setHints(dto.getHints())
+                .setRadius(dto.getRadius())
+                .setSeverity(dto.getSeverity())
+                .setRichterDegree(dto.getRichterDegree())
+                .setMercaliDegree(dto.getMercaliDegree())
+                .setDepth(dto.getDepth())
+                .getEarthquake();
+    }
+
+
+    //Fire
+    @Autowired
+    private FireService fireService;
+
+    @RequestMapping(value = "/fire", method = RequestMethod.GET)
+    public ResponseEntity<List<FireDto>> getFire() {
+        List<Fire> events = this.fireService.getAll();
+        if (events.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(Lists.transform(events, event -> toDto(event)), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/fire", method = RequestMethod.POST)
+    public ResponseEntity<Fire> addFire(@RequestBody Fire event) {
+        Fire savedEvent = this.fireService.save(event);
+        return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
+    }
+
+    private FireDto toDto(Fire fire) {
+        return new FireDto.Builder()
+                .name(fire.getName())
+                .latitude(fire.getLatitude())
+                .longitude(fire.getLongitude())
+                .startingDate(fire.getStartingTime())
+                .endingDate(fire.getEndingTime())
+                .severity(fire.getSeverity())
+                .description(fire.getDescription())
+                .hints(fire.getHints())
+                .radius(fire.getRadius())
+                .speed(fire.getSpeed());
+    }
+
+    private Fire toCreatingModel(CreatingFireDto dto) {
+        return new FireBuilder()
+                .setName(dto.getName())
+                .setLongitude(dto.getLongitude())
+                .setLatitude(dto.getLongitude())
+                .setDescription(dto.getDescription())
+                .setEndingTime(dto.getEndingDate())
+                .setStartingTime(dto.getStartingDate())
+                .setHints(dto.getHints())
+                .setRadius(dto.getRadius())
+                .setSeverity(dto.getSeverity())
+                .setSpeed(dto.getSpeed())
+                .getFire();
+    }
+
+    //TerroristAttack
+    @Autowired
+    private TerroristAttackService terroristAttackService;
+
+    @RequestMapping(value = "/terroristAttack", method = RequestMethod.GET)
+    public ResponseEntity<List<TerroristAttackDto>> getTerroristAttack() {
+        List<TerroristAttack> events = this.terroristAttackService.getAll();
+        if (events.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(Lists.transform(events, event -> toDto(event)), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/terroristAttack", method = RequestMethod.POST)
+    public ResponseEntity<TerroristAttack> addTerroristAttack(@RequestBody TerroristAttack event) {
+        TerroristAttack savedEvent = this.terroristAttackService.save(event);
+        return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
+    }
+
+    private TerroristAttackDto toDto(TerroristAttack terroristAttack) {
+        return new TerroristAttackDto.Builder()
+                .name(terroristAttack.getName())
+                .latitude(terroristAttack.getLatitude())
+                .longitude(terroristAttack.getLongitude())
+                .startingDate(terroristAttack.getStartingTime())
+                .endingDate(terroristAttack.getEndingTime())
+                .severity(terroristAttack.getSeverity())
+                .description(terroristAttack.getDescription())
+                .hints(terroristAttack.getHints())
+                .radius(terroristAttack.getRadius())
+                .numberOfTerrorists(terroristAttack.getNumberOfTerrorists());
+    }
+
+    private TerroristAttack toCreatingModel(CreatingTerroristAttackDto dto) {
+        return new TerroristAttackBuilder()
+                .setName(dto.getName())
+                .setLongitude(dto.getLongitude())
+                .setLatitude(dto.getLongitude())
+                .setDescription(dto.getDescription())
+                .setEndingTime(dto.getEndingDate())
+                .setStartingTime(dto.getStartingDate())
+                .setHints(dto.getHints())
+                .setRadius(dto.getRadius())
+                .setSeverity(dto.getSeverity())
+                .setNumberOfTerrorists(dto.getNumberOfTerrorists())
+                .getTerroristAttack();
+    }
+
+
+
 }
