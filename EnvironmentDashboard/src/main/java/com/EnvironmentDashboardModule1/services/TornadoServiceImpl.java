@@ -5,12 +5,14 @@ import com.EnvironmentDashboardModule1.models.Tornado;
 import com.EnvironmentDashboardModule1.repositories.EventRepository;
 import com.EnvironmentDashboardModule1.repositories.TornadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by Luca Andrei on 5/4/2017.
  */
+@Service
 public class TornadoServiceImpl implements TornadoService {
     @Autowired
     private TornadoRepository tornadoRepository;
