@@ -11,6 +11,69 @@ public class TornadoBuilder extends EventBuilder {
 
     private Double windspeed;
 
+    private String name;
+
+    private Double latitude;
+
+    private Double longitude;
+
+    private Date startingTime;
+
+    private Date endingTime;
+
+    private String severity;
+
+    private String description;
+
+    private String hints;
+
+    private Double radius;
+
+    public TornadoBuilder setName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public TornadoBuilder setLatitude(Double latitude) {
+        this.latitude = latitude;
+        return this;
+    }
+
+    public TornadoBuilder setLongitude(Double longitude) {
+        this.longitude = longitude;
+        return this;
+    }
+
+    public TornadoBuilder setStartingTime(Date startingTime) {
+        this.startingTime = startingTime;
+        return this;
+    }
+
+    public TornadoBuilder setEndingTime(Date endingTime) {
+        this.endingTime = endingTime;
+        return this;
+    }
+
+    public TornadoBuilder setSeverity(String severity) {
+        this.severity = severity;
+        return this;
+    }
+
+    public TornadoBuilder setDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    public TornadoBuilder setHints(String hints) {
+        this.hints = hints;
+        return this;
+    }
+
+    public TornadoBuilder setRadius(Double radius) {
+        this.radius = radius;
+        return this;
+    }
+    
     public TornadoBuilder setWindspeed(Double windspeed) {
         this.windspeed = windspeed;
         return this;

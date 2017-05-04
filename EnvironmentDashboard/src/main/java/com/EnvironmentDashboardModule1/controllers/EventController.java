@@ -1,6 +1,7 @@
 package com.EnvironmentDashboardModule1.controllers;
 
 import com.EnvironmentDashboardModule1.DTO.*;
+import com.EnvironmentDashboardModule1.models.Builders.EarthquakeBuilder;
 import com.EnvironmentDashboardModule1.models.Builders.TornadoBuilder;
 import com.EnvironmentDashboardModule1.models.Events.Earthquake;
 import com.EnvironmentDashboardModule1.models.Events.Event;
@@ -53,14 +54,14 @@ public class EventController {
         return new ResponseEntity<>(Lists.transform(events, event -> toDto(event)), HttpStatus.OK);
     }
 
-//    @RequestMapping(value = "/earthquake", method = RequestMethod.GET)
-//    public ResponseEntity<List<EarthquakeDto>> getEarthquake() {
-//        List<Earthquake> events = this.earthquakeService.getAll();
-//        if (events.isEmpty()) {
-//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-//        }
-//        return new ResponseEntity<>(Lists.transform(events, event -> toDto(event)), HttpStatus.OK);
-//    }
+    @RequestMapping(value = "/earthquake", method = RequestMethod.GET)
+    public ResponseEntity<List<EarthquakeDto>> getEarthquake() {
+        List<Earthquake> events = this.earthquakeService.getAll();
+        if (events.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(Lists.transform(events, event -> toDto(event)), HttpStatus.OK);
+    }
 
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Event> addEvent(@RequestBody CreatingEventDto eventDto) {
@@ -73,6 +74,13 @@ public class EventController {
     public ResponseEntity<Tornado> addTornado(@RequestBody CreatingTornadoDto event) {
         Tornado tornado = toCreatingModel(event);
         Tornado savedEvent = this.tornadoService.save(tornado);
+        return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
+    }
+
+    @RequestMapping(value = "/earthquake", method = RequestMethod.POST)
+    public ResponseEntity<Earthquake> addTornado(@RequestBody CreatingEarthquakeDto event) {
+        Earthquake earthquake = toCreatingModel(event);
+        Earthquake savedEvent = this.earthquakeService.save(earthquake);
         return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
     }
 
@@ -130,7 +138,8 @@ public class EventController {
                 .setHints(dto.getHints())
                 .setRadius(dto.getRadius())
                 .setSeverity(dto.getSeverity())
-                .
+                .setWindspeed(dto.getWindspeed())
+                .getTornado();
     }
 
     private EarthquakeDto toDto(Earthquake earthquake) {
@@ -149,22 +158,22 @@ public class EventController {
                 .depth(earthquake.getDepth());
     }
 
-//    private Earthquake toCreatingModel(CreatingEarthquakeDto dto) {
-//        return new EarthquakeBuilder()
-//                .setName(dto.getName())
-//                .setLongitude(dto.getLongitude())
-//                .setLatitude(dto.getLongitude())
-//                .setDescription(dto.getDescription())
-//                .setEndingTime(dto.getEndingDate())
-//                .setStartingTime(dto.getStartingDate())
-//                .setHints(dto.getHints())
-//                .setRadius(dto.getRadius())
-//                .setSeverity(dto.getSeverity())
-//                .setRichterDegree(dto.getRichterDegree())
-//                .setMercaliDegree(dto.getMercaliDegree())
-//                .setDepth(dto.getDepth())
-//                .getEarthquake();
-//    }
+    private Earthquake toCreatingModel(CreatingEarthquakeDto dto) {
+        return new EarthquakeBuilder()
+                .setName(dto.getName())
+                .setLongitude(dto.getLongitude())
+                .setLatitude(dto.getLongitude())
+                .setDescription(dto.getDescription())
+                .setEndingTime(dto.getEndingDate())
+                .setStartingTime(dto.getStartingDate())
+                .setHints(dto.getHints())
+                .setRadius(dto.getRadius())
+                .setSeverity(dto.getSeverity())
+                .setRichterDegree(dto.getRichterDegree())
+                .setMercalliDegree(dto.getMercaliDegree())
+                .setDepth(dto.getDepth())
+                .getEarthquake();
+    }
 
 
 
