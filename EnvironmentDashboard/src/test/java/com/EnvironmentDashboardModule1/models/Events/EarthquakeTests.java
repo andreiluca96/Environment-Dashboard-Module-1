@@ -28,7 +28,7 @@ public class EarthquakeTests {
         Assert.assertEquals(earthquake.getRichterDegree(), richterDegree, 0);
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void given_aNegativeRichterDegree_when_setRichterDegreeIsCalled_then_shouldThrowException(){
         Earthquake earthquake = new Earthquake();
         double richterDegree = -10.3;
@@ -45,7 +45,7 @@ public class EarthquakeTests {
         Assert.assertEquals(earthquake.getMercalliDegree(), mercalliDegree, 0);
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void given_aNegativeMercalliDegree_when_setMercalliDegreeIsCalled_then_shouldThrowException(){
         Earthquake earthquake = new Earthquake();
         double mercalliDegree = -10;
@@ -62,7 +62,7 @@ public class EarthquakeTests {
         Assert.assertEquals(earthquake.getDepth(), depth, 0);
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void given_aNegativeDepth_when_setDepthIsCalled_then_shouldThrowException(){
         Earthquake earthquake = new Earthquake();
         Integer depth = -100;

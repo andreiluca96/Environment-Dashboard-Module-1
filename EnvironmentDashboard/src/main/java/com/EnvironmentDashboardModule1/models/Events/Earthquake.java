@@ -19,6 +19,7 @@ public class Earthquake extends Event {
     }
 
     public void setRichterDegree(Double richterDegree) {
+        validateDegree(richterDegree);
         this.richterDegree = richterDegree;
     }
 
@@ -27,6 +28,7 @@ public class Earthquake extends Event {
     }
 
     public void setMercalliDegree(Double mercalliDegree) {
+        validateDegree(mercalliDegree);
         this.mercalliDegree = mercalliDegree;
     }
 
@@ -35,7 +37,21 @@ public class Earthquake extends Event {
     }
 
     public void setDepth(Integer depth) {
+        validateDepth(depth);
         this.depth = depth;
     }
 
+    //Dragos -> validate richter and mercalli degree
+    private void validateDegree(Double degreeValue) {
+        if (degreeValue < 0){
+            throw new IllegalArgumentException(Double.toString(degreeValue));
+        }
+    }
+
+    //Dragos -> validate depth
+    private void validateDepth(Integer depth) {
+        if(depth < 0){
+            throw new IllegalArgumentException(Integer.toString(depth));
+        }
+    }
 }
