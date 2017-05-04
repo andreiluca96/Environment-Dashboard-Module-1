@@ -79,7 +79,7 @@ public class EventTests {
     @Test
     public void given_differentValues_when_getIdIsCalled_then_assertEquality(){
         Event event = new Event();
-        Integer id = 10;
+        Long id = new Long(10);
         event.setId(id);
 
         Assert.assertEquals(event.getId(), id);
@@ -88,7 +88,7 @@ public class EventTests {
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setIdIsCalled_then_shouldThrowException(){
         Event event = new Event();
-        Integer id = -1000;
+        Long id = new Long(-1000);
 
         event.setId(id);
     }

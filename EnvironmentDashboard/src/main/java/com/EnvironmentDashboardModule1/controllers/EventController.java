@@ -61,6 +61,16 @@ public class EventController {
         return new ResponseEntity<>(Lists.transform(events, event -> toDto(event)), HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/tornado/{id}", method = RequestMethod.GET)
+    public ResponseEntity<TornadoDto> getTornadoById(@PathVariable("id") Long id) {
+        Tornado tornado = this.tornadoService.getById(id);
+        if (tornado == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<>(toDto(tornado), HttpStatus.OK);
+    }
+
     @RequestMapping(value = "/earthquake", method = RequestMethod.GET)
     public ResponseEntity<List<EarthquakeDto>> getEarthquake() {
         List<Earthquake> events = this.earthquakeService.getAll();
@@ -68,6 +78,17 @@ public class EventController {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(Lists.transform(events, event -> toDto(event)), HttpStatus.OK);
+    }
+
+
+    @RequestMapping(value = "/earthquake/{id}", method = RequestMethod.GET)
+    public ResponseEntity<EarthquakeDto> getEarthquakeById(@PathVariable("id") Long id) {
+        Earthquake earthquake = this.earthquakeService.getById(id);
+        if (earthquake == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<>(toDto(earthquake), HttpStatus.OK);
     }
 
     @RequestMapping(method = RequestMethod.POST)
@@ -88,7 +109,42 @@ public class EventController {
     public ResponseEntity<Earthquake> addTornado(@RequestBody CreatingEarthquakeDto event) {
         Earthquake earthquake = toCreatingModel(event);
         Earthquake savedEvent = this.earthquakeService.save(earthquake);
+
         return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE)
+    public ResponseEntity<List<EventDto>> delete(){
+        List<Event> eventList = this.eventService.getAll();
+
+        for(Event event : eventList){
+            this.eventService.delete(event.getId());
+        }
+
+        return new ResponseEntity<>(Lists.transform(eventList, event -> toDto(event)), HttpStatus.OK);
+    }
+
+
+    @RequestMapping(value = "/tornado", method = RequestMethod.DELETE)
+    public ResponseEntity<List<TornadoDto>> deleteTornados(){
+        List<Tornado> tornadoList = this.tornadoService.getAll();
+
+        for(Tornado tornado : tornadoList){
+            this.eventService.delete(tornado.getId());
+        }
+
+        return new ResponseEntity<>(Lists.transform(tornadoList, event -> toDto(event)), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/earthquake", method = RequestMethod.DELETE)
+    public ResponseEntity<List<EarthquakeDto>> deleteEarthquakes(){
+        List<Earthquake> earthquakeList = this.earthquakeService.getAll();
+
+        for(Earthquake earthquake : earthquakeList){
+            this.eventService.delete(earthquake.getId());
+        }
+
+        return new ResponseEntity<>(Lists.transform(earthquakeList, event -> toDto(event)), HttpStatus.OK);
     }
 
 
