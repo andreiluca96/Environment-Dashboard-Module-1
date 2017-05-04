@@ -41,20 +41,16 @@ public class Event implements Serializable {
     }
 
     public void setSeverity(String severity) {
-        if (severity!="Green" ||severity!="YELLOW" || severity!="ORANGE"|| severity!="RED") {
-            throw new IllegalArgumentException((severity));
-        }
+        validateSeverity(severity);
         this.severity = severity;
     }
 
     public Double getLatitude() {
-        return latitude;
+        return this.latitude;
     }
 
     public void setLatitude(Double latitude) {
-        if (latitude < -85 || latitude > 85) {
-            throw new IllegalArgumentException(Double.toString(latitude));
-        }
+        validateLatitude(latitude);
         this.latitude = latitude;
     }
 
@@ -136,4 +132,17 @@ public class Event implements Serializable {
         return radius;
     }
 
+    //Dragos -> validate severity
+    private void validateSeverity(String severity) {
+        if (!severity.equals("GREEN") && !severity.equals("YELLOW") && !severity.equals("ORANGE") && !severity.equals("RED")) {
+            throw new IllegalArgumentException(severity);
+        }
+    }
+
+    //Dragos -> validate latitude
+    private void validateLatitude(Double latitude) {
+        if (latitude < -85 || latitude > 85) {
+            throw new IllegalArgumentException(Double.toString(latitude));
+        }
+    }
 }
