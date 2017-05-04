@@ -11,7 +11,6 @@ import javax.persistence.Table;
 @Table(name = "Tsunami")
 public class Tsunami extends Event{
 
-    @Column(nullable = false)
     private Double maxWaveHeight;
 
     public Double getMaxWaveHeight() {

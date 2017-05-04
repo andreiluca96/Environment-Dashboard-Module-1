@@ -10,7 +10,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Fire")
 public class Fire extends Event{
-    @Column(nullable = false)
     private Double speed;
 
     public Double getSpeed() {

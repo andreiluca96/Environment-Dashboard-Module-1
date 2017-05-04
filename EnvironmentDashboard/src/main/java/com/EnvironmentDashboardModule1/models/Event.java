@@ -13,31 +13,23 @@ import java.util.Date;
 public class Event implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
-    private Integer id;
+    private Long id;
 
-    @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
     private Date startingTime;
 
-    @Column(nullable = false)
     private Date endingTime;
 
-    @Column(nullable = false)
-    private Severity sevirity;
+    private String severity;
 
-    @Column(nullable = false)
     private String description;
 
-    @Column(nullable = false)
     private String hints;
 
-    @Column(nullable = false)
     private Double radius;
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -53,8 +45,8 @@ public class Event implements Serializable {
         this.endingTime = endingTime;
     }
 
-    public void setSevirity(Severity sevirity) {
-        this.sevirity = sevirity;
+    public void setSeverity(String severity) {
+        this.severity = severity;
     }
 
     public void setDescription(String description) {
@@ -70,7 +62,7 @@ public class Event implements Serializable {
     }
 
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
@@ -86,8 +78,8 @@ public class Event implements Serializable {
         return endingTime;
     }
 
-    public Severity getSevirity() {
-        return sevirity;
+    public String getSeverity() {
+        return severity;
     }
 
     public String getDescription() {

@@ -11,7 +11,6 @@ import javax.persistence.Table;
 @Table(name = "Flood")
 public class Flood extends Event{
 
-    @Column(nullable = false)
     private Double precipitationLevek;
 
     public Double getPrecipitationLevek() {

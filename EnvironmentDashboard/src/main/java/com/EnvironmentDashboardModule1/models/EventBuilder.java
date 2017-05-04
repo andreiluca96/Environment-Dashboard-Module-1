@@ -13,7 +13,7 @@ public class EventBuilder {
 
     private Date endingTime;
 
-    private Severity sevirity;
+    private String severity;
 
     private String description;
 
@@ -36,8 +36,8 @@ public class EventBuilder {
         return this;
     }
 
-    public EventBuilder setSevirity(Severity sevirity) {
-        this.sevirity = sevirity;
+    public EventBuilder setSeverity(String severity) {
+        this.severity = severity;
         return this;
     }
 
@@ -63,7 +63,7 @@ public class EventBuilder {
         event.setHints(hints);
         event.setName(name);
         event.setRadius(radius);
-        event.setSevirity(sevirity);
+        event.setSeverity(severity);
         event.setStartingTime(startingTime);
         return event;
     }

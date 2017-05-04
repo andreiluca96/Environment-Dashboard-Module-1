@@ -10,7 +10,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Tornado")
 public class Tornado extends Event{
-    @Column(nullable = false)
     private Double windSpeed;
 
     public Double getWindSpeed() {

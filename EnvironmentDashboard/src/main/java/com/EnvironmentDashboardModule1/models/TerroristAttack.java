@@ -10,8 +10,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "TerroristAttack")
 public class TerroristAttack extends Event{
-
-    @Column(nullable = false)
     private Integer numberOfTerrorists;
 
     public Integer getNumberOfTerrorists() {

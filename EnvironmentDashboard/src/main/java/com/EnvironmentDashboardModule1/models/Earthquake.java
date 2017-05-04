@@ -10,13 +10,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Earthquake")
 public class Earthquake extends Event{
-    @Column(nullable = false)
     private Double richterDegree;
 
-    @Column(nullable = false)
     private Double mercalliDegree;
 
-    @Column(nullable = false)
     private Integer depth;
 
     public Double getRichterDegree() {
