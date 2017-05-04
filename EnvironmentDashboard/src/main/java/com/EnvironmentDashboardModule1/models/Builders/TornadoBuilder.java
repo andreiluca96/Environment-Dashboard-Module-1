@@ -7,7 +7,9 @@ import java.util.Date;
 /**
  * Created by Luca Andrei on 5/4/2017.
  */
-public class TornadoBuilder {
+public class TornadoBuilder extends EventBuilder {
+
+    private Double windspeed;
 
     private String name;
 
@@ -26,8 +28,6 @@ public class TornadoBuilder {
     private String hints;
 
     private Double radius;
-
-    private Double windspeed;
 
     public TornadoBuilder setName(String name) {
         this.name = name;
@@ -73,7 +73,7 @@ public class TornadoBuilder {
         this.radius = radius;
         return this;
     }
-
+    
     public TornadoBuilder setWindspeed(Double windspeed) {
         this.windspeed = windspeed;
         return this;

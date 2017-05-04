@@ -64,6 +64,22 @@ public class EventController {
         return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
     }
 
+    @RequestMapping(method = RequestMthod.GET)
+    public ResponseEntity<List<EventDto>> getById(@PathVariable("eventId") Long eventId){
+    Event event = this.eventService.getById(eventId);
+    if(events.isEmpty()){
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+    events.getEvent().size();
+    events.size();
+
+    List<EventDto> dtoEvent = Lists.transform(events, event -> toDto(event));
+    if(dtoEvent.size() != events.size()){
+        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+    return new ResponseEntity<>(stoTornado, HttpStatus.OK);
+}
+
 
 
     private EventDto toDto(Event event) {
