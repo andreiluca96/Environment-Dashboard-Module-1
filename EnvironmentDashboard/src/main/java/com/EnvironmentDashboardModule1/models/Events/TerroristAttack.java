@@ -1,6 +1,7 @@
-package com.EnvironmentDashboardModule1.models;
+package com.EnvironmentDashboardModule1.models.Events;
 
-import javax.persistence.Column;
+import com.EnvironmentDashboardModule1.models.Events.Event;
+
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -9,7 +10,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "TerroristAttack")
-public class TerroristAttack extends Event{
+public class TerroristAttack extends Event {
     private Integer numberOfTerrorists;
 
     public Integer getNumberOfTerrorists() {

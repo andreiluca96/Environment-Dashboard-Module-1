@@ -1,6 +1,6 @@
 package com.EnvironmentDashboardModule1.models.Builders;
 
-import com.EnvironmentDashboardModule1.models.Tornado;
+import com.EnvironmentDashboardModule1.models.Events.Tornado;
 
 import java.util.Date;
 

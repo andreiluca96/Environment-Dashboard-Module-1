@@ -1,6 +1,6 @@
 package com.EnvironmentDashboardModule1.services;
 
-import com.EnvironmentDashboardModule1.models.Event;
+import com.EnvironmentDashboardModule1.models.Events.Event;
 import com.EnvironmentDashboardModule1.repositories.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,5 @@
-package com.EnvironmentDashboardModule1.models;
+package com.EnvironmentDashboardModule1.models.Events;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -9,7 +8,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "Earthquake")
-public class Earthquake extends Event{
+public class Earthquake extends Event {
     private Double richterDegree;
 
     private Double mercalliDegree;

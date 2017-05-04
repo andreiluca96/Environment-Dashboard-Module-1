@@ -1,8 +1,6 @@
 package com.EnvironmentDashboardModule1.services;
 
-import com.EnvironmentDashboardModule1.models.Event;
-import com.EnvironmentDashboardModule1.models.Tornado;
-import com.EnvironmentDashboardModule1.repositories.EventRepository;
+import com.EnvironmentDashboardModule1.models.Events.Tornado;
 import com.EnvironmentDashboardModule1.repositories.TornadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

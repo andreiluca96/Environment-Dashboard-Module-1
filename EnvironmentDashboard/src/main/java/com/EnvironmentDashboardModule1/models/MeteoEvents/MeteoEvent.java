@@ -1,4 +1,4 @@
-package com.EnvironmentDashboardModule1.models;
+package com.EnvironmentDashboardModule1.models.MeteoEvents;
 
 import javax.persistence.*;
 
