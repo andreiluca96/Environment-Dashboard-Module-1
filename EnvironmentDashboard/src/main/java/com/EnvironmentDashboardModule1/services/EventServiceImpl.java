@@ -34,4 +34,19 @@ public class EventServiceImpl implements EventService {
     public void delete(Long id) {
         this.eventRepository.delete(id);
     }
+
+    public Event update(Event entity, Long id) {
+        Event grade = this.eventRepository.findOne(id);
+        this.eventRepository.findOne(id).setDescription(entity.getDescription());
+        this.eventRepository.findOne(id).setStartingTime(entity.getStartingTime());
+        this.eventRepository.findOne(id).setRadius(entity.getRadius());
+        this.eventRepository.findOne(id).setName(entity.getName());
+        this.eventRepository.findOne(id).setHints(entity.getHints());
+        this.eventRepository.findOne(id).setEndingTime(entity.getEndingTime());
+        this.eventRepository.findOne(id).setLatitude(entity.getLatitude());
+        this.eventRepository.findOne(id).setLongitude(entity.getLongitude());
+        this.eventRepository.findOne(id).setSeverity(entity.getSeverity());
+        this.eventRepository.saveAndFlush(this.eventRepository.findOne(id));
+        return this.eventRepository.findOne(id);
+    }
 }
