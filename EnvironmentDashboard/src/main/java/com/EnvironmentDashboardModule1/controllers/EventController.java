@@ -180,6 +180,36 @@ public class EventController {
         return new ResponseEntity<>(toDto(updatedTornado), HttpStatus.CREATED);
     }
 
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<EventDto> deleteById(@PathVariable("id") Long id){
+        Event event = this.eventService.getById(id);
+        if(event == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        this.eventService.delete(event.getId());
+        return new ResponseEntity<>(toDto(event), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "tornado/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<TornadoDto> deleteTornadoById(@PathVariable("id") Long id){
+        Tornado tornado = this.tornadoService.getById(id);
+        if(tornado == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        this.eventService.delete(tornado.getId());
+        return new ResponseEntity<>(toDto(tornado), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "earthquake/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<EarthquakeDto> deleteEarthquakeById(@PathVariable("id") Long id){
+        Earthquake earthquake = this.earthquakeService.getById(id);
+        if(earthquake == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        this.eventService.delete(earthquake.getId());
+        return new ResponseEntity<>(toDto(earthquake), HttpStatus.OK);
+    }
+
     private EventDto toDto(Event event) {
         return new EventDto.Builder()
                 .name(event.getName())
