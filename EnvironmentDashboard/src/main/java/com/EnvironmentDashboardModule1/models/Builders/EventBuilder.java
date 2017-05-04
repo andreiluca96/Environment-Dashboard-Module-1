@@ -1,6 +1,7 @@
 package com.EnvironmentDashboardModule1.models.Builders;
 
 import com.EnvironmentDashboardModule1.models.Events.Event;
+import com.EnvironmentDashboardModule1.models.Events.Tornado;
 
 import java.util.Date;
 
@@ -9,23 +10,23 @@ import java.util.Date;
  */
 public class EventBuilder {
 
-    private String name;
+    protected String name;
 
-    private Double latitude;
+    protected Double latitude;
 
-    private Double longitude;
+    protected Double longitude;
 
-    private Date startingTime;
+    protected Date startingTime;
 
-    private Date endingTime;
+    protected Date endingTime;
 
-    private String severity;
+    protected String severity;
 
-    private String description;
+    protected String description;
 
-    private String hints;
+    protected String hints;
 
-    private Double radius;
+    protected Double radius;
 
     public EventBuilder setName(String name) {
         this.name = name;
