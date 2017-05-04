@@ -31,4 +31,9 @@ public class TerroristAttackServiceImpl implements TerroristAttackService {
     public void delete(Long id) {
         this.terroristattackRepository.delete(id);
     }
+
+    @Override
+    public TerroristAttack update(TerroristAttack entity, Long id) {
+        return null;
+    }
 }

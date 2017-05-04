@@ -31,4 +31,9 @@ public class FireServiceImpl implements FireService {
     public void delete(Long id) {
         this.fireRepository.delete(id);
     }
+
+    @Override
+    public Fire update(Fire entity, Long id) {
+        return null;
+    }
 }

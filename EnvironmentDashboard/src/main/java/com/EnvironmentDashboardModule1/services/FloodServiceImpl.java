@@ -31,4 +31,9 @@ public class FloodServiceImpl implements FloodService {
     public void delete(Long id) {
         this.floodRepository.delete(id);
     }
+
+    @Override
+    public Flood update(Flood entity, Long id) {
+        return null;
+    }
 }

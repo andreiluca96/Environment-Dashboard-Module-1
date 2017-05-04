@@ -31,4 +31,9 @@ public class TsunamiServiceImpl implements TsunamiService {
     public void delete(Long id) {
         this.tsunamiRepository.delete(id);
     }
+
+    @Override
+    public Tsunami update(Tsunami entity, Long id) {
+        return null;
+    }
 }
