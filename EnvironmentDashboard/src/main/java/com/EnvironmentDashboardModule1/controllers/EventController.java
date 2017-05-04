@@ -1,23 +1,20 @@
 package com.EnvironmentDashboardModule1.controllers;
 
-import com.EnvironmentDashboardModule1.DTO.CreatingEventDto;
-import com.EnvironmentDashboardModule1.DTO.CreatingTornadoDto;
-import com.EnvironmentDashboardModule1.DTO.EventDto;
-import com.EnvironmentDashboardModule1.DTO.TornadoDto;
+import com.EnvironmentDashboardModule1.DTO.*;
+import com.EnvironmentDashboardModule1.models.Builders.EarthquakeBuilder;
 import com.EnvironmentDashboardModule1.models.Builders.TornadoBuilder;
+import com.EnvironmentDashboardModule1.models.Events.Earthquake;
 import com.EnvironmentDashboardModule1.models.Events.Event;
 import com.EnvironmentDashboardModule1.models.Builders.EventBuilder;
 import com.EnvironmentDashboardModule1.models.Events.Tornado;
+import com.EnvironmentDashboardModule1.services.EarthquakeService;
 import com.EnvironmentDashboardModule1.services.EventService;
 import com.EnvironmentDashboardModule1.services.TornadoService;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,6 +30,9 @@ public class EventController {
     @Autowired
     private TornadoService tornadoService;
 
+    @Autowired
+    private EarthquakeService earthquakeService;
+
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<EventDto>> get() {
         List<Event> events = this.eventService.getAll();
@@ -42,9 +42,28 @@ public class EventController {
         return new ResponseEntity<>(Lists.transform(events, event -> toDto(event)), HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public ResponseEntity<EventDto> getById(@PathVariable("id") Long id) {
+        Event event = this.eventService.getById(id);
+        if (event == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<>(toDto(event), HttpStatus.OK);
+    }
+
     @RequestMapping(value = "/tornado", method = RequestMethod.GET)
     public ResponseEntity<List<TornadoDto>> getTornado() {
         List<Tornado> events = this.tornadoService.getAll();
+        if (events.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(Lists.transform(events, event -> toDto(event)), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/earthquake", method = RequestMethod.GET)
+    public ResponseEntity<List<EarthquakeDto>> getEarthquake() {
+        List<Earthquake> events = this.earthquakeService.getAll();
         if (events.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
@@ -59,27 +78,18 @@ public class EventController {
     }
 
     @RequestMapping(value = "/tornado", method = RequestMethod.POST)
-    public ResponseEntity<Tornado> addTornado(@RequestBody Tornado event) {
-        Tornado savedEvent = this.tornadoService.save(event);
+    public ResponseEntity<Tornado> addTornado(@RequestBody CreatingTornadoDto event) {
+        Tornado tornado = toCreatingModel(event);
+        Tornado savedEvent = this.tornadoService.save(tornado);
         return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
     }
 
-    @RequestMapping(method = RequestMthod.GET)
-    public ResponseEntity<List<EventDto>> getById(@PathVariable("eventId") Long eventId){
-    Event event = this.eventService.getById(eventId);
-    if(events.isEmpty()){
-        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    @RequestMapping(value = "/earthquake", method = RequestMethod.POST)
+    public ResponseEntity<Earthquake> addTornado(@RequestBody CreatingEarthquakeDto event) {
+        Earthquake earthquake = toCreatingModel(event);
+        Earthquake savedEvent = this.earthquakeService.save(earthquake);
+        return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
     }
-    events.getEvent().size();
-    events.size();
-
-    List<EventDto> dtoEvent = Lists.transform(events, event -> toDto(event));
-    if(dtoEvent.size() != events.size()){
-        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-    }
-    return new ResponseEntity<>(stoTornado, HttpStatus.OK);
-}
-
 
 
     private EventDto toDto(Event event) {
@@ -138,6 +148,39 @@ public class EventController {
                 .getTornado();
     }
 
+    private EarthquakeDto toDto(Earthquake earthquake) {
+        return new EarthquakeDto.Builder()
+                .name(earthquake.getName())
+                .latitude(earthquake.getLatitude())
+                .longitude(earthquake.getLongitude())
+                .startingDate(earthquake.getStartingTime())
+                .endingDate(earthquake.getEndingTime())
+                .severity(earthquake.getSeverity())
+                .description(earthquake.getDescription())
+                .hints(earthquake.getHints())
+                .radius(earthquake.getRadius())
+                .mercaliDegree(earthquake.getMercalliDegree())
+                .richterDegree(earthquake.getRichterDegree())
+                .depth(earthquake.getDepth());
+    }
+
+    private Earthquake toCreatingModel(CreatingEarthquakeDto dto) {
+        return new EarthquakeBuilder()
+                .setName(dto.getName())
+                .setLongitude(dto.getLongitude())
+                .setLatitude(dto.getLongitude())
+                .setDescription(dto.getDescription())
+                .setEndingTime(dto.getEndingDate())
+                .setStartingTime(dto.getStartingDate())
+                .setHints(dto.getHints())
+                .setRadius(dto.getRadius())
+                .setSeverity(dto.getSeverity())
+                .setRichterDegree(dto.getRichterDegree())
+                .setMercalliDegree(dto.getMercaliDegree())
+                .setDepth(dto.getDepth())
+                .getEarthquake();
+    }
+
 
 //    //earthquake
 //    @Autowired
@@ -158,38 +201,7 @@ public class EventController {
 //        return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
 //    }
 //
-//    private EarthquakeDto toDto(Earthquake earthquake) {
-//        return new EarthquakeDto.Builder()
-//                .name(earthquake.getName())
-//                .latitude(earthquake.getLatitude())
-//                .longitude(earthquake.getLongitude())
-//                .startingDate(earthquake.getStartingTime())
-//                .endingDate(earthquake.getEndingTime())
-//                .severity(earthquake.getSeverity())
-//                .description(earthquake.getDescription())
-//                .hints(earthquake.getHints())
-//                .radius(earthquake.getRadius())
-//                .richterDegree(earthquake.getRichterDegree())
-//                .mercalliDegree(earthquake.getMercalliDegree())
-//                .depth(earthquake.getDepth());
-//    }
-//
-//    private Earthquake toCreatingModel(CreatingEarthquakeDto dto) {
-//        return new EarthquakeBuilder()
-//                .setName(dto.getName())
-//                .setLongitude(dto.getLongitude())
-//                .setLatitude(dto.getLongitude())
-//                .setDescription(dto.getDescription())
-//                .setEndingTime(dto.getEndingDate())
-//                .setStartingTime(dto.getStartingDate())
-//                .setHints(dto.getHints())
-//                .setRadius(dto.getRadius())
-//                .setSeverity(dto.getSeverity())
-//                .setRichterDegree(dto.getRichterDegree())
-//                .setMercaliDegree(dto.getMercaliDegree())
-//                .setDepth(dto.getDepth())
-//                .getEarthquake();
-//    }
+
 //
 //
 //    //Fire
@@ -383,5 +395,4 @@ public class EventController {
 //                .setPrecipitationLevel(dto.getPrecipitationLevel())
 //                .getFlood();
 //    }
-
 }
