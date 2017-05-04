@@ -28,6 +28,9 @@ public class MeteoEvent {
     }
 
     public void setId(Integer id) {
+        if (id < 0) {
+            throw new IllegalArgumentException(Integer.toString(id));
+        }
         this.id = id;
     }
 
@@ -52,6 +55,10 @@ public class MeteoEvent {
     }
 
     public void setPrecipitationLevel(Integer precipitationLevel) {
+
+        if (precipitationLevel < 0) {
+            throw new IllegalArgumentException(Integer.toString(precipitationLevel));
+        }
         this.precipitationLevel = precipitationLevel;
     }
 

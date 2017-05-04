@@ -18,6 +18,9 @@ public class Tsunami extends Event{
     }
 
     public void setMaxWaveHeight(Double maxWaveHeight) {
+        if (maxWaveHeight < 0) {
+            throw new IllegalArgumentException(Double.toString(maxWaveHeight));
+        }
         this.maxWaveHeight = maxWaveHeight;
     }
 }

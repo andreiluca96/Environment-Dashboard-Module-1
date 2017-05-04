@@ -18,7 +18,10 @@ public class Flood extends Event{
     }
 
     public void setPrecipitationLevel(Double precipitationLevel) {
-        this.precipitationLevek = precipitationLevel;
+        if (precipitationLevel < 0) {
+            throw new IllegalArgumentException(Double.toString(precipitationLevel));
+        }
+        this.precipitationLevel = precipitationLevel;
     }
 
 }

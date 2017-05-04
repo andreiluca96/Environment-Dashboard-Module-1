@@ -36,10 +36,14 @@ public class Event implements Serializable {
     private Double radius;
 
     public String getSeverity() {
+
         return severity;
     }
 
     public void setSeverity(String severity) {
+        if (severity!="Green" ||severity!="YELLOW" || severity!="ORANGE"|| severity!="RED") {
+            throw new IllegalArgumentException((severity));
+        }
         this.severity = severity;
     }
 
@@ -48,6 +52,9 @@ public class Event implements Serializable {
     }
 
     public void setLatitude(Double latitude) {
+        if (latitude < -85 || latitude > 85) {
+            throw new IllegalArgumentException(Double.toString(latitude));
+        }
         this.latitude = latitude;
     }
 
@@ -56,18 +63,28 @@ public class Event implements Serializable {
     }
 
     public void setLongitude(Double longitude) {
+        if (longitude < -180 || longitude > 180) {
+            throw new IllegalArgumentException(Double.toString(longitude));
+        }
         this.longitude = longitude;
     }
 
     public void setId(Integer id) {
+        if (id<0) {
+            throw new IllegalArgumentException(Double.toString(id));
+        }
         this.id = id;
     }
 
     public void setName(String name) {
+        if (name==null) {
+            throw new IllegalArgumentException(name);
+        }
         this.name = name;
     }
 
     public void setStartingTime(Date startingTime) {
+
         this.startingTime = startingTime;
     }
 
@@ -84,6 +101,9 @@ public class Event implements Serializable {
     }
 
     public void setRadius(Double radius) {
+        if (radius < 0) {
+            throw new IllegalArgumentException(Double.toString(radius));
+        }
         this.radius = radius;
     }
 

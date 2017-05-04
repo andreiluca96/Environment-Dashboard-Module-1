@@ -23,6 +23,9 @@ public class MeteoBuilder {
     }
 
     public MeteoBuilder setPrecipitationLevel(Integer precipitationLevel) {
+        if (precipitationLevel < 0) {
+            throw new IllegalArgumentException(Integer.toString(precipitationLevel));
+        }
         this.precipitationLevel = precipitationLevel;
         return this;
     }
