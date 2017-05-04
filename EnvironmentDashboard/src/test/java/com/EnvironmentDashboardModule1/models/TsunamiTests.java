@@ -1,5 +1,6 @@
 package com.EnvironmentDashboardModule1.models;
 
+import com.EnvironmentDashboardModule1.models.Events.Tsunami;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

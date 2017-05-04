@@ -1,14 +1,14 @@
-package com.EnvironmentDashboardModule1.models;
+package com.EnvironmentDashboardModule1.models.Events;
 
-import javax.persistence.Column;
+import com.EnvironmentDashboardModule1.models.Events.Event;
+
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 /**
  * Created by Ariana on 5/3/2017.
  */
 @Entity
-public class Tornado extends Event{
+public class Tornado extends Event {
     private Double windSpeed;
 
     public Double getWindSpeed() {

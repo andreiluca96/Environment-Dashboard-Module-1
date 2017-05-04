@@ -1,6 +1,6 @@
 package com.EnvironmentDashboardModule1.models.Builders;
 
-import com.EnvironmentDashboardModule1.models.Event;
+import com.EnvironmentDashboardModule1.models.Events.Event;
 
 import java.util.Date;
 

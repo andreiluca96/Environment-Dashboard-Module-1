@@ -1,6 +1,6 @@
 package com.EnvironmentDashboardModule1.repositories;
 
-import com.EnvironmentDashboardModule1.models.Event;
+import com.EnvironmentDashboardModule1.models.Events.Event;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

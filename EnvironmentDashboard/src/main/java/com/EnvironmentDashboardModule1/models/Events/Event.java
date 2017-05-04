@@ -1,4 +1,4 @@
-package com.EnvironmentDashboardModule1.models;
+package com.EnvironmentDashboardModule1.models.Events;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
