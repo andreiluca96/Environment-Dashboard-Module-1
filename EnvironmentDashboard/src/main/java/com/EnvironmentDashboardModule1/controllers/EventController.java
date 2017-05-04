@@ -123,249 +123,249 @@ public class EventController {
     }
 
 
-    //earthquake
-    @Autowired
-    private EarthquakeService earthquakeService;
-
-    @RequestMapping(value = "/earthquake", method = RequestMethod.GET)
-    public ResponseEntity<List<EarthquakeDto>> getEarthquake() {
-        List<Earthquake> events = this.earthquakeService.getAll();
-        if (events.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(Lists.transform(events, event -> toDto(event)), HttpStatus.OK);
-    }
-
-    @RequestMapping(value = "/earthquake", method = RequestMethod.POST)
-    public ResponseEntity<Tornado> addEarthquake(@RequestBody Earthquake event) {
-        Earthquake savedEvent = this.earthquakeService.save(event);
-        return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
-    }
-
-    private EarthquakeDto toDto(Earthquake earthquake) {
-        return new EarthquakeDto.Builder()
-                .name(earthquake.getName())
-                .latitude(earthquake.getLatitude())
-                .longitude(earthquake.getLongitude())
-                .startingDate(earthquake.getStartingTime())
-                .endingDate(earthquake.getEndingTime())
-                .severity(earthquake.getSeverity())
-                .description(earthquake.getDescription())
-                .hints(earthquake.getHints())
-                .radius(earthquake.getRadius())
-                .richterDegree(earthquake.getRichterDegree())
-                .mercalliDegree(earthquake.getMercalliDegree())
-                .depth(earthquake.getDepth());
-    }
-
-    private Earthquake toCreatingModel(CreatingEarthquakeDto dto) {
-        return new EarthquakeBuilder()
-                .setName(dto.getName())
-                .setLongitude(dto.getLongitude())
-                .setLatitude(dto.getLongitude())
-                .setDescription(dto.getDescription())
-                .setEndingTime(dto.getEndingDate())
-                .setStartingTime(dto.getStartingDate())
-                .setHints(dto.getHints())
-                .setRadius(dto.getRadius())
-                .setSeverity(dto.getSeverity())
-                .setRichterDegree(dto.getRichterDegree())
-                .setMercaliDegree(dto.getMercaliDegree())
-                .setDepth(dto.getDepth())
-                .getEarthquake();
-    }
-
-
-    //Fire
-    @Autowired
-    private FireService fireService;
-
-    @RequestMapping(value = "/fire", method = RequestMethod.GET)
-    public ResponseEntity<List<FireDto>> getFire() {
-        List<Fire> events = this.fireService.getAll();
-        if (events.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(Lists.transform(events, event -> toDto(event)), HttpStatus.OK);
-    }
-
-    @RequestMapping(value = "/fire", method = RequestMethod.POST)
-    public ResponseEntity<Fire> addFire(@RequestBody Fire event) {
-        Fire savedEvent = this.fireService.save(event);
-        return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
-    }
-
-    private FireDto toDto(Fire fire) {
-        return new FireDto.Builder()
-                .name(fire.getName())
-                .latitude(fire.getLatitude())
-                .longitude(fire.getLongitude())
-                .startingDate(fire.getStartingTime())
-                .endingDate(fire.getEndingTime())
-                .severity(fire.getSeverity())
-                .description(fire.getDescription())
-                .hints(fire.getHints())
-                .radius(fire.getRadius())
-                .speed(fire.getSpeed());
-    }
-
-    private Fire toCreatingModel(CreatingFireDto dto) {
-        return new FireBuilder()
-                .setName(dto.getName())
-                .setLongitude(dto.getLongitude())
-                .setLatitude(dto.getLongitude())
-                .setDescription(dto.getDescription())
-                .setEndingTime(dto.getEndingDate())
-                .setStartingTime(dto.getStartingDate())
-                .setHints(dto.getHints())
-                .setRadius(dto.getRadius())
-                .setSeverity(dto.getSeverity())
-                .setSpeed(dto.getSpeed())
-                .getFire();
-    }
-
-    //TerroristAttack
-    @Autowired
-    private TerroristAttackService terroristAttackService;
-
-    @RequestMapping(value = "/terroristAttack", method = RequestMethod.GET)
-    public ResponseEntity<List<TerroristAttackDto>> getTerroristAttack() {
-        List<TerroristAttack> events = this.terroristAttackService.getAll();
-        if (events.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(Lists.transform(events, event -> toDto(event)), HttpStatus.OK);
-    }
-
-    @RequestMapping(value = "/terroristAttack", method = RequestMethod.POST)
-    public ResponseEntity<TerroristAttack> addTerroristAttack(@RequestBody TerroristAttack event) {
-        TerroristAttack savedEvent = this.terroristAttackService.save(event);
-        return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
-    }
-
-    private TerroristAttackDto toDto(TerroristAttack terroristAttack) {
-        return new TerroristAttackDto.Builder()
-                .name(terroristAttack.getName())
-                .latitude(terroristAttack.getLatitude())
-                .longitude(terroristAttack.getLongitude())
-                .startingDate(terroristAttack.getStartingTime())
-                .endingDate(terroristAttack.getEndingTime())
-                .severity(terroristAttack.getSeverity())
-                .description(terroristAttack.getDescription())
-                .hints(terroristAttack.getHints())
-                .radius(terroristAttack.getRadius())
-                .numberOfTerrorists(terroristAttack.getNumberOfTerrorists());
-    }
-
-    private TerroristAttack toCreatingModel(CreatingTerroristAttackDto dto) {
-        return new TerroristAttackBuilder()
-                .setName(dto.getName())
-                .setLongitude(dto.getLongitude())
-                .setLatitude(dto.getLongitude())
-                .setDescription(dto.getDescription())
-                .setEndingTime(dto.getEndingDate())
-                .setStartingTime(dto.getStartingDate())
-                .setHints(dto.getHints())
-                .setRadius(dto.getRadius())
-                .setSeverity(dto.getSeverity())
-                .setNumberOfTerrorists(dto.getNumberOfTerrorists())
-                .getTerroristAttack();
-    }
-
-    //tsunami
-    @Autowired
-    private TsunamiService tsunamiService;
-
-    @RequestMapping(value = "/tsunami", method = RequestMethod.GET)
-    public ResponseEntity<List<TsunamiDto>> getTsunami() {
-        List<Tsunami> events = this.tsunamiService.getAll();
-        if (events.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(Lists.transform(events, event -> toDto(event)), HttpStatus.OK);
-    }
-
-    @RequestMapping(value = "/tsunami", method = RequestMethod.POST)
-    public ResponseEntity<Tsunami> addTsunami(@RequestBody Tsunami event) {
-        Tsunami savedEvent = this.tsunamiService.save(event);
-        return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
-    }
-
-    private TsunamiDto toDto(Tsunami tsunami) {
-        return new TsunamiDto.Builder()
-                .name(tsunami.getName())
-                .latitude(tsunami.getLatitude())
-                .longitude(tsunami.getLongitude())
-                .startingDate(tsunami.getStartingTime())
-                .endingDate(tsunami.getEndingTime())
-                .severity(tsunami.getSeverity())
-                .description(tsunami.getDescription())
-                .hints(tsunami.getHints())
-                .radius(tsunami.getRadius())
-                .maxWaveHeight(tsunami.getMaxWaveHeight());
-    }
-
-    private Tsunami toCreatingModel(CreatingTsunamiDto dto) {
-        return new TsunamiBuilder()
-                .setName(dto.getName())
-                .setLongitude(dto.getLongitude())
-                .setLatitude(dto.getLongitude())
-                .setDescription(dto.getDescription())
-                .setEndingTime(dto.getEndingDate())
-                .setStartingTime(dto.getStartingDate())
-                .setHints(dto.getHints())
-                .setRadius(dto.getRadius())
-                .setSeverity(dto.getSeverity())
-                .setMaxWaveHeight(dto.getMaxWaveHeight())
-                .getTsunami();
-    }
-
-    //flood
-    @Autowired
-    private FloodService floodService;
-
-    @RequestMapping(value = "/flood", method = RequestMethod.GET)
-    public ResponseEntity<List<FloodDto>> getFlood() {
-        List<Flood> events = this.floodService.getAll();
-        if (events.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(Lists.transform(events, event -> toDto(event)), HttpStatus.OK);
-    }
-
-    @RequestMapping(value = "/flood", method = RequestMethod.POST)
-    public ResponseEntity<Flood> addFlood(@RequestBody Flood event) {
-        Flood savedEvent = this.floodService.save(event);
-        return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
-    }
-
-    private FloodDto toDto(Flood flood) {
-        return new FloodDto.Builder()
-                .name(flood.getName())
-                .latitude(flood.getLatitude())
-                .longitude(flood.getLongitude())
-                .startingDate(flood.getStartingTime())
-                .endingDate(flood.getEndingTime())
-                .severity(flood.getSeverity())
-                .description(flood.getDescription())
-                .hints(flood.getHints())
-                .radius(flood.getRadius())
-                .precipitationLevel(flood.getPrecipitationLevel());
-    }
-
-    private Flood toCreatingModel(CreatingFloodDto dto) {
-        return new FloodBuilder()
-                .setName(dto.getName())
-                .setLongitude(dto.getLongitude())
-                .setLatitude(dto.getLongitude())
-                .setDescription(dto.getDescription())
-                .setEndingTime(dto.getEndingDate())
-                .setStartingTime(dto.getStartingDate())
-                .setHints(dto.getHints())
-                .setRadius(dto.getRadius())
-                .setSeverity(dto.getSeverity())
-                .setPrecipitationLevel(dto.getPrecipitationLevel())
-                .getFlood();
-    }
+//    //earthquake
+//    @Autowired
+//    private EarthquakeService earthquakeService;
+//
+//    @RequestMapping(value = "/earthquake", method = RequestMethod.GET)
+//    public ResponseEntity<List<EarthquakeDto>> getEarthquake() {
+//        List<Earthquake> events = this.earthquakeService.getAll();
+//        if (events.isEmpty()) {
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//        }
+//        return new ResponseEntity<>(Lists.transform(events, event -> toDto(event)), HttpStatus.OK);
+//    }
+//
+//    @RequestMapping(value = "/earthquake", method = RequestMethod.POST)
+//    public ResponseEntity<Tornado> addEarthquake(@RequestBody Earthquake event) {
+//        Earthquake savedEvent = this.earthquakeService.save(event);
+//        return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
+//    }
+//
+//    private EarthquakeDto toDto(Earthquake earthquake) {
+//        return new EarthquakeDto.Builder()
+//                .name(earthquake.getName())
+//                .latitude(earthquake.getLatitude())
+//                .longitude(earthquake.getLongitude())
+//                .startingDate(earthquake.getStartingTime())
+//                .endingDate(earthquake.getEndingTime())
+//                .severity(earthquake.getSeverity())
+//                .description(earthquake.getDescription())
+//                .hints(earthquake.getHints())
+//                .radius(earthquake.getRadius())
+//                .richterDegree(earthquake.getRichterDegree())
+//                .mercalliDegree(earthquake.getMercalliDegree())
+//                .depth(earthquake.getDepth());
+//    }
+//
+//    private Earthquake toCreatingModel(CreatingEarthquakeDto dto) {
+//        return new EarthquakeBuilder()
+//                .setName(dto.getName())
+//                .setLongitude(dto.getLongitude())
+//                .setLatitude(dto.getLongitude())
+//                .setDescription(dto.getDescription())
+//                .setEndingTime(dto.getEndingDate())
+//                .setStartingTime(dto.getStartingDate())
+//                .setHints(dto.getHints())
+//                .setRadius(dto.getRadius())
+//                .setSeverity(dto.getSeverity())
+//                .setRichterDegree(dto.getRichterDegree())
+//                .setMercaliDegree(dto.getMercaliDegree())
+//                .setDepth(dto.getDepth())
+//                .getEarthquake();
+//    }
+//
+//
+//    //Fire
+//    @Autowired
+//    private FireService fireService;
+//
+//    @RequestMapping(value = "/fire", method = RequestMethod.GET)
+//    public ResponseEntity<List<FireDto>> getFire() {
+//        List<Fire> events = this.fireService.getAll();
+//        if (events.isEmpty()) {
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//        }
+//        return new ResponseEntity<>(Lists.transform(events, event -> toDto(event)), HttpStatus.OK);
+//    }
+//
+//    @RequestMapping(value = "/fire", method = RequestMethod.POST)
+//    public ResponseEntity<Fire> addFire(@RequestBody Fire event) {
+//        Fire savedEvent = this.fireService.save(event);
+//        return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
+//    }
+//
+//    private FireDto toDto(Fire fire) {
+//        return new FireDto.Builder()
+//                .name(fire.getName())
+//                .latitude(fire.getLatitude())
+//                .longitude(fire.getLongitude())
+//                .startingDate(fire.getStartingTime())
+//                .endingDate(fire.getEndingTime())
+//                .severity(fire.getSeverity())
+//                .description(fire.getDescription())
+//                .hints(fire.getHints())
+//                .radius(fire.getRadius())
+//                .speed(fire.getSpeed());
+//    }
+//
+//    private Fire toCreatingModel(CreatingFireDto dto) {
+//        return new FireBuilder()
+//                .setName(dto.getName())
+//                .setLongitude(dto.getLongitude())
+//                .setLatitude(dto.getLongitude())
+//                .setDescription(dto.getDescription())
+//                .setEndingTime(dto.getEndingDate())
+//                .setStartingTime(dto.getStartingDate())
+//                .setHints(dto.getHints())
+//                .setRadius(dto.getRadius())
+//                .setSeverity(dto.getSeverity())
+//                .setSpeed(dto.getSpeed())
+//                .getFire();
+//    }
+//
+//    //TerroristAttack
+//    @Autowired
+//    private TerroristAttackService terroristAttackService;
+//
+//    @RequestMapping(value = "/terroristAttack", method = RequestMethod.GET)
+//    public ResponseEntity<List<TerroristAttackDto>> getTerroristAttack() {
+//        List<TerroristAttack> events = this.terroristAttackService.getAll();
+//        if (events.isEmpty()) {
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//        }
+//        return new ResponseEntity<>(Lists.transform(events, event -> toDto(event)), HttpStatus.OK);
+//    }
+//
+//    @RequestMapping(value = "/terroristAttack", method = RequestMethod.POST)
+//    public ResponseEntity<TerroristAttack> addTerroristAttack(@RequestBody TerroristAttack event) {
+//        TerroristAttack savedEvent = this.terroristAttackService.save(event);
+//        return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
+//    }
+//
+//    private TerroristAttackDto toDto(TerroristAttack terroristAttack) {
+//        return new TerroristAttackDto.Builder()
+//                .name(terroristAttack.getName())
+//                .latitude(terroristAttack.getLatitude())
+//                .longitude(terroristAttack.getLongitude())
+//                .startingDate(terroristAttack.getStartingTime())
+//                .endingDate(terroristAttack.getEndingTime())
+//                .severity(terroristAttack.getSeverity())
+//                .description(terroristAttack.getDescription())
+//                .hints(terroristAttack.getHints())
+//                .radius(terroristAttack.getRadius())
+//                .numberOfTerrorists(terroristAttack.getNumberOfTerrorists());
+//    }
+//
+//    private TerroristAttack toCreatingModel(CreatingTerroristAttackDto dto) {
+//        return new TerroristAttackBuilder()
+//                .setName(dto.getName())
+//                .setLongitude(dto.getLongitude())
+//                .setLatitude(dto.getLongitude())
+//                .setDescription(dto.getDescription())
+//                .setEndingTime(dto.getEndingDate())
+//                .setStartingTime(dto.getStartingDate())
+//                .setHints(dto.getHints())
+//                .setRadius(dto.getRadius())
+//                .setSeverity(dto.getSeverity())
+//                .setNumberOfTerrorists(dto.getNumberOfTerrorists())
+//                .getTerroristAttack();
+//    }
+//
+//    //tsunami
+//    @Autowired
+//    private TsunamiService tsunamiService;
+//
+//    @RequestMapping(value = "/tsunami", method = RequestMethod.GET)
+//    public ResponseEntity<List<TsunamiDto>> getTsunami() {
+//        List<Tsunami> events = this.tsunamiService.getAll();
+//        if (events.isEmpty()) {
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//        }
+//        return new ResponseEntity<>(Lists.transform(events, event -> toDto(event)), HttpStatus.OK);
+//    }
+//
+//    @RequestMapping(value = "/tsunami", method = RequestMethod.POST)
+//    public ResponseEntity<Tsunami> addTsunami(@RequestBody Tsunami event) {
+//        Tsunami savedEvent = this.tsunamiService.save(event);
+//        return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
+//    }
+//
+//    private TsunamiDto toDto(Tsunami tsunami) {
+//        return new TsunamiDto.Builder()
+//                .name(tsunami.getName())
+//                .latitude(tsunami.getLatitude())
+//                .longitude(tsunami.getLongitude())
+//                .startingDate(tsunami.getStartingTime())
+//                .endingDate(tsunami.getEndingTime())
+//                .severity(tsunami.getSeverity())
+//                .description(tsunami.getDescription())
+//                .hints(tsunami.getHints())
+//                .radius(tsunami.getRadius())
+//                .maxWaveHeight(tsunami.getMaxWaveHeight());
+//    }
+//
+//    private Tsunami toCreatingModel(CreatingTsunamiDto dto) {
+//        return new TsunamiBuilder()
+//                .setName(dto.getName())
+//                .setLongitude(dto.getLongitude())
+//                .setLatitude(dto.getLongitude())
+//                .setDescription(dto.getDescription())
+//                .setEndingTime(dto.getEndingDate())
+//                .setStartingTime(dto.getStartingDate())
+//                .setHints(dto.getHints())
+//                .setRadius(dto.getRadius())
+//                .setSeverity(dto.getSeverity())
+//                .setMaxWaveHeight(dto.getMaxWaveHeight())
+//                .getTsunami();
+//    }
+//
+//    //flood
+//    @Autowired
+//    private FloodService floodService;
+//
+//    @RequestMapping(value = "/flood", method = RequestMethod.GET)
+//    public ResponseEntity<List<FloodDto>> getFlood() {
+//        List<Flood> events = this.floodService.getAll();
+//        if (events.isEmpty()) {
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//        }
+//        return new ResponseEntity<>(Lists.transform(events, event -> toDto(event)), HttpStatus.OK);
+//    }
+//
+//    @RequestMapping(value = "/flood", method = RequestMethod.POST)
+//    public ResponseEntity<Flood> addFlood(@RequestBody Flood event) {
+//        Flood savedEvent = this.floodService.save(event);
+//        return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
+//    }
+//
+//    private FloodDto toDto(Flood flood) {
+//        return new FloodDto.Builder()
+//                .name(flood.getName())
+//                .latitude(flood.getLatitude())
+//                .longitude(flood.getLongitude())
+//                .startingDate(flood.getStartingTime())
+//                .endingDate(flood.getEndingTime())
+//                .severity(flood.getSeverity())
+//                .description(flood.getDescription())
+//                .hints(flood.getHints())
+//                .radius(flood.getRadius())
+//                .precipitationLevel(flood.getPrecipitationLevel());
+//    }
+//
+//    private Flood toCreatingModel(CreatingFloodDto dto) {
+//        return new FloodBuilder()
+//                .setName(dto.getName())
+//                .setLongitude(dto.getLongitude())
+//                .setLatitude(dto.getLongitude())
+//                .setDescription(dto.getDescription())
+//                .setEndingTime(dto.getEndingDate())
+//                .setStartingTime(dto.getStartingDate())
+//                .setHints(dto.getHints())
+//                .setRadius(dto.getRadius())
+//                .setSeverity(dto.getSeverity())
+//                .setPrecipitationLevel(dto.getPrecipitationLevel())
+//                .getFlood();
+//    }
 
 }
