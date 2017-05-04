@@ -14,10 +14,7 @@ import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -43,6 +40,16 @@ public class EventController {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(Lists.transform(events, event -> toDto(event)), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public ResponseEntity<EventDto> getById(@PathVariable("id") Long id) {
+        Event event = this.eventService.getById(id);
+        if (event == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<>(toDto(event), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/tornado", method = RequestMethod.GET)
@@ -83,7 +90,6 @@ public class EventController {
         Earthquake savedEvent = this.earthquakeService.save(earthquake);
         return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
     }
-
 
 
     private EventDto toDto(Event event) {
@@ -174,7 +180,6 @@ public class EventController {
                 .setDepth(dto.getDepth())
                 .getEarthquake();
     }
-
 
 
 //    //earthquake
@@ -390,5 +395,4 @@ public class EventController {
 //                .setPrecipitationLevel(dto.getPrecipitationLevel())
 //                .getFlood();
 //    }
-
 }
