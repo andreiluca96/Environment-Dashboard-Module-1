@@ -6,7 +6,6 @@ import javax.persistence.*;
  * Created by Ariana on 5/3/2017.
  */
 @Entity
-@Table(name = " MeteoEvent")
 public class MeteoEvent {
 
     @Id
