@@ -58,6 +58,13 @@ public class EventController {
         return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
     }
 
+    @RequestMapping(value = "/tornado", method = RequestMethod.POST)
+    public ResponseEntity<Tornado> addTornado(@RequestBody Tornado event) {
+        Tornado savedEvent = this.tornadoService.save(event);
+        return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
+    }
+
+
 
     private EventDto toDto(Event event) {
         return new EventDto.Builder()
