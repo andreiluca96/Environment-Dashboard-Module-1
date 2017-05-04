@@ -1,5 +1,7 @@
 package com.EnvironmentDashboardModule1.models;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -13,7 +15,7 @@ import java.util.Date;
 public class Event implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     private String name;
 
@@ -27,9 +29,37 @@ public class Event implements Serializable {
 
     private String hints;
 
+    private Double latitude;
+
+    private Double longitude;
+
     private Double radius;
 
-    public void setId(Long id) {
+    public String getSeverity() {
+        return severity;
+    }
+
+    public void setSeverity(String severity) {
+        this.severity = severity;
+    }
+
+    public Double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(Double latitude) {
+        this.latitude = latitude;
+    }
+
+    public Double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
+    }
+
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -45,10 +75,6 @@ public class Event implements Serializable {
         this.endingTime = endingTime;
     }
 
-    public void setSeverity(String severity) {
-        this.severity = severity;
-    }
-
     public void setDescription(String description) {
         this.description = description;
     }
@@ -62,7 +88,7 @@ public class Event implements Serializable {
     }
 
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -76,10 +102,6 @@ public class Event implements Serializable {
 
     public Date getEndingTime() {
         return endingTime;
-    }
-
-    public String getSeverity() {
-        return severity;
     }
 
     public String getDescription() {

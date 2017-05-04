@@ -1,4 +1,6 @@
-package com.EnvironmentDashboardModule1.models;
+package com.EnvironmentDashboardModule1.models.Builders;
+
+import com.EnvironmentDashboardModule1.models.Event;
 
 import java.util.Date;
 
@@ -8,6 +10,10 @@ import java.util.Date;
 public class EventBuilder {
 
     private String name;
+
+    private Double latitude;
+
+    private Double longitude;
 
     private Date startingTime;
 
@@ -23,6 +29,16 @@ public class EventBuilder {
 
     public EventBuilder setName(String name) {
         this.name = name;
+        return this;
+    }
+
+    public EventBuilder setLatitude(Double latitude) {
+        this.latitude = latitude;
+        return this;
+    }
+
+    public EventBuilder setLongitude(Double longitude) {
+        this.longitude = longitude;
         return this;
     }
 
@@ -58,6 +74,9 @@ public class EventBuilder {
 
     public Event getEvent(){
         Event event = new Event();
+
+        event.setLatitude(latitude);
+        event.setLongitude(longitude);
         event.setDescription(description);
         event.setEndingTime(endingTime);
         event.setHints(hints);
@@ -65,6 +84,7 @@ public class EventBuilder {
         event.setRadius(radius);
         event.setSeverity(severity);
         event.setStartingTime(startingTime);
+
         return event;
     }
 }

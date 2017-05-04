@@ -1,8 +1,6 @@
 package com.EnvironmentDashboardModule1.DTO;
 
-import com.EnvironmentDashboardModule1.DTO.Interfaces.*;
-import com.EnvironmentDashboardModule1.models.Location;
-import com.EnvironmentDashboardModule1.models.Severity;
+import com.EnvironmentDashboardModule1.DTO.Interfaces.EventInterfaces.*;
 
 import java.util.Date;
 
@@ -12,9 +10,9 @@ import java.util.Date;
 public class EventDto extends CreatingEventDto {
     private Long id;
 
-    private EventDto() {};
+    protected EventDto() {};
 
-    public static class Builder implements IDescription, IEndingDate, IHints, ILocation, IRadius, ISeverity, IStartingDate {
+    public static class Builder implements IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude {
         private EventDto eventDto = new EventDto();
 
         @Override
@@ -48,14 +46,26 @@ public class EventDto extends CreatingEventDto {
         }
 
         @Override
-        public IDescription severity(Severity severity) {
+        public IDescription severity(String severity) {
             eventDto.severity = severity;
             return this;
         }
 
         @Override
-        public IStartingDate location(Location location) {
-            eventDto.location = location;
+        public IStartingDate longitude(Double longitude) {
+            eventDto.longitude = longitude;
+            return this;
+        }
+
+        @Override
+        public ILongitude latitude(Double latitude) {
+            eventDto.latitude = latitude;
+            return this;
+        }
+
+        @Override
+        public ILatitude name(String name) {
+            eventDto.name = name;
             return this;
         }
     }

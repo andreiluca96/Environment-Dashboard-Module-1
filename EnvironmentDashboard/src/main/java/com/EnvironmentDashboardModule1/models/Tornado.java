@@ -8,7 +8,6 @@ import javax.persistence.Table;
  * Created by Ariana on 5/3/2017.
  */
 @Entity
-@Table(name = "Tornado")
 public class Tornado extends Event{
     private Double windSpeed;
 

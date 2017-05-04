@@ -1,4 +1,4 @@
-package com.EnvironmentDashboardModule1.DTO.Interfaces;
+package com.EnvironmentDashboardModule1.DTO.Interfaces.EventInterfaces;
 
 import java.util.Date;
 

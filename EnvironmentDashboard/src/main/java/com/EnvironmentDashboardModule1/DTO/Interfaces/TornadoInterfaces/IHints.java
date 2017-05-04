@@ -1,4 +1,4 @@
-package com.EnvironmentDashboardModule1.DTO.Interfaces;
+package com.EnvironmentDashboardModule1.DTO.Interfaces.TornadoInterfaces;
 
 /**
  * Created by Luca Andrei on 5/3/2017.

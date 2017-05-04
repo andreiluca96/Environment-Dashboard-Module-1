@@ -9,20 +9,38 @@ import java.util.Date;
  * Created by Luca Andrei on 5/3/2017.
  */
 public class CreatingEventDto {
-    protected Location location;
+    protected String name;
+    protected Double longitude;
+    protected Double latitude;
     protected Date startingDate;
     protected Date endingDate;
-    protected Severity severity;
+    protected String severity;
     protected String description;
     protected String hints;
     protected Double radius;
 
-    public Location getLocation() {
-        return location;
+    public String getName() {
+        return name;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
+    }
+
+    public Double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(Double latitude) {
+        this.latitude = latitude;
     }
 
     public void setRadius(Double radius) {
@@ -45,11 +63,11 @@ public class CreatingEventDto {
         this.endingDate = endingDate;
     }
 
-    public Severity getSeverity() {
+    public String getSeverity() {
         return severity;
     }
 
-    public void setSeverity(Severity severity) {
+    public void setSeverity(String severity) {
         this.severity = severity;
     }
 
@@ -72,5 +90,4 @@ public class CreatingEventDto {
     public double getRadius() {
         return radius;
     }
-
 }
