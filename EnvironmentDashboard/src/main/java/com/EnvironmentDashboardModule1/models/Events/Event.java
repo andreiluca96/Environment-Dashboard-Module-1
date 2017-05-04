@@ -4,12 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.text.DateFormat;
 import java.util.Date;
 
 
 /**
  * Created by Luca Andrei on 5/3/2017.
  */
+
 @Entity
 @Table(name = "Event")
 public class Event implements Serializable {
@@ -36,8 +38,7 @@ public class Event implements Serializable {
     private Double radius;
 
     public String getSeverity() {
-
-        return severity;
+        return this.severity;
     }
 
     public void setSeverity(String severity) {
@@ -55,81 +56,71 @@ public class Event implements Serializable {
     }
 
     public Double getLongitude() {
-        return longitude;
+        return this.longitude;
     }
 
     public void setLongitude(Double longitude) {
-        if (longitude < -180 || longitude > 180) {
-            throw new IllegalArgumentException(Double.toString(longitude));
-        }
+        validateLongitude(longitude);
         this.longitude = longitude;
     }
 
+    public Integer getId() {
+        return this.id;
+    }
+
     public void setId(Integer id) {
-        if (id<0) {
-            throw new IllegalArgumentException(Double.toString(id));
-        }
+        validateId(id);
         this.id = id;
     }
 
+    public String getName() {
+        return this.name;
+    }
+
     public void setName(String name) {
-        if (name==null) {
-            throw new IllegalArgumentException(name);
-        }
+        validateName(name);
         this.name = name;
     }
 
-    public void setStartingTime(Date startingTime) {
+    public Date getStartingTime() {
+        return this.startingTime;
+    }
 
+    public void setStartingTime(Date startingTime) {
+        validateTime(startingTime);
         this.startingTime = startingTime;
     }
 
+    public Date getEndingTime() {
+        return this.endingTime;
+    }
+
     public void setEndingTime(Date endingTime) {
+        validateTime(endingTime);
         this.endingTime = endingTime;
     }
 
+    public String getDescription() {
+        return this.description;
+    }
+
     public void setDescription(String description) {
+        validateName(description);
         this.description = description;
     }
 
+    public String getHints() { return this.hints; }
+
     public void setHints(String hints) {
+        validateName(hints);
         this.hints = hints;
     }
 
+    public Double getRadius() { return this.radius; }
+
     public void setRadius(Double radius) {
-        if (radius < 0) {
-            throw new IllegalArgumentException(Double.toString(radius));
-        }
+        validateRadius(radius);
         this.radius = radius;
-    }
-
-
-    public Integer getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Date getStartingTime() {
-        return startingTime;
-    }
-
-    public Date getEndingTime() {
-        return endingTime;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public String getHints() {
-        return hints;
-    }
-
-    public Double getRadius() {
-        return radius;
     }
 
     //Dragos -> validate severity
@@ -143,6 +134,41 @@ public class Event implements Serializable {
     private void validateLatitude(Double latitude) {
         if (latitude < -85 || latitude > 85) {
             throw new IllegalArgumentException(Double.toString(latitude));
+        }
+    }
+
+    //Dragos -> validate longitude
+    private void validateLongitude(Double longitude) {
+        if (longitude < -180 || longitude > 180) {
+            throw new IllegalArgumentException(Double.toString(longitude));
+        }
+    }
+
+    //Dragos -> validate id
+    private void validateId(Integer id) {
+        if (id < 0) {
+            throw new IllegalArgumentException(Double.toString(id));
+        }
+    }
+
+    //Dragos -> validate name
+    private void validateName(String name) {
+        if (name == null) {
+            throw new IllegalArgumentException(name);
+        }
+    }
+
+    //Dragos -> validate time
+    private void validateTime(Date time) {
+        if (time == null) {
+            throw new IllegalArgumentException("null time");
+        }
+    }
+
+    //Dragos -> validate radius
+    private void validateRadius(Double radius) {
+        if (radius < 0) {
+            throw new IllegalArgumentException(Double.toString(radius));
         }
     }
 }
