@@ -36,7 +36,7 @@ public class TornadoServiceImpl implements TornadoService {
     }
 
     public Tornado update(Tornado entity, Long id) {
-        Event grade = this.tornadoRepository.findOne(id);
+        Tornado tornado = this.tornadoRepository.findOne(id);
         this.tornadoRepository.findOne(id).setDescription(entity.getDescription());
         this.tornadoRepository.findOne(id).setStartingTime(entity.getStartingTime());
         this.tornadoRepository.findOne(id).setRadius(entity.getRadius());

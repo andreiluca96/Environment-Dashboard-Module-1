@@ -34,4 +34,22 @@ public class EarthquakeServiceImpl implements EarthquakeService {
     public void delete(Long id) {
         this.earthquakeRepository.delete(id);
     }
+
+    public Earthquake update(Earthquake entity, Long id) {
+        Earthquake earthquake = this.earthquakeRepository.findOne(id);
+        this.earthquakeRepository.findOne(id).setDescription(entity.getDescription());
+        this.earthquakeRepository.findOne(id).setStartingTime(entity.getStartingTime());
+        this.earthquakeRepository.findOne(id).setRadius(entity.getRadius());
+        this.earthquakeRepository.findOne(id).setName(entity.getName());
+        this.earthquakeRepository.findOne(id).setHints(entity.getHints());
+        this.earthquakeRepository.findOne(id).setEndingTime(entity.getEndingTime());
+        this.earthquakeRepository.findOne(id).setLatitude(entity.getLatitude());
+        this.earthquakeRepository.findOne(id).setLongitude(entity.getLongitude());
+        this.earthquakeRepository.findOne(id).setSeverity(entity.getSeverity());
+        this.earthquakeRepository.findOne(id).setDepth(entity.getDepth());
+        this.earthquakeRepository.findOne(id).setMercalliDegree(entity.getMercalliDegree());
+        this.earthquakeRepository.findOne(id).setRichterDegree(entity.getRichterDegree());
+        this.earthquakeRepository.saveAndFlush(this.earthquakeRepository.findOne(id));
+        return this.earthquakeRepository.findOne(id);
+    }
 }
