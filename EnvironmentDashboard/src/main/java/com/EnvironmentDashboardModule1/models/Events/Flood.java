@@ -19,15 +19,7 @@ public class Flood extends Event {
     }
 
     public void setPrecipitationLevel(Double precipitationLevel) {
-        validate(precipitationLevel);
+        validateNonNegativeValue(precipitationLevel);
         this.precipitationLevel = precipitationLevel;
     }
-
-    //Dragos -> validate precipitationLevel
-    private void validate(Double precipitationLevel) {
-        if (precipitationLevel < 0) {
-            throw new IllegalArgumentException(Double.toString(precipitationLevel));
-        }
-    }
-
 }

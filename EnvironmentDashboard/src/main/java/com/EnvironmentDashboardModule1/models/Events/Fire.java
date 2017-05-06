@@ -18,14 +18,7 @@ public class Fire extends Event {
     }
 
     public void setSpeed(Double speed) {
-        validate(speed);
+        validateNonNegativeValue(speed);
         this.speed = speed;
-    }
-
-    // Dragos -> validate speed
-    private void validate(Double speed) {
-        if (speed < 0){
-            throw new IllegalArgumentException(Double.toString(speed));
-        }
     }
 }

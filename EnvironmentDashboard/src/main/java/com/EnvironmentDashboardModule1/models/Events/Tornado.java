@@ -19,15 +19,7 @@ public class Tornado extends Event {
     }
 
     public void setWindSpeed(Double windSpeed) {
-        validate(windSpeed);
+        validateNonNegativeValue(windSpeed);
         this.windSpeed = windSpeed;
     }
-
-    // Dragos -> validate windSpeed
-    private void validate(Double windSpeed) {
-        if (windSpeed < 0){
-            throw new IllegalArgumentException(Double.toString(windSpeed));
-        }
-    }
-
 }

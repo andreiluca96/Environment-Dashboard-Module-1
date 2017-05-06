@@ -18,15 +18,7 @@ public class TerroristAttack extends Event {
     }
 
     public void setNumberOfTerrorists(Integer numberOfTerrorists) {
-        validate(numberOfTerrorists);
+        validateNonNegativeValue(numberOfTerrorists);
         this.numberOfTerrorists = numberOfTerrorists;
     }
-
-    // Dragos -> validate numberOfTerrorists
-    private void validate(Integer numberOfTerrorists) {
-        if (numberOfTerrorists < 0){
-            throw new IllegalArgumentException(Integer.toString(numberOfTerrorists));
-        }
-    }
-
 }

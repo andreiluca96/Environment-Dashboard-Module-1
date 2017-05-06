@@ -1,7 +1,6 @@
 package com.EnvironmentDashboardModule1.models.Events;
 
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 /**
  * Created by Ariana on 5/3/2017.
@@ -19,7 +18,7 @@ public class Earthquake extends Event {
     }
 
     public void setRichterDegree(Double richterDegree) {
-        validateDegree(richterDegree);
+        validateNonNegativeValue(richterDegree);
         this.richterDegree = richterDegree;
     }
 
@@ -28,7 +27,7 @@ public class Earthquake extends Event {
     }
 
     public void setMercalliDegree(Double mercalliDegree) {
-        validateDegree(mercalliDegree);
+        validateNonNegativeValue(mercalliDegree);
         this.mercalliDegree = mercalliDegree;
     }
 
@@ -37,21 +36,8 @@ public class Earthquake extends Event {
     }
 
     public void setDepth(Integer depth) {
-        validateDepth(depth);
+        validateNonNegativeValue(depth);
         this.depth = depth;
     }
 
-    //Dragos -> validate richter and mercalli degree
-    private void validateDegree(Double degreeValue) {
-        if (degreeValue < 0){
-            throw new IllegalArgumentException(Double.toString(degreeValue));
-        }
-    }
-
-    //Dragos -> validate depth
-    private void validateDepth(Integer depth) {
-        if(depth < 0){
-            throw new IllegalArgumentException(Integer.toString(depth));
-        }
-    }
 }

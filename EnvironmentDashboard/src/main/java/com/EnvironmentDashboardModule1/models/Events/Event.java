@@ -1,10 +1,7 @@
 package com.EnvironmentDashboardModule1.models.Events;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.*;
 import java.io.Serializable;
-import java.text.DateFormat;
 import java.util.Date;
 
 
@@ -69,6 +66,7 @@ public class Event implements Serializable {
     }
 
     public void setId(Long id) {
+        validateId(id);
         this.id = id;
     }
 
@@ -77,7 +75,7 @@ public class Event implements Serializable {
     }
 
     public void setName(String name) {
-        validateName(name);
+        validateString(name);
         this.name = name;
     }
 
@@ -104,22 +102,36 @@ public class Event implements Serializable {
     }
 
     public void setDescription(String description) {
-        validateName(description);
+        validateString(description);
         this.description = description;
     }
 
     public String getHints() { return this.hints; }
 
     public void setHints(String hints) {
-        validateName(hints);
+        validateString(hints);
         this.hints = hints;
     }
 
     public Double getRadius() { return this.radius; }
 
     public void setRadius(Double radius) {
-        validateRadius(radius);
+        validateNonNegativeValue(radius);
         this.radius = radius;
+    }
+
+    //Dragos -> validate double values
+    protected void validateNonNegativeValue(Double value) {
+        if (value < 0) {
+            throw new IllegalArgumentException(Double.toString(value));
+        }
+    }
+
+    //Dragos validate integer values
+    protected void validateNonNegativeValue(Integer value) {
+        if (value < 0) {
+            throw new IllegalArgumentException(Double.toString(value));
+        }
     }
 
     //Dragos -> validate severity
@@ -144,14 +156,14 @@ public class Event implements Serializable {
     }
 
     //Dragos -> validate id
-    private void validateId(Integer id) {
+    private void validateId(Long id) {
         if (id < 0) {
             throw new IllegalArgumentException(Double.toString(id));
         }
     }
 
-    //Dragos -> validate name
-    private void validateName(String name) {
+    //Dragos -> validate strings
+    private void validateString(String name) {
         if (name == null) {
             throw new IllegalArgumentException(name);
         }
@@ -161,13 +173,6 @@ public class Event implements Serializable {
     private void validateTime(Date time) {
         if (time == null) {
             throw new IllegalArgumentException("null time");
-        }
-    }
-
-    //Dragos -> validate radius
-    private void validateRadius(Double radius) {
-        if (radius < 0) {
-            throw new IllegalArgumentException(Double.toString(radius));
         }
     }
 }

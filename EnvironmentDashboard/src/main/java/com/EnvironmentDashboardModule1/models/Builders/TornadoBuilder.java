@@ -7,6 +7,7 @@ import java.util.Date;
 /**
  * Created by Luca Andrei on 5/4/2017.
  */
+
 public class TornadoBuilder extends EventBuilder {
 
     private Double windspeed;
@@ -30,7 +31,7 @@ public class TornadoBuilder extends EventBuilder {
     private Double radius;
 
     public TornadoBuilder setName(String name) {
-        validateName(name);
+        validateString(name);
         this.name = name;
         return this;
     }
@@ -66,13 +67,13 @@ public class TornadoBuilder extends EventBuilder {
     }
 
     public TornadoBuilder setDescription(String description) {
-        validateName(description);
+        validateString(description);
         this.description = description;
         return this;
     }
 
     public TornadoBuilder setHints(String hints) {
-        validateName(hints);
+        validateString(hints);
         this.hints = hints;
         return this;
     }
@@ -127,15 +128,8 @@ public class TornadoBuilder extends EventBuilder {
         }
     }
 
-    //Dragos -> validate id
-    private void validateId(Integer id) {
-        if (id < 0) {
-            throw new IllegalArgumentException(Double.toString(id));
-        }
-    }
-
-    //Dragos -> validate name
-    private void validateName(String name) {
+    //Dragos -> validate name/description/hints
+    private void validateString(String name) {
         if (name == null) {
             throw new IllegalArgumentException(name);
         }
