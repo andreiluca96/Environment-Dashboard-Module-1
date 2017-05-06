@@ -33,6 +33,11 @@ public class MeteoEventServiceImpl implements MeteoEventService {
     }
 
     public MeteoEvent update(MeteoEvent entity, Long id) {
+
+        return null;
+
+        //Dragos -> copy paste done bad???
+        /*
         MeteoEvent grade = this.meteoeventRepository.findOne(id);
         this.meteoeventRepository.findOne(id).setDescription(entity.getDescription());
         this.meteoeventRepository.findOne(id).setStartingTime(entity.getStartingTime());
@@ -45,5 +50,6 @@ public class MeteoEventServiceImpl implements MeteoEventService {
         this.meteoeventRepository.findOne(id).setSeverity(entity.getSeverity());
         this.meteoeventRepository.saveAndFlush(this.meteoeventRepository.findOne(id));
         return this.meteoeventRepository.findOne(id);
+        */
     }
 }

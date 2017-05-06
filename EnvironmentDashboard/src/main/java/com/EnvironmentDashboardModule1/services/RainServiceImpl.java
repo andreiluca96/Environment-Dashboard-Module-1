@@ -33,6 +33,11 @@ public class RainServiceImpl implements RainService {
     }
 
     public Rain update(Rain entity, Long id) {
+
+        return null;
+
+        // Dragos -> copy paste done bad???
+        /*
         Rain rain = this.rainRepository.findOne(id);
         this.rainRepository.findOne(id).setDescription(entity.getDescription());
         this.rainRepository.findOne(id).setStartingTime(entity.getStartingTime());
@@ -48,5 +53,6 @@ public class RainServiceImpl implements RainService {
         this.rainRepository.findOne(id).setRichterDegree(entity.getRichterDegree());
         this.rainRepository.saveAndFlush(this.rainRepository.findOne(id));
         return this.rainRepository.findOne(id);
+        */
     }
 }

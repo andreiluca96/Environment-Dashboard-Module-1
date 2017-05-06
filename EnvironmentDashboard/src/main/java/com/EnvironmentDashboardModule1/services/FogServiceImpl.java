@@ -33,6 +33,11 @@ public class FogServiceImpl implements FogService {
     }
 
     public Fog update(Fog entity, Long id) {
+
+        return null;
+
+        //Dragos -> copy paste done bad???
+        /*
         Fog fog = this.fogRepository.findOne(id);
         this.fogRepository.findOne(id).setDescription(entity.getDescription());
         this.fogRepository.findOne(id).setStartingTime(entity.getStartingTime());
@@ -48,5 +53,6 @@ public class FogServiceImpl implements FogService {
         this.fogRepository.findOne(id).setRichterDegree(entity.getRichterDegree());
         this.fogRepository.saveAndFlush(this.fogRepository.findOne(id));
         return this.fogRepository.findOne(id);
+        */
     }
 }

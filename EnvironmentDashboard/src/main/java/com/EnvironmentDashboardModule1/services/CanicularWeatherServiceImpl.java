@@ -33,6 +33,11 @@ public class CanicularWeatherServiceImpl implements CanicularWeatherService {
     }
 
     public CanicularWeather update(CanicularWeather entity, Long id) {
+
+        return null;
+
+        // Dragos -> copy paste done bad???
+        /*
         CanicularWeather canicularweather = this.canicularweatherRepository.findOne(id);
         this.canicularweatherRepository.findOne(id).setDescription(entity.getDescription());
         this.canicularweatherRepository.findOne(id).setStartingTime(entity.getStartingTime());
@@ -48,5 +53,6 @@ public class CanicularWeatherServiceImpl implements CanicularWeatherService {
         this.canicularweatherRepository.findOne(id).setRichterDegree(entity.getRichterDegree());
         this.canicularweatherRepository.saveAndFlush(this.canicularweatherRepository.findOne(id));
         return this.canicularweatherRepository.findOne(id);
+        */
     }
 }

@@ -33,6 +33,11 @@ public class ColdWeatherServiceImpl implements ColdWeatherService {
     }
 
     public ColdWeather update(ColdWeather entity, Long id) {
+
+        return null;
+
+        // Dragos -> copy paste done bad???
+        /*
         ColdWeather coldweather = this.coldweatherRepository.findOne(id);
         this.coldweatherRepository.findOne(id).setDescription(entity.getDescription());
         this.coldweatherRepository.findOne(id).setStartingTime(entity.getStartingTime());
@@ -48,5 +53,6 @@ public class ColdWeatherServiceImpl implements ColdWeatherService {
         this.coldweatherRepository.findOne(id).setRichterDegree(entity.getRichterDegree());
         this.coldweatherRepository.saveAndFlush(this.coldweatherRepository.findOne(id));
         return this.coldweatherRepository.findOne(id);
+        */
     }
 }

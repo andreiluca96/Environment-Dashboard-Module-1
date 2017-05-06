@@ -33,6 +33,11 @@ public class SnowServiceImpl implements SnowService {
     }
 
     public Snow update(Snow entity, Long id) {
+
+        return null;
+
+        // Dragos -> copy paste done bad???
+        /*
         Snow snow = this.snowRepository.findOne(id);
         this.snowRepository.findOne(id).setDescription(entity.getDescription());
         this.snowRepository.findOne(id).setStartingTime(entity.getStartingTime());
@@ -47,6 +52,6 @@ public class SnowServiceImpl implements SnowService {
         this.snowRepository.findOne(id).setMercalliDegree(entity.getMercalliDegree());
         this.snowRepository.findOne(id).setRichterDegree(entity.getRichterDegree());
         this.snowRepository.saveAndFlush(this.snowRepository.findOne(id));
-        return this.snowRepository.findOne(id);
+        return this.snowRepository.findOne(id); */
     }
 }
