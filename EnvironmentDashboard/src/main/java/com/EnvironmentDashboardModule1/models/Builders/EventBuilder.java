@@ -1,7 +1,6 @@
 package com.EnvironmentDashboardModule1.models.Builders;
 
 import com.EnvironmentDashboardModule1.models.Events.Event;
-import com.EnvironmentDashboardModule1.models.Events.Tornado;
 
 import java.util.Date;
 
@@ -29,7 +28,7 @@ public class EventBuilder {
     protected Double radius;
 
     public EventBuilder setName(String name) {
-        validateName(name);
+        validateString(name);
         this.name = name;
         return this;
     }
@@ -65,19 +64,19 @@ public class EventBuilder {
     }
 
     public EventBuilder setDescription(String description) {
-        validateName(description);
+        validateString(description);
         this.description = description;
         return this;
     }
 
     public EventBuilder setHints(String hints) {
-        validateName(hints);
+        validateString(hints);
         this.hints = hints;
         return this;
     }
 
     public EventBuilder setRadius(Double radius) {
-        validateRadius(radius);
+        validateNonNegativeValue(radius);
         this.radius = radius;
         return this;
     }
@@ -100,51 +99,51 @@ public class EventBuilder {
 
 
     //Dragos -> validate severity
-    private void validateSeverity(String severity) {
+    protected void validateSeverity(String severity) {
         if (!severity.equals("GREEN") && !severity.equals("YELLOW") && !severity.equals("ORANGE") && !severity.equals("RED")) {
             throw new IllegalArgumentException(severity);
         }
     }
 
     //Dragos -> validate latitude
-    private void validateLatitude(Double latitude) {
+    protected void validateLatitude(Double latitude) {
         if (latitude < -85 || latitude > 85) {
             throw new IllegalArgumentException(Double.toString(latitude));
         }
     }
 
     //Dragos -> validate longitude
-    private void validateLongitude(Double longitude) {
+    protected void validateLongitude(Double longitude) {
         if (longitude < -180 || longitude > 180) {
             throw new IllegalArgumentException(Double.toString(longitude));
         }
     }
 
     //Dragos -> validate id
-    private void validateId(Integer id) {
-        if (id < 0) {
-            throw new IllegalArgumentException(Double.toString(id));
+    protected void validateNonNegativeValue(Integer value) {
+        if (value < 0) {
+            throw new IllegalArgumentException(Double.toString(value));
         }
     }
 
     //Dragos -> validate name
-    private void validateName(String name) {
+    protected void validateString(String name) {
         if (name == null) {
             throw new IllegalArgumentException(name);
         }
     }
 
     //Dragos -> validate time
-    private void validateTime(Date time) {
+    protected void validateTime(Date time) {
         if (time == null) {
             throw new IllegalArgumentException("null time");
         }
     }
 
     //Dragos -> validate radius
-    private void validateRadius(Double radius) {
-        if (radius < 0) {
-            throw new IllegalArgumentException(Double.toString(radius));
+    protected void validateNonNegativeValue(Double value) {
+        if (value < 0) {
+            throw new IllegalArgumentException(Double.toString(value));
         }
     }
 }

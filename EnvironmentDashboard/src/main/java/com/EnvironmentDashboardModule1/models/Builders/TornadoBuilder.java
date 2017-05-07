@@ -107,45 +107,4 @@ public class TornadoBuilder extends EventBuilder {
         return tornado;
     }
 
-    //Dragos -> validate severity
-    private void validateSeverity(String severity) {
-        if (!severity.equals("GREEN") && !severity.equals("YELLOW") && !severity.equals("ORANGE") && !severity.equals("RED")) {
-            throw new IllegalArgumentException(severity);
-        }
-    }
-
-    //Dragos -> validate latitude
-    private void validateLatitude(Double latitude) {
-        if (latitude < -85 || latitude > 85) {
-            throw new IllegalArgumentException(Double.toString(latitude));
-        }
-    }
-
-    //Dragos -> validate longitude
-    private void validateLongitude(Double longitude) {
-        if (longitude < -180 || longitude > 180) {
-            throw new IllegalArgumentException(Double.toString(longitude));
-        }
-    }
-
-    //Dragos -> validate name/description/hints
-    private void validateString(String name) {
-        if (name == null) {
-            throw new IllegalArgumentException(name);
-        }
-    }
-
-    //Dragos -> validate time
-    private void validateTime(Date time) {
-        if (time == null) {
-            throw new IllegalArgumentException("null time");
-        }
-    }
-
-    //Dragos -> validate radius
-    private void validateNonNegativeValue(Double value) {
-        if (value < 0) {
-            throw new IllegalArgumentException(Double.toString(value));
-        }
-    }
 }
