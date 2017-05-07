@@ -14,25 +14,25 @@ import java.util.Date;
 public class Event implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    protected Long id;
 
-    private String name;
+    protected String name;
 
-    private Date startingTime;
+    protected Date startingTime;
 
-    private Date endingTime;
+    protected Date endingTime;
 
-    private String severity;
+    protected String severity;
 
-    private String description;
+    protected String description;
 
-    private String hints;
+    protected String hints;
 
-    private Double latitude;
+    protected Double latitude;
 
-    private Double longitude;
+    protected Double longitude;
 
-    private Double radius;
+    protected Double radius;
 
     public String getSeverity() {
         return this.severity;

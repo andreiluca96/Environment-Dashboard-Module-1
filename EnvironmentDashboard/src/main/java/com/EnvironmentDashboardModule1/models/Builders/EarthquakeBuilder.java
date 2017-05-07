@@ -9,7 +9,7 @@ import java.util.Date;
  */
 
 public class EarthquakeBuilder extends EventBuilder{
-    
+
     private Double richterDegree;
 
     private Double mercalliDegree;
