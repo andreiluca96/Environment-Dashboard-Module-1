@@ -12,24 +12,6 @@ public class TornadoBuilder extends EventBuilder {
 
     private Double windspeed;
 
-    private String name;
-
-    private Double latitude;
-
-    private Double longitude;
-
-    private Date startingTime;
-
-    private Date endingTime;
-
-    private String severity;
-
-    private String description;
-
-    private String hints;
-
-    private Double radius;
-
     public TornadoBuilder setName(String name) {
         validateString(name);
         this.name = name;

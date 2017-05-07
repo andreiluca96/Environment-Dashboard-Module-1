@@ -7,6 +7,7 @@ import java.util.Date;
 /**
  * Created by Ariana on 5/3/2017.
  */
+
 public class EventBuilder {
 
     protected String name;
@@ -119,7 +120,7 @@ public class EventBuilder {
         }
     }
 
-    //Dragos -> validate id
+    //Dragos -> validate non-negative integer
     protected void validateNonNegativeValue(Integer value) {
         if (value < 0) {
             throw new IllegalArgumentException(Double.toString(value));
@@ -140,7 +141,7 @@ public class EventBuilder {
         }
     }
 
-    //Dragos -> validate radius
+    //Dragos -> validate non-negative double
     protected void validateNonNegativeValue(Double value) {
         if (value < 0) {
             throw new IllegalArgumentException(Double.toString(value));
