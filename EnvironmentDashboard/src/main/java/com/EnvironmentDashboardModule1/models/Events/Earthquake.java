@@ -14,7 +14,7 @@ public class Earthquake extends Event {
     private Integer depth;
 
     public Double getRichterDegree() {
-        return richterDegree;
+        return this.richterDegree;
     }
 
     public void setRichterDegree(Double richterDegree) {
@@ -23,7 +23,7 @@ public class Earthquake extends Event {
     }
 
     public Double getMercalliDegree() {
-        return mercalliDegree;
+        return this.mercalliDegree;
     }
 
     public void setMercalliDegree(Double mercalliDegree) {
@@ -32,7 +32,7 @@ public class Earthquake extends Event {
     }
 
     public Integer getDepth() {
-        return depth;
+        return this.depth;
     }
 
     public void setDepth(Integer depth) {
