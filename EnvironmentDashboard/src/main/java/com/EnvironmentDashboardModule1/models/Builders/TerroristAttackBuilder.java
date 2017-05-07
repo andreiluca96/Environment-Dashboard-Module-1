@@ -66,6 +66,12 @@ public class TerroristAttackBuilder extends EventBuilder{
         return this;
     }
 
+    public TerroristAttackBuilder setNumberOfTerrorists(Integer numberOfTerrorists) {
+        validateNonNegativeValue(numberOfTerrorists);
+        this.numberOfTerrorists = numberOfTerrorists;
+        return this;
+    }
+
     public TerroristAttack getTerroristAttack(){
         TerroristAttack terroristAttack = new TerroristAttack();
 
