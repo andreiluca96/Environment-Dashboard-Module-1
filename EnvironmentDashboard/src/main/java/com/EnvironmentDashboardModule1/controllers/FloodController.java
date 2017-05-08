@@ -66,7 +66,7 @@ public class FloodController {
     }
 
     @RequestMapping(value = "/flood", method = RequestMethod.DELETE)
-    public ResponseEntity<List<FloodDto>> deleteFloods() {
+    public ResponseEntity<List<FloodDto>> deleteFlood() {
         List<Flood> floodList = this.floodService.getAll();
 
         for (Flood flood : floodList) {
