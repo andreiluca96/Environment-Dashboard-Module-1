@@ -18,4 +18,18 @@ public class MeteoBuilderTests {
 
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void given_anInvalidValue_when_setHumidityIsCalled_then_shouldThrowException(){
+        MeteoEventBuilder meteoEventBuilder = new MeteoEventBuilder();
+        Integer invalidHumidity = -1000;
+        meteoEventBuilder.setHumidity(invalidHumidity);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void given_anInvalidValue_when_setPrecipitationLevelIsCalled_then_shouldThrowException(){
+        MeteoEventBuilder meteoEventBuilder = new MeteoEventBuilder();
+        Integer invalidPrecipitationLevel = -1000;
+        meteoEventBuilder.setPrecipitationLevel(invalidPrecipitationLevel);
+    }
+
 }
