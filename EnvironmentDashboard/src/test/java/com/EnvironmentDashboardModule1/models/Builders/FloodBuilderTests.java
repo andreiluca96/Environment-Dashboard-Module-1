@@ -1,5 +1,6 @@
 package com.EnvironmentDashboardModule1.models.Builders;
 
+import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.FloodBuilder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

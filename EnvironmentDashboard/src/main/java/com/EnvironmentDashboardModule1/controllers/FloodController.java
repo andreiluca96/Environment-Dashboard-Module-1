@@ -5,18 +5,10 @@ package com.EnvironmentDashboardModule1.controllers;
  */
 
 import com.EnvironmentDashboardModule1.DTO.*;
-import com.EnvironmentDashboardModule1.models.Builders.EarthquakeBuilder;
-import com.EnvironmentDashboardModule1.models.Builders.FloodBuilder;
-import com.EnvironmentDashboardModule1.models.Builders.TornadoBuilder;
-import com.EnvironmentDashboardModule1.models.Events.Earthquake;
-import com.EnvironmentDashboardModule1.models.Events.Event;
-import com.EnvironmentDashboardModule1.models.Builders.EventBuilder;
+import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.FloodBuilder;
 import com.EnvironmentDashboardModule1.models.Events.Flood;
-import com.EnvironmentDashboardModule1.models.Events.Tornado;
-import com.EnvironmentDashboardModule1.services.EarthquakeService;
 import com.EnvironmentDashboardModule1.services.EventService;
 import com.EnvironmentDashboardModule1.services.FloodService;
-import com.EnvironmentDashboardModule1.services.TornadoService;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
