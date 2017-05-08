@@ -11,30 +11,26 @@ public class MeteoEvent {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Integer id;
+    protected Integer id;
 
     @Column(nullable = false)
-    private Integer temperature;
+    protected Integer temperature;
 
     @Column(nullable = false)
-    private Integer humidity;
+    protected Integer humidity;
 
     @Column(nullable = false)
-    private Integer precipitationLevel;
+    protected Integer precipitationLevel;
 
-    public Integer getId() {
-        return id;
-    }
+    public Integer getId() { return this.id; }
 
     public void setId(Integer id) {
-        if (id < 0) {
-            throw new IllegalArgumentException(Integer.toString(id));
-        }
+        validateNonNegativeValue(id);
         this.id = id;
     }
 
     public Integer getTemperature() {
-        return temperature;
+        return this.temperature;
     }
 
     public void setTemperature(Integer temperature) {
@@ -42,23 +38,27 @@ public class MeteoEvent {
     }
 
     public Integer getHumidity() {
-        return humidity;
+        return this.humidity;
     }
 
     public void setHumidity(Integer humidity) {
+        validateNonNegativeValue(humidity);
         this.humidity = humidity;
     }
 
     public Integer getPrecipitationLevel() {
-        return precipitationLevel;
+        return this.precipitationLevel;
     }
 
     public void setPrecipitationLevel(Integer precipitationLevel) {
-
-        if (precipitationLevel < 0) {
-            throw new IllegalArgumentException(Integer.toString(precipitationLevel));
-        }
+        validateNonNegativeValue(precipitationLevel);
         this.precipitationLevel = precipitationLevel;
     }
 
+    //Dragos -> validate integer values
+    protected void validateNonNegativeValue(Integer value) {
+        if (value < 0) {
+            throw new IllegalArgumentException(Integer.toString(value));
+        }
+    }
 }

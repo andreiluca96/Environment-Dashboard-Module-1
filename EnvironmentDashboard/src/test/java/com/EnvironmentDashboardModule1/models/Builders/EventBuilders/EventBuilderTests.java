@@ -1,4 +1,4 @@
-package com.EnvironmentDashboardModule1.models.Builders;
+package com.EnvironmentDashboardModule1.models.Builders.EventBuilders;
 
 import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.EventBuilder;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package com.EnvironmentDashboardModule1.models.Builders;
+package com.EnvironmentDashboardModule1.models.Builders.MeteoEventBuilders;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,6 +1,6 @@
-package com.EnvironmentDashboardModule1.models.Builders;
+package com.EnvironmentDashboardModule1.models.Builders.EventBuilders;
 
-import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.FloodBuilder;
+import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.TerroristAttackBuilder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,7 +14,7 @@ import java.util.Date;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class FloodBuilderTests {
+public class TerroristAttackBuilderTests {
 
     @Test
     public void contextLoads(){
@@ -23,72 +23,71 @@ public class FloodBuilderTests {
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setNameIsCalled_then_shouldThrowException(){
-        FloodBuilder floodBuilder = new FloodBuilder();
+        TerroristAttackBuilder terroristAttackBuilder = new TerroristAttackBuilder();
         String invalidName = null;
-        floodBuilder.setName(invalidName);
+        terroristAttackBuilder.setName(invalidName);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setLatitudeIsCalled_then_shouldThrowException(){
-        FloodBuilder floodBuilder = new FloodBuilder();
+        TerroristAttackBuilder terroristAttackBuilder = new TerroristAttackBuilder();
         double invalidLatitude = -1000;
-        floodBuilder.setLatitude(invalidLatitude);
+        terroristAttackBuilder.setLatitude(invalidLatitude);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setLongitudeIsCalled_then_shouldThrowException(){
-        FloodBuilder floodBuilder = new FloodBuilder();
+        TerroristAttackBuilder terroristAttackBuilder = new TerroristAttackBuilder();
         double invalidLongitude = -1000;
-        floodBuilder.setLongitude(invalidLongitude);
+        terroristAttackBuilder.setLongitude(invalidLongitude);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setStartingTimeIsCalled_then_shouldThrowException(){
-        FloodBuilder floodBuilder = new FloodBuilder();
+        TerroristAttackBuilder terroristAttackBuilder = new TerroristAttackBuilder();
         Date invalidStartingTime = null;
-        floodBuilder.setStartingTime(invalidStartingTime);
+        terroristAttackBuilder.setStartingTime(invalidStartingTime);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setEndingTimeIsCalled_then_shouldThrowException(){
-        FloodBuilder floodBuilder = new FloodBuilder();
+        TerroristAttackBuilder terroristAttackBuilder = new TerroristAttackBuilder();
         Date invalidEndingTime = null;
-        floodBuilder.setEndingTime(invalidEndingTime);
+        terroristAttackBuilder.setEndingTime(invalidEndingTime);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setSeverityIsCalled_then_shouldThrowException(){
-        FloodBuilder floodBuilder = new FloodBuilder();
+        TerroristAttackBuilder terroristAttackBuilder = new TerroristAttackBuilder();
         String invalidSeverity = "BLUE";
-        floodBuilder.setSeverity(invalidSeverity);
+        terroristAttackBuilder.setSeverity(invalidSeverity);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setDescriptionTimeIsCalled_then_shouldThrowException(){
-        FloodBuilder floodBuilder = new FloodBuilder();
+        TerroristAttackBuilder terroristAttackBuilder = new TerroristAttackBuilder();
         String invalidDescription = null;
-        floodBuilder.setDescription(invalidDescription);
+        terroristAttackBuilder.setDescription(invalidDescription);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setHintsTimeIsCalled_then_shouldThrowException(){
-        FloodBuilder floodBuilder = new FloodBuilder();
+        TerroristAttackBuilder terroristAttackBuilder = new TerroristAttackBuilder();
         String invalidHints = null;
-        floodBuilder.setHints(invalidHints);
+        terroristAttackBuilder.setHints(invalidHints);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setRadiusIsCalled_then_shouldThrowException(){
-        FloodBuilder floodBuilder = new FloodBuilder();
+        TerroristAttackBuilder terroristAttackBuilder = new TerroristAttackBuilder();
         double invalidRadius = -1000;
-        floodBuilder.setRadius(invalidRadius);
+        terroristAttackBuilder.setRadius(invalidRadius);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void given_anInvalidValue_when_setPrecipitationLevelIsCalled_then_shouldThrowException(){
-        FloodBuilder floodBuilder = new FloodBuilder();
-        double precipitationLevel = -1000;
-        floodBuilder.setPrecipitationLevel(precipitationLevel);
+    public void given_anInvalidValue_when_setNumberOfTerroristsIsCalled_then_shouldThrowException(){
+        TerroristAttackBuilder terroristAttackBuilder = new TerroristAttackBuilder();
+        Integer invalidNumberOfTerrorists = -1000;
+        terroristAttackBuilder.setNumberOfTerrorists(invalidNumberOfTerrorists);
     }
-
 }
