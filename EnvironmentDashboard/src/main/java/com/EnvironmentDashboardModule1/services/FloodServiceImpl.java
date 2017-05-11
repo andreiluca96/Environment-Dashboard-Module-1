@@ -35,17 +35,17 @@ public class FloodServiceImpl implements FloodService {
     @Override
     public Flood update(Flood entity, Long id) {
         Flood flood = this.floodRepository.findOne(id);
-        this.floodRepository.findOne(id).setDescription(entity.getDescription());
-        this.floodRepository.findOne(id).setStartingTime(entity.getStartingTime());
-        this.floodRepository.findOne(id).setRadius(entity.getRadius());
-        this.floodRepository.findOne(id).setName(entity.getName());
-        this.floodRepository.findOne(id).setHints(entity.getHints());
-        this.floodRepository.findOne(id).setEndingTime(entity.getEndingTime());
-        this.floodRepository.findOne(id).setLatitude(entity.getLatitude());
-        this.floodRepository.findOne(id).setLongitude(entity.getLongitude());
-        this.floodRepository.findOne(id).setSeverity(entity.getSeverity());
-        this.floodRepository.findOne(id).setPrecipitationLevel(entity.getPrecipitationLevel());
-        this.floodRepository.saveAndFlush(this.floodRepository.findOne(id));
-        return this.floodRepository.findOne(id);
+        flood.setDescription(entity.getDescription());
+        flood.setStartingTime(entity.getStartingTime());
+        flood.setRadius(entity.getRadius());
+        flood.setName(entity.getName());
+        flood.setHints(entity.getHints());
+        flood.setEndingTime(entity.getEndingTime());
+        flood.setLatitude(entity.getLatitude());
+        flood.setLongitude(entity.getLongitude());
+        flood.setSeverity(entity.getSeverity());
+        flood.setPrecipitationLevel(entity.getPrecipitationLevel());
+        this.floodRepository.saveAndFlush(flood);
+        return flood;
     }
 }

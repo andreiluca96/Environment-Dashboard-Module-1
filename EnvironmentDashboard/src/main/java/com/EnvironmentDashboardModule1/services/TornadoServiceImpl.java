@@ -37,17 +37,17 @@ public class TornadoServiceImpl implements TornadoService {
 
     public Tornado update(Tornado entity, Long id) {
         Tornado tornado = this.tornadoRepository.findOne(id);
-        this.tornadoRepository.findOne(id).setDescription(entity.getDescription());
-        this.tornadoRepository.findOne(id).setStartingTime(entity.getStartingTime());
-        this.tornadoRepository.findOne(id).setRadius(entity.getRadius());
-        this.tornadoRepository.findOne(id).setName(entity.getName());
-        this.tornadoRepository.findOne(id).setHints(entity.getHints());
-        this.tornadoRepository.findOne(id).setEndingTime(entity.getEndingTime());
-        this.tornadoRepository.findOne(id).setLatitude(entity.getLatitude());
-        this.tornadoRepository.findOne(id).setLongitude(entity.getLongitude());
-        this.tornadoRepository.findOne(id).setSeverity(entity.getSeverity());
-        this.tornadoRepository.findOne(id).setWindSpeed(entity.getWindSpeed());
-        this.tornadoRepository.saveAndFlush(this.tornadoRepository.findOne(id));
-        return this.tornadoRepository.findOne(id);
+        tornado.setDescription(entity.getDescription());
+        tornado.setStartingTime(entity.getStartingTime());
+        tornado.setRadius(entity.getRadius());
+        tornado.setName(entity.getName());
+        tornado.setHints(entity.getHints());
+        tornado.setEndingTime(entity.getEndingTime());
+        tornado.setLatitude(entity.getLatitude());
+        tornado.setLongitude(entity.getLongitude());
+        tornado.setSeverity(entity.getSeverity());
+        tornado.setWindSpeed(entity.getWindSpeed());
+        this.tornadoRepository.saveAndFlush(tornado);
+        return tornado;
     }
 }
