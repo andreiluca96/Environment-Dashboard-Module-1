@@ -36,17 +36,17 @@ public class EventServiceImpl implements EventService {
     }
 
     public Event update(Event entity, Long id) {
-        Event grade = this.eventRepository.findOne(id);
-        this.eventRepository.findOne(id).setDescription(entity.getDescription());
-        this.eventRepository.findOne(id).setStartingTime(entity.getStartingTime());
-        this.eventRepository.findOne(id).setRadius(entity.getRadius());
-        this.eventRepository.findOne(id).setName(entity.getName());
-        this.eventRepository.findOne(id).setHints(entity.getHints());
-        this.eventRepository.findOne(id).setEndingTime(entity.getEndingTime());
-        this.eventRepository.findOne(id).setLatitude(entity.getLatitude());
-        this.eventRepository.findOne(id).setLongitude(entity.getLongitude());
-        this.eventRepository.findOne(id).setSeverity(entity.getSeverity());
-        this.eventRepository.saveAndFlush(this.eventRepository.findOne(id));
-        return this.eventRepository.findOne(id);
+        Event event = this.eventRepository.findOne(id);
+        event.setDescription(entity.getDescription());
+        event.setStartingTime(entity.getStartingTime());
+        event.setRadius(entity.getRadius());
+        event.setName(entity.getName());
+        event.setHints(entity.getHints());
+        event.setEndingTime(entity.getEndingTime());
+        event.setLatitude(entity.getLatitude());
+        event.setLongitude(entity.getLongitude());
+        event.setSeverity(entity.getSeverity());
+        this.eventRepository.saveAndFlush(event);
+        return event;
     }
 }
