@@ -33,23 +33,12 @@ public class MeteoEventServiceImpl implements MeteoEventService {
     }
 
     public MeteoEvent update(MeteoEvent entity, Long id) {
+        MeteoEvent meteoEvent = this.meteoeventRepository.findOne(id);
+        meteoEvent.setHumidity(entity.getHumidity());
+        meteoEvent.setPrecipitationLevel(entity.getPrecipitationLevel());
+        meteoEvent.setTemperature(entity.getTemperature());
+        this.meteoeventRepository.saveAndFlush(meteoEvent);
+        return meteoEvent ;
 
-        return null;
-
-        //Dragos -> copy paste done bad???
-        /*
-        MeteoEvent grade = this.meteoeventRepository.findOne(id);
-        this.meteoeventRepository.findOne(id).setDescription(entity.getDescription());
-        this.meteoeventRepository.findOne(id).setStartingTime(entity.getStartingTime());
-        this.meteoeventRepository.findOne(id).setRadius(entity.getRadius());
-        this.meteoeventRepository.findOne(id).setName(entity.getName());
-        this.meteoeventRepository.findOne(id).setHints(entity.getHints());
-        this.meteoeventRepository.findOne(id).setEndingTime(entity.getEndingTime());
-        this.meteoeventRepository.findOne(id).setLatitude(entity.getLatitude());
-        this.meteoeventRepository.findOne(id).setLongitude(entity.getLongitude());
-        this.meteoeventRepository.findOne(id).setSeverity(entity.getSeverity());
-        this.meteoeventRepository.saveAndFlush(this.meteoeventRepository.findOne(id));
-        return this.meteoeventRepository.findOne(id);
-        */
     }
 }

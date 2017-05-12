@@ -34,6 +34,18 @@ public class TsunamiServiceImpl implements TsunamiService {
 
     @Override
     public Tsunami update(Tsunami entity, Long id) {
-        return null;
+        Tsunami tsunami = this.tsunamiRepository.findOne(id);
+        tsunami.setDescription(entity.getDescription());
+        tsunami.setStartingTime(entity.getStartingTime());
+        tsunami.setRadius(entity.getRadius());
+        tsunami.setName(entity.getName());
+        tsunami.setHints(entity.getHints());
+        tsunami.setEndingTime(entity.getEndingTime());
+        tsunami.setLatitude(entity.getLatitude());
+        tsunami.setLongitude(entity.getLongitude());
+        tsunami.setSeverity(entity.getSeverity());
+        tsunami.setMaxWaveHeight(entity.getMaxWaveHeight());
+        this.tsunamiRepository.saveAndFlush(tsunami);
+        return tsunami;
     }
 }
