@@ -11,25 +11,11 @@ import javax.persistence.*;
 @Entity
 public class MeteoEvent extends Event{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
-    protected Long id;
-
-    @Column(nullable = false)
     protected Integer temperature;
 
-    @Column(nullable = false)
     protected Integer humidity;
 
-    @Column(nullable = false)
     protected Integer precipitationLevel;
-
-    public Long getId() { return this.id; }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Integer getTemperature() {
         return this.temperature;

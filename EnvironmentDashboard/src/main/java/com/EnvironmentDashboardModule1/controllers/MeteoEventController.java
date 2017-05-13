@@ -19,7 +19,7 @@ import java.util.List;
  * Created by Ariana on 5/13/2017.
  */
 @RestController
-@RequestMapping("v1/meteoevents")
+@RequestMapping("v1/events")
 public class MeteoEventController {
 
     @Autowired
@@ -28,62 +28,63 @@ public class MeteoEventController {
     @Autowired
     private EventService eventService;
 
-    @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<MeteoEvent> addEvent(@RequestBody CreatingMeteoEventDto meteoEventDto) {
-        MeteoEvent meteoEvent = toCreatingModel(meteoEventDto);
+    @RequestMapping(value = "/meteoevent", method = RequestMethod.POST)
+    public ResponseEntity<MeteoEvent> addMeteoEvent(@RequestBody CreatingMeteoEventDto event) {
+        MeteoEvent meteoEvent = toCreatingModel(event);
         MeteoEvent savedMeteoEvent = this.meteoEventService.save(meteoEvent);
+
         return new ResponseEntity<>(savedMeteoEvent, HttpStatus.CREATED);
     }
 
-    @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<List<MeteoEventDto>> get() {
-        List<MeteoEvent> meteoEvents = this.meteoEventService.getAll();
-        if (meteoEvents.isEmpty()) {
+    @RequestMapping(value = "/meteoevent", method = RequestMethod.GET)
+    public ResponseEntity<List<MeteoEventDto>> getMeteoEvent() {
+        List<MeteoEvent> events = this.meteoEventService.getAll();
+        if (events.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-        return new ResponseEntity<>(Lists.transform(meteoEvents, meteoEvent -> toDto(meteoEvent)), HttpStatus.OK);
+        return new ResponseEntity<>(Lists.transform(events, event -> toDto(event)), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ResponseEntity<MeteoEventDto> getById(@PathVariable("id") Long id) {
-        MeteoEvent event = this.meteoEventService.getById(id);
-        if (event == null) {
+    @RequestMapping(value = "/meteoevent/{id}", method = RequestMethod.GET)
+    public ResponseEntity<MeteoEventDto> getMeteoEventById(@PathVariable("id") Long id) {
+        MeteoEvent meteoEvent = this.meteoEventService.getById(id);
+        if (meteoEvent == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
-        return new ResponseEntity<>(toDto(event), HttpStatus.OK);
+        return new ResponseEntity<>(toDto(meteoEvent), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/meteoevent/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<MeteoEventDto> updateEvent(@PathVariable ("id") Long id, @RequestBody CreatingMeteoEventDto meteoEventDto) {
-        MeteoEvent event = toCreatingModel(meteoEventDto);
-        MeteoEvent eventCheck = this.meteoEventService.getById(id);
-        if (eventCheck == null) {
+    public ResponseEntity<MeteoEventDto> updateMeteoEvent(@PathVariable("id") Long id,@RequestBody CreatingMeteoEventDto meteoEventDto){
+        MeteoEvent meteoEvent = toCreatingModel(meteoEventDto);
+        MeteoEvent meteoEventChecked = this.meteoEventService.getById(id);
+        if (meteoEventChecked == null) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-       MeteoEvent updatedEvent = this.meteoEventService.update(event, id);
-        return new ResponseEntity<>(toDto(updatedEvent), HttpStatus.CREATED);
+        MeteoEvent updatedMeteoEvent= this.meteoEventService.update(meteoEvent,id);
+        return new ResponseEntity<>(toDto(updatedMeteoEvent), HttpStatus.CREATED);
     }
 
-    @RequestMapping(method = RequestMethod.DELETE)
-    public ResponseEntity<List<MeteoEventDto>> delete() {
-        List<MeteoEvent> eventList = this.meteoEventService.getAll();
+    @RequestMapping(value = "/meteoevent", method = RequestMethod.DELETE)
+    public ResponseEntity<List<MeteoEventDto>> deleteMeteoEvent(){
+        List<MeteoEvent> meteoEventsList = this.meteoEventService.getAll();
 
-        for (MeteoEvent event : eventList) {
-            this.meteoEventService.delete(event.getId());
+        for(MeteoEvent meteoEvent : meteoEventsList){
+            this.eventService.delete(meteoEvent.getId());
         }
 
-        return new ResponseEntity<>(Lists.transform(eventList, meteoEvent -> toDto(meteoEvent)), HttpStatus.OK);
+        return new ResponseEntity<>(Lists.transform(meteoEventsList, event -> toDto(event)), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<MeteoEventDto> deleteById(@PathVariable("id") Long id) {
-        MeteoEvent event = this.meteoEventService.getById(id);
-        if (event == null) {
+    @RequestMapping(value = "meteoevent/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<MeteoEventDto> deleteMeteoEventById(@PathVariable("id") Long id){
+        MeteoEvent meteoEvent = this.meteoEventService.getById(id);
+        if(meteoEvent == null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        this.meteoEventService.delete(event.getId());
-        return new ResponseEntity<>(toDto(event), HttpStatus.OK);
+        this.eventService.delete(meteoEvent.getId());
+        return new ResponseEntity<>(toDto(meteoEvent), HttpStatus.OK);
     }
 
     private MeteoEventDto toDto(MeteoEvent meteoEvent) {

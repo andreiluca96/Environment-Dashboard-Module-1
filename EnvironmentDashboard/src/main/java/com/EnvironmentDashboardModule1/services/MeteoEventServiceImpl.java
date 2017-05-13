@@ -34,6 +34,15 @@ public class MeteoEventServiceImpl implements MeteoEventService {
 
     public MeteoEvent update(MeteoEvent entity, Long id) {
         MeteoEvent meteoEvent = this.meteoeventRepository.findOne(id);
+        meteoEvent.setDescription(entity.getDescription());
+        meteoEvent.setStartingTime(entity.getStartingTime());
+        meteoEvent.setRadius(entity.getRadius());
+        meteoEvent.setName(entity.getName());
+        meteoEvent.setHints(entity.getHints());
+        meteoEvent.setEndingTime(entity.getEndingTime());
+        meteoEvent.setLatitude(entity.getLatitude());
+        meteoEvent.setLongitude(entity.getLongitude());
+        meteoEvent.setSeverity(entity.getSeverity());
         meteoEvent.setHumidity(entity.getHumidity());
         meteoEvent.setPrecipitationLevel(entity.getPrecipitationLevel());
         meteoEvent.setTemperature(entity.getTemperature());
