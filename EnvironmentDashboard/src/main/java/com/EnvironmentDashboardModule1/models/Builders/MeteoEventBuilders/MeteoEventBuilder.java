@@ -92,6 +92,15 @@ public class MeteoEventBuilder extends EventBuilder{
 
     public MeteoEvent getMeteoEvent() {
         MeteoEvent meteoEvent=new MeteoEvent();
+        meteoEvent.setLatitude(latitude);
+        meteoEvent.setLongitude(longitude);
+        meteoEvent.setDescription(description);
+        meteoEvent.setEndingTime(endingTime);
+        meteoEvent.setHints(hints);
+        meteoEvent.setName(name);
+        meteoEvent.setRadius(radius);
+        meteoEvent.setSeverity(severity);
+        meteoEvent.setStartingTime(startingTime);
         meteoEvent.setHumidity(humidity);
         meteoEvent.setPrecipitationLevel(precipitationLevel);
         meteoEvent.setTemperature(temperature);
