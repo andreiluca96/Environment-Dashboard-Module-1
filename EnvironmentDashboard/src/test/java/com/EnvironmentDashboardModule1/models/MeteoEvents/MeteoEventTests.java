@@ -20,7 +20,7 @@ public class MeteoEventTests {
     @Test(expected = IllegalArgumentException.class)
     public void given_aNegativeId_when_setIdIsCalled_then_shouldThrowException(){
         MeteoEvent meteoEvent = new MeteoEvent();
-        Integer negativeId = -1000;
+        Long negativeId = new Long(-100);
 
         meteoEvent.setId(negativeId);
     }
