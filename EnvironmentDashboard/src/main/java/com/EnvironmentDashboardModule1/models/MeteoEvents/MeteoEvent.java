@@ -11,7 +11,7 @@ public class MeteoEvent {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    protected Integer id;
+    protected Long id;
 
     @Column(nullable = false)
     protected Integer temperature;
@@ -22,10 +22,9 @@ public class MeteoEvent {
     @Column(nullable = false)
     protected Integer precipitationLevel;
 
-    public Integer getId() { return this.id; }
+    public Long getId() { return this.id; }
 
-    public void setId(Integer id) {
-        validateNonNegativeValue(id);
+    public void setId(Long id) {
         this.id = id;
     }
 
