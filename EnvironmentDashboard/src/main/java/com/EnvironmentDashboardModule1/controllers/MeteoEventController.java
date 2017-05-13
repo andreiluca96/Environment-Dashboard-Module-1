@@ -4,6 +4,7 @@ import com.EnvironmentDashboardModule1.DTO.CreatingMeteoEventDto;
 import com.EnvironmentDashboardModule1.DTO.MeteoEventDto;
 import com.EnvironmentDashboardModule1.models.Builders.MeteoEventBuilders.MeteoEventBuilder;
 import com.EnvironmentDashboardModule1.models.MeteoEvents.MeteoEvent;
+import com.EnvironmentDashboardModule1.services.EventService;
 import com.EnvironmentDashboardModule1.services.MeteoEventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,6 +24,9 @@ public class MeteoEventController {
 
     @Autowired
     private MeteoEventService meteoEventService;
+
+    @Autowired
+    private EventService eventService;
 
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<MeteoEvent> addEvent(@RequestBody CreatingMeteoEventDto meteoEventDto) {
@@ -84,6 +88,15 @@ public class MeteoEventController {
 
     private MeteoEventDto toDto(MeteoEvent meteoEvent) {
         return new MeteoEventDto.Builder()
+                .name(meteoEvent.getName())
+                .latitude(meteoEvent.getLatitude())
+                .longitude(meteoEvent.getLongitude())
+                .startingDate(meteoEvent.getStartingTime())
+                .endingDate(meteoEvent.getEndingTime())
+                .severity(meteoEvent.getSeverity())
+                .description(meteoEvent.getDescription())
+                .hints(meteoEvent.getHints())
+                .radius(meteoEvent.getRadius())
                 .precipitationLevel(meteoEvent.getPrecipitationLevel())
                 .temperature(meteoEvent.getTemperature())
                 .humidity(meteoEvent.getHumidity());
@@ -91,6 +104,15 @@ public class MeteoEventController {
 
     private MeteoEvent toCreatingModel(CreatingMeteoEventDto dto) {
         return new MeteoEventBuilder()
+                .setName(dto.getName())
+                .setLongitude(dto.getLongitude())
+                .setLatitude(dto.getLongitude())
+                .setDescription(dto.getDescription())
+                .setEndingTime(dto.getEndingDate())
+                .setStartingTime(dto.getStartingDate())
+                .setHints(dto.getHints())
+                .setRadius(dto.getRadius())
+                .setSeverity(dto.getSeverity())
                 .setHumidity(dto.getHumidity())
                 .setPrecipitationLevel(dto.getPrecipitationLevel())
                 .setTemperature(dto.getTemperature())

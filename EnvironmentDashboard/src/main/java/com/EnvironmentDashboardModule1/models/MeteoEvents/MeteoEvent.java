@@ -1,12 +1,15 @@
 package com.EnvironmentDashboardModule1.models.MeteoEvents;
 
+import com.EnvironmentDashboardModule1.models.Events.Earthquake;
+import com.EnvironmentDashboardModule1.models.Events.Event;
+
 import javax.persistence.*;
 
 /**
  * Created by Ariana on 5/3/2017.
  */
 @Entity
-public class MeteoEvent {
+public class MeteoEvent extends Event{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -60,4 +63,6 @@ public class MeteoEvent {
             throw new IllegalArgumentException(Integer.toString(value));
         }
     }
+
+
 }

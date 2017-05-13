@@ -3,7 +3,7 @@ package com.EnvironmentDashboardModule1.DTO;
 /**
  * Created by Ariana on 5/13/2017.
  */
-public class CreatingMeteoEventDto {
+public class CreatingMeteoEventDto extends CreatingEventDto {
     protected Integer temperature;
     protected Integer humidity;
     protected Integer precipitationLevel;
