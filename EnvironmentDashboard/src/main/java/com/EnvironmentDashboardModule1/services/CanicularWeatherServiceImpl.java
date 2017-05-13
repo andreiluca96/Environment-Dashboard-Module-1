@@ -33,26 +33,20 @@ public class CanicularWeatherServiceImpl implements CanicularWeatherService {
     }
 
     public CanicularWeather update(CanicularWeather entity, Long id) {
-
-        return null;
-
-        // Dragos -> copy paste done bad???
-        /*
         CanicularWeather canicularweather = this.canicularweatherRepository.findOne(id);
-        this.canicularweatherRepository.findOne(id).setDescription(entity.getDescription());
-        this.canicularweatherRepository.findOne(id).setStartingTime(entity.getStartingTime());
-        this.canicularweatherRepository.findOne(id).setRadius(entity.getRadius());
-        this.canicularweatherRepository.findOne(id).setName(entity.getName());
-        this.canicularweatherRepository.findOne(id).setHints(entity.getHints());
-        this.canicularweatherRepository.findOne(id).setEndingTime(entity.getEndingTime());
-        this.canicularweatherRepository.findOne(id).setLatitude(entity.getLatitude());
-        this.canicularweatherRepository.findOne(id).setLongitude(entity.getLongitude());
-        this.canicularweatherRepository.findOne(id).setSeverity(entity.getSeverity());
-        this.canicularweatherRepository.findOne(id).setDepth(entity.getDepth());
-        this.canicularweatherRepository.findOne(id).setMercalliDegree(entity.getMercalliDegree());
-        this.canicularweatherRepository.findOne(id).setRichterDegree(entity.getRichterDegree());
-        this.canicularweatherRepository.saveAndFlush(this.canicularweatherRepository.findOne(id));
-        return this.canicularweatherRepository.findOne(id);
-        */
+        canicularweather.setDescription(entity.getDescription());
+        canicularweather.setStartingTime(entity.getStartingTime());
+        canicularweather.setRadius(entity.getRadius());
+        canicularweather.setName(entity.getName());
+        canicularweather.setHints(entity.getHints());
+        canicularweather.setEndingTime(entity.getEndingTime());
+        canicularweather.setLatitude(entity.getLatitude());
+        canicularweather.setLongitude(entity.getLongitude());
+        canicularweather.setSeverity(entity.getSeverity());
+        canicularweather.setHumidity(entity.getHumidity());
+        canicularweather.setPrecipitationLevel(entity.getPrecipitationLevel());
+        canicularweather.setTemperature(entity.getTemperature());
+        this.canicularweatherRepository.saveAndFlush(canicularweather);
+        return canicularweather ;
     }
 }

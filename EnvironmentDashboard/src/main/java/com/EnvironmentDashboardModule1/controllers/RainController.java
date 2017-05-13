@@ -39,7 +39,7 @@ public class RainController {
     @RequestMapping(value = "/rain", method = RequestMethod.GET)
     public ResponseEntity<List<RainDto>> getRain() {
         List<Rain> meteoEvents = this.rainService.getAll();
-        if (events.isEmpty()) {
+        if (meteoEvents.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(Lists.transform(meteoEvents, meteoEvent -> toDto(meteoEvent)), HttpStatus.OK);
@@ -56,7 +56,7 @@ public class RainController {
     }
 
     @RequestMapping(value = "/rain/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<rainDto> updateRain(@PathVariable("id") Long id,@RequestBody CreatingRainDto rainDto){
+    public ResponseEntity<RainDto> updateRain(@PathVariable("id") Long id,@RequestBody CreatingRainDto rainDto){
         Rain rain = toCreatingModel(rainDto);
         Rain rainChecked = this.rainService.getById(id);
         if (rainChecked == null) {
@@ -71,7 +71,7 @@ public class RainController {
         List<Rain> rainList = this.rainService.getAll();
 
         for(Rain rain : rainList){
-            this.eventService.delete(rain.getId());
+            this.rainService.delete(rain.getId());
         }
 
         return new ResponseEntity<>(Lists.transform(rainList, meteoEvent -> toDto(meteoEvent)), HttpStatus.OK);
@@ -87,7 +87,7 @@ public class RainController {
         return new ResponseEntity<>(toDto(rain), HttpStatus.OK);
     }
 
-    private RainDto toRain(Rain rain) {
+    private RainDto toDto(Rain rain) {
         return new RainDto.Builder()
                 .name(rain.getName())
                 .latitude(rain.getLatitude())

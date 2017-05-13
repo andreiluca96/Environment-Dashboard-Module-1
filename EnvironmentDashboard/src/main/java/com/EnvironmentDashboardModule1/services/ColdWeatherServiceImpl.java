@@ -33,26 +33,20 @@ public class ColdWeatherServiceImpl implements ColdWeatherService {
     }
 
     public ColdWeather update(ColdWeather entity, Long id) {
-
-        return null;
-
-        // Dragos -> copy paste done bad???
-        /*
         ColdWeather coldweather = this.coldweatherRepository.findOne(id);
-        this.coldweatherRepository.findOne(id).setDescription(entity.getDescription());
-        this.coldweatherRepository.findOne(id).setStartingTime(entity.getStartingTime());
-        this.coldweatherRepository.findOne(id).setRadius(entity.getRadius());
-        this.coldweatherRepository.findOne(id).setName(entity.getName());
-        this.coldweatherRepository.findOne(id).setHints(entity.getHints());
-        this.coldweatherRepository.findOne(id).setEndingTime(entity.getEndingTime());
-        this.coldweatherRepository.findOne(id).setLatitude(entity.getLatitude());
-        this.coldweatherRepository.findOne(id).setLongitude(entity.getLongitude());
-        this.coldweatherRepository.findOne(id).setSeverity(entity.getSeverity());
-        this.coldweatherRepository.findOne(id).setDepth(entity.getDepth());
-        this.coldweatherRepository.findOne(id).setMercalliDegree(entity.getMercalliDegree());
-        this.coldweatherRepository.findOne(id).setRichterDegree(entity.getRichterDegree());
-        this.coldweatherRepository.saveAndFlush(this.coldweatherRepository.findOne(id));
-        return this.coldweatherRepository.findOne(id);
-        */
+        coldweather.setDescription(entity.getDescription());
+        coldweather.setStartingTime(entity.getStartingTime());
+        coldweather.setRadius(entity.getRadius());
+        coldweather.setName(entity.getName());
+        coldweather.setHints(entity.getHints());
+        coldweather.setEndingTime(entity.getEndingTime());
+        coldweather.setLatitude(entity.getLatitude());
+        coldweather.setLongitude(entity.getLongitude());
+        coldweather.setSeverity(entity.getSeverity());
+        coldweather.setHumidity(entity.getHumidity());
+        coldweather.setPrecipitationLevel(entity.getPrecipitationLevel());
+        coldweather.setTemperature(entity.getTemperature());
+        this.coldweatherRepository.saveAndFlush(coldweather);
+        return coldweather ;
     }
 }

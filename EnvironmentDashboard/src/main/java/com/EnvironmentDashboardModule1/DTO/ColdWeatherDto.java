@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * Created by Radu Lungu on 5/13/2017.
  */
-public class ColdWeatherDto extends CreatingColdWeatherDto{
+public class ColdWeatherDto extends CreatingMeteoEventDto{
     private Long id;
 
     protected ColdWeatherDto() {};

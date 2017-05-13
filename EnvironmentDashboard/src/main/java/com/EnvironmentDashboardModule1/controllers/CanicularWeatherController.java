@@ -39,7 +39,7 @@ public class CanicularWeatherController {
     @RequestMapping(value = "/canicularWeather", method = RequestMethod.GET)
     public ResponseEntity<List<CanicularWeatherDto>> getCanicularWeather() {
         List<CanicularWeather> meteoEvents = this.canicularWeatherService.getAll();
-        if (events.isEmpty()) {
+        if (meteoEvents.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(Lists.transform(meteoEvents, meteoEvent -> toDto(meteoEvent)), HttpStatus.OK);
@@ -71,7 +71,7 @@ public class CanicularWeatherController {
         List<CanicularWeather> canicularWeatherList = this.canicularWeatherService.getAll();
 
         for(CanicularWeather canicularWeather : canicularWeatherList){
-            this.eventService.delete(canicularWeather.getId());
+            this.canicularWeatherService.delete(canicularWeather.getId());
         }
 
         return new ResponseEntity<>(Lists.transform(canicularWeatherList, meteoEvent -> toDto(meteoEvent)), HttpStatus.OK);
@@ -87,7 +87,7 @@ public class CanicularWeatherController {
         return new ResponseEntity<>(toDto(canicularWeather), HttpStatus.OK);
     }
 
-    private CanicularWeatherDto toCanicularWeather(CanicularWeather canicularWeather) {
+    private CanicularWeatherDto toDto(CanicularWeather canicularWeather) {
         return new CanicularWeatherDto.Builder()
                 .name(canicularWeather.getName())
                 .latitude(canicularWeather.getLatitude())

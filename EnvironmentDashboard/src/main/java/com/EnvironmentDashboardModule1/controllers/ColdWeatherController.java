@@ -39,7 +39,7 @@ public class ColdWeatherController {
     @RequestMapping(value = "/coldWeather", method = RequestMethod.GET)
     public ResponseEntity<List<ColdWeatherDto>> getColdWeather() {
         List<ColdWeather> meteoEvents = this.coldWeatherService.getAll();
-        if (events.isEmpty()) {
+        if (meteoEvents.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(Lists.transform(meteoEvents, meteoEvent -> toDto(meteoEvent)), HttpStatus.OK);
@@ -71,7 +71,7 @@ public class ColdWeatherController {
         List<ColdWeather> coldWeatherList = this.coldWeatherService.getAll();
 
         for(ColdWeather coldWeather : coldWeatherList){
-            this.eventService.delete(coldWeather.getId());
+            this.coldWeatherService.delete(coldWeather.getId());
         }
 
         return new ResponseEntity<>(Lists.transform(coldWeatherList, meteoEvent -> toDto(meteoEvent)), HttpStatus.OK);
@@ -87,7 +87,7 @@ public class ColdWeatherController {
         return new ResponseEntity<>(toDto(coldWeather), HttpStatus.OK);
     }
 
-    private ColdWeatherDto toColdWeather(ColdWeather coldWeather) {
+    private ColdWeatherDto toDto(ColdWeather coldWeather) {
         return new ColdWeatherDto.Builder()
                 .name(coldWeather.getName())
                 .latitude(coldWeather.getLatitude())

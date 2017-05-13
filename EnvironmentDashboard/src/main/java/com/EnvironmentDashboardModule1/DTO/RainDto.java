@@ -1,7 +1,18 @@
 package com.EnvironmentDashboardModule1.DTO;
 
 
-import com.EnvironmentDashboardModule1.DTO.Interfaces.RainInterfaces.*;
+import com.EnvironmentDashboardModule1.DTO.Interfaces.RainInterfaces.IDescription;
+import com.EnvironmentDashboardModule1.DTO.Interfaces.RainInterfaces.IEndingDate;
+import com.EnvironmentDashboardModule1.DTO.Interfaces.RainInterfaces.IHints;
+import com.EnvironmentDashboardModule1.DTO.Interfaces.RainInterfaces.IHumidity;
+import com.EnvironmentDashboardModule1.DTO.Interfaces.RainInterfaces.ILatitude;
+import com.EnvironmentDashboardModule1.DTO.Interfaces.RainInterfaces.ILongitude;
+import com.EnvironmentDashboardModule1.DTO.Interfaces.RainInterfaces.IName;
+import com.EnvironmentDashboardModule1.DTO.Interfaces.RainInterfaces.IPrecipitationLevel;
+import com.EnvironmentDashboardModule1.DTO.Interfaces.RainInterfaces.IRadius;
+import com.EnvironmentDashboardModule1.DTO.Interfaces.RainInterfaces.ISeverity;
+import com.EnvironmentDashboardModule1.DTO.Interfaces.RainInterfaces.IStartingDate;
+import com.EnvironmentDashboardModule1.DTO.Interfaces.RainInterfaces.ITemperature;
 
 
 import java.util.Date;
@@ -9,7 +20,7 @@ import java.util.Date;
 /**
  * Created by Andrei Sfarghiu on 5/13/2017.
  */
-public class RainDto extends CreatingRainDto{
+public class RainDto extends CreatingMeteoEventDto{
         private Long id;
 
     protected RainDto() {};

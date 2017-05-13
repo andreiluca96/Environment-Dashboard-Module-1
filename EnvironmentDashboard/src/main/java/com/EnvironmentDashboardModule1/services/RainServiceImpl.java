@@ -33,26 +33,21 @@ public class RainServiceImpl implements RainService {
     }
 
     public Rain update(Rain entity, Long id) {
-
-        return null;
-
-        // Dragos -> copy paste done bad???
-        /*
         Rain rain = this.rainRepository.findOne(id);
-        this.rainRepository.findOne(id).setDescription(entity.getDescription());
-        this.rainRepository.findOne(id).setStartingTime(entity.getStartingTime());
-        this.rainRepository.findOne(id).setRadius(entity.getRadius());
-        this.rainRepository.findOne(id).setName(entity.getName());
-        this.rainRepository.findOne(id).setHints(entity.getHints());
-        this.rainRepository.findOne(id).setEndingTime(entity.getEndingTime());
-        this.rainRepository.findOne(id).setLatitude(entity.getLatitude());
-        this.rainRepository.findOne(id).setLongitude(entity.getLongitude());
-        this.rainRepository.findOne(id).setSeverity(entity.getSeverity());
-        this.rainRepository.findOne(id).setDepth(entity.getDepth());
-        this.rainRepository.findOne(id).setMercalliDegree(entity.getMercalliDegree());
-        this.rainRepository.findOne(id).setRichterDegree(entity.getRichterDegree());
-        this.rainRepository.saveAndFlush(this.rainRepository.findOne(id));
-        return this.rainRepository.findOne(id);
-        */
+        rain.setDescription(entity.getDescription());
+        rain.setStartingTime(entity.getStartingTime());
+        rain.setRadius(entity.getRadius());
+        rain.setName(entity.getName());
+        rain.setHints(entity.getHints());
+        rain.setEndingTime(entity.getEndingTime());
+        rain.setLatitude(entity.getLatitude());
+        rain.setLongitude(entity.getLongitude());
+        rain.setSeverity(entity.getSeverity());
+        rain.setHumidity(entity.getHumidity());
+        rain.setPrecipitationLevel(entity.getPrecipitationLevel());
+        rain.setTemperature(entity.getTemperature());
+        this.rainRepository.saveAndFlush(rain);
+        return rain ;
+
     }
 }

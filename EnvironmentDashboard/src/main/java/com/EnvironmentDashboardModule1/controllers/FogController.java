@@ -39,7 +39,7 @@ public class FogController {
     @RequestMapping(value = "/fog", method = RequestMethod.GET)
     public ResponseEntity<List<FogDto>> getFog() {
         List<Fog> meteoEvents = this.fogService.getAll();
-        if (events.isEmpty()) {
+        if (meteoEvents.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(Lists.transform(meteoEvents, meteoEvent -> toDto(meteoEvent)), HttpStatus.OK);
@@ -63,7 +63,7 @@ public class FogController {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         Fog updatedFog= this.fogService.update(fog,id);
-        return new ResponseEntity<>(toDto(updatedFSog), HttpStatus.CREATED);
+        return new ResponseEntity<>(toDto(updatedFog), HttpStatus.CREATED);
     }
 
     @RequestMapping(value = "/fog", method = RequestMethod.DELETE)
@@ -71,7 +71,7 @@ public class FogController {
         List<Fog> fogList = this.fogService.getAll();
 
         for(Fog fog : fogList){
-            this.eventService.delete(fog.getId());
+            this.fogService.delete(fog.getId());
         }
 
         return new ResponseEntity<>(Lists.transform(fogList, meteoEvent -> toDto(meteoEvent)), HttpStatus.OK);
@@ -87,7 +87,7 @@ public class FogController {
         return new ResponseEntity<>(toDto(fog), HttpStatus.OK);
     }
 
-    private FogDto toFog(Fog fog) {
+    private FogDto toDto(Fog fog) {
         return new FogDto.Builder()
                 .name(fog.getName())
                 .latitude(fog.getLatitude())
