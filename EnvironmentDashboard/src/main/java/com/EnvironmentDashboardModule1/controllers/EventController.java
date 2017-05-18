@@ -3,11 +3,13 @@ package com.EnvironmentDashboardModule1.controllers;
 import com.EnvironmentDashboardModule1.DTO.*;
 import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.EarthquakeBuilder;
 import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.TornadoBuilder;
+import com.EnvironmentDashboardModule1.models.EventMapping;
 import com.EnvironmentDashboardModule1.models.Events.Earthquake;
 import com.EnvironmentDashboardModule1.models.Events.Event;
 import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.EventBuilder;
 import com.EnvironmentDashboardModule1.models.Events.Tornado;
 import com.EnvironmentDashboardModule1.services.EarthquakeService;
+import com.EnvironmentDashboardModule1.services.EventMappingService;
 import com.EnvironmentDashboardModule1.services.EventService;
 import com.EnvironmentDashboardModule1.services.TornadoService;
 import com.google.common.collect.Lists;
@@ -29,10 +31,17 @@ public class EventController {
     @Autowired
     private EventService eventService;
 
+//    @Autowired
+//    private EventMappingService eventMappingService;
+
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Event> addEvent(@RequestBody CreatingEventDto eventDto) {
         Event event = toCreatingModel(eventDto);
         Event savedEvent = this.eventService.save(event);
+
+//        EventMapping eventMapping = new EventMapping(savedEvent.getId(), "Event");
+//        eventMappingService.save(eventMapping);
+
         return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
     }
 

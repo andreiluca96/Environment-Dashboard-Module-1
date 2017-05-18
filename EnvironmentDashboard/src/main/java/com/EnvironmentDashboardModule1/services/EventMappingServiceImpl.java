@@ -3,12 +3,14 @@ package com.EnvironmentDashboardModule1.services;
 import com.EnvironmentDashboardModule1.models.EventMapping;
 import com.EnvironmentDashboardModule1.repositories.EventMappingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by Luca Andrei on 5/18/2017.
  */
+@Service
 public class EventMappingServiceImpl implements  EventMappingService {
     @Autowired
     private EventMappingRepository eventMappingRepository;

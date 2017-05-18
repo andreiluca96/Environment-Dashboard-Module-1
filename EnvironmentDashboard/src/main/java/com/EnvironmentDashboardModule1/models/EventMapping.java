@@ -15,6 +15,11 @@ public class EventMapping {
 
     private String eventType;
 
+    public EventMapping(Long id, String eventType) {
+        this.id = id;
+        this.eventType = eventType;
+    }
+
     public Long getId() {
         return id;
     }
