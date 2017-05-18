@@ -10,7 +10,7 @@ import java.util.Date;
  */
 
 @Entity
-@Table(name = "Event")
+@Table(name = "EventMapping")
 public class Event implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
