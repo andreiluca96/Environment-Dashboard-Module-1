@@ -6,7 +6,9 @@ package com.EnvironmentDashboardModule1.controllers;
 
 import com.EnvironmentDashboardModule1.DTO.*;
 import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.FloodBuilder;
+import com.EnvironmentDashboardModule1.models.EventMapping;
 import com.EnvironmentDashboardModule1.models.Events.Flood;
+import com.EnvironmentDashboardModule1.services.EventMappingService;
 import com.EnvironmentDashboardModule1.services.EventService;
 import com.EnvironmentDashboardModule1.services.FloodService;
 import com.google.common.collect.Lists;
@@ -27,10 +29,16 @@ public class FloodController {
     @Autowired
     private FloodService floodService;
 
+    @Autowired
+    private EventMappingService eventMappingService;
+
     @RequestMapping(value = "/flood", method = RequestMethod.POST)
     public ResponseEntity<Flood> addFlood(@RequestBody CreatingFloodDto event) {
         Flood flood = toCreatingModel(event);
         Flood savedEvent = this.floodService.save(flood);
+
+        EventMapping eventMapping = new EventMapping(savedEvent.getId(), "Flood");
+        eventMappingService.save(eventMapping);
 
         return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
     }

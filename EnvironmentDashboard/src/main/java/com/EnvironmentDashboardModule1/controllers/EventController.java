@@ -31,16 +31,16 @@ public class EventController {
     @Autowired
     private EventService eventService;
 
-//    @Autowired
-//    private EventMappingService eventMappingService;
+    @Autowired
+    private EventMappingService eventMappingService;
 
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Event> addEvent(@RequestBody CreatingEventDto eventDto) {
         Event event = toCreatingModel(eventDto);
         Event savedEvent = this.eventService.save(event);
 
-//        EventMapping eventMapping = new EventMapping(savedEvent.getId(), "Event");
-//        eventMappingService.save(eventMapping);
+        EventMapping eventMapping = new EventMapping(savedEvent.getId(), "Event");
+        eventMappingService.save(eventMapping);
 
         return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
     }

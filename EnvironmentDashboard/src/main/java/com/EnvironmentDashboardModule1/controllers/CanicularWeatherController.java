@@ -3,7 +3,9 @@ package com.EnvironmentDashboardModule1.controllers;
 import com.EnvironmentDashboardModule1.DTO.CreatingCanicularWeatherDto;
 import com.EnvironmentDashboardModule1.DTO.CanicularWeatherDto;
 import com.EnvironmentDashboardModule1.models.Builders.MeteoEventBuilders.CanicularWeatherBuilder;
+import com.EnvironmentDashboardModule1.models.EventMapping;
 import com.EnvironmentDashboardModule1.models.MeteoEvents.CanicularWeather;
+import com.EnvironmentDashboardModule1.services.EventMappingService;
 import com.EnvironmentDashboardModule1.services.MeteoEventService;
 import com.EnvironmentDashboardModule1.services.CanicularWeatherService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +30,16 @@ public class CanicularWeatherController {
     @Autowired
     private CanicularWeatherService canicularWeatherService;
 
+    @Autowired
+    private EventMappingService eventMappingService;
+
     @RequestMapping(value = "/canicularWeather", method = RequestMethod.POST)
     public ResponseEntity<CanicularWeather> addCanicularWeather(@RequestBody CreatingCanicularWeatherDto meteoEvent) {
         CanicularWeather canicularWeather = toCreatingModel(meteoEvent);
         CanicularWeather savedMeteoEvent = this.canicularWeatherService.save(canicularWeather);
+
+        EventMapping eventMapping = new EventMapping(savedMeteoEvent.getId(), "Canicular Weather");
+        eventMappingService.save(eventMapping);
 
         return new ResponseEntity<>(savedMeteoEvent, HttpStatus.CREATED);
     }

@@ -3,7 +3,9 @@ package com.EnvironmentDashboardModule1.controllers;
 import com.EnvironmentDashboardModule1.DTO.CreatingRainDto;
 import com.EnvironmentDashboardModule1.DTO.RainDto;
 import com.EnvironmentDashboardModule1.models.Builders.MeteoEventBuilders.RainBuilder;
+import com.EnvironmentDashboardModule1.models.EventMapping;
 import com.EnvironmentDashboardModule1.models.MeteoEvents.Rain;
+import com.EnvironmentDashboardModule1.services.EventMappingService;
 import com.EnvironmentDashboardModule1.services.MeteoEventService;
 import com.EnvironmentDashboardModule1.services.RainService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +30,16 @@ public class RainController {
     @Autowired
     private RainService rainService;
 
+    @Autowired
+    private EventMappingService eventMappingService;
+
     @RequestMapping(value = "/rain", method = RequestMethod.POST)
     public ResponseEntity<Rain> addRain(@RequestBody CreatingRainDto meteoEvent) {
         Rain rain = toCreatingModel(meteoEvent);
         Rain savedMeteoEvent = this.rainService.save(rain);
+
+        EventMapping eventMapping = new EventMapping(savedMeteoEvent.getId(), "Rain Weather");
+        eventMappingService.save(eventMapping);
 
         return new ResponseEntity<>(savedMeteoEvent, HttpStatus.CREATED);
     }

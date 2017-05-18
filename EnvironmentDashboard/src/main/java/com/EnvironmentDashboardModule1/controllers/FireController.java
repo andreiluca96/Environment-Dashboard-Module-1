@@ -6,8 +6,10 @@ package com.EnvironmentDashboardModule1.controllers;
 
 import com.EnvironmentDashboardModule1.DTO.*;
 import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.FireBuilder;
+import com.EnvironmentDashboardModule1.models.EventMapping;
 import com.EnvironmentDashboardModule1.models.Events.Fire;
 import com.EnvironmentDashboardModule1.models.Events.Fire;
+import com.EnvironmentDashboardModule1.services.EventMappingService;
 import com.EnvironmentDashboardModule1.services.EventService;
 import com.EnvironmentDashboardModule1.services.FireService;
 import com.google.common.collect.Lists;
@@ -28,10 +30,16 @@ public class FireController {
     @Autowired
     private FireService fireService;
 
+    @Autowired
+    private EventMappingService eventMappingService;
+
     @RequestMapping(value = "/fire", method = RequestMethod.POST)
     public ResponseEntity<Fire> addFire(@RequestBody CreatingFireDto event) {
         Fire fire = toCreatingModel(event);
         Fire savedEvent = this.fireService.save(fire);
+
+        EventMapping eventMapping = new EventMapping(savedEvent.getId(), "Fire");
+        eventMappingService.save(eventMapping);
 
         return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
     }

@@ -3,11 +3,13 @@ package com.EnvironmentDashboardModule1.controllers;
 import com.EnvironmentDashboardModule1.DTO.*;
 import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.EarthquakeBuilder;
 import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.TornadoBuilder;
+import com.EnvironmentDashboardModule1.models.EventMapping;
 import com.EnvironmentDashboardModule1.models.Events.Earthquake;
 import com.EnvironmentDashboardModule1.models.Events.Event;
 import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.EventBuilder;
 import com.EnvironmentDashboardModule1.models.Events.Tornado;
 import com.EnvironmentDashboardModule1.services.EarthquakeService;
+import com.EnvironmentDashboardModule1.services.EventMappingService;
 import com.EnvironmentDashboardModule1.services.EventService;
 import com.EnvironmentDashboardModule1.services.TornadoService;
 import com.google.common.collect.Lists;
@@ -31,10 +33,17 @@ public class TornadoController {
     @Autowired
     private TornadoService tornadoService;
 
+    @Autowired
+    private EventMappingService eventMappingService;
+
     @RequestMapping(value = "/tornado", method = RequestMethod.POST)
     public ResponseEntity<Tornado> addTornado(@RequestBody CreatingTornadoDto event) {
         Tornado tornado = toCreatingModel(event);
         Tornado savedEvent = this.tornadoService.save(tornado);
+
+        EventMapping eventMapping = new EventMapping(savedEvent.getId(), "Tornado");
+        eventMappingService.save(eventMapping);
+
         return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
     }
 

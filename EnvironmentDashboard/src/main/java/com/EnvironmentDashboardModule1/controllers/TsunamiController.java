@@ -6,7 +6,9 @@ package com.EnvironmentDashboardModule1.controllers;
 
 import com.EnvironmentDashboardModule1.DTO.CreatingTsunamiDto;
 import com.EnvironmentDashboardModule1.DTO.TsunamiDto;
+import com.EnvironmentDashboardModule1.models.EventMapping;
 import com.EnvironmentDashboardModule1.models.Events.Tsunami;
+import com.EnvironmentDashboardModule1.services.EventMappingService;
 import com.EnvironmentDashboardModule1.services.EventService;
 import com.EnvironmentDashboardModule1.services.TsunamiService;
 import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.TsunamiBuilder;
@@ -29,10 +31,17 @@ public class TsunamiController {
     @Autowired
     private TsunamiService tsunamiService;
 
+    @Autowired
+    private EventMappingService eventMappingService;
+
     @RequestMapping(value = "/tsunami", method = RequestMethod.POST)
     public ResponseEntity<Tsunami> addTornado(@RequestBody CreatingTsunamiDto event) {
         Tsunami tornado = toCreatingModel(event);
         Tsunami savedEvent = this.tsunamiService.save(tornado);
+
+        EventMapping eventMapping = new EventMapping(savedEvent.getId(), "Tsunami");
+        eventMappingService.save(eventMapping);
+
         return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
     }
 

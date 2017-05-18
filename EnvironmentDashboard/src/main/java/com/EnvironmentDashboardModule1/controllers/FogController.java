@@ -3,7 +3,9 @@ package com.EnvironmentDashboardModule1.controllers;
 import com.EnvironmentDashboardModule1.DTO.CreatingFogDto;
 import com.EnvironmentDashboardModule1.DTO.FogDto;
 import com.EnvironmentDashboardModule1.models.Builders.MeteoEventBuilders.FogBuilder;
+import com.EnvironmentDashboardModule1.models.EventMapping;
 import com.EnvironmentDashboardModule1.models.MeteoEvents.Fog;
+import com.EnvironmentDashboardModule1.services.EventMappingService;
 import com.EnvironmentDashboardModule1.services.MeteoEventService;
 import com.EnvironmentDashboardModule1.services.FogService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +30,16 @@ public class FogController {
     @Autowired
     private FogService fogService;
 
+    @Autowired
+    private EventMappingService eventMappingService;
+
     @RequestMapping(value = "/fog", method = RequestMethod.POST)
     public ResponseEntity<Fog> addFog(@RequestBody CreatingFogDto meteoEvent) {
         Fog fog = toCreatingModel(meteoEvent);
         Fog savedMeteoEvent = this.fogService.save(fog);
+
+        EventMapping eventMapping = new EventMapping(savedMeteoEvent.getId(), "Fog Weather");
+        eventMappingService.save(eventMapping);
 
         return new ResponseEntity<>(savedMeteoEvent, HttpStatus.CREATED);
     }

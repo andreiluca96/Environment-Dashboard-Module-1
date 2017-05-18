@@ -4,7 +4,9 @@ package com.EnvironmentDashboardModule1.controllers;
 import com.EnvironmentDashboardModule1.DTO.CreatingSnowDto;
 import com.EnvironmentDashboardModule1.DTO.SnowDto;
 import com.EnvironmentDashboardModule1.models.Builders.MeteoEventBuilders.SnowBuilder;
+import com.EnvironmentDashboardModule1.models.EventMapping;
 import com.EnvironmentDashboardModule1.models.MeteoEvents.Snow;
+import com.EnvironmentDashboardModule1.services.EventMappingService;
 import com.EnvironmentDashboardModule1.services.EventService;
 import com.EnvironmentDashboardModule1.services.SnowService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +30,16 @@ public class FloodController {
     @Autowired
     private SnowService snowService;
 
+    @Autowired
+    private EventMappingService eventMappingService;
+
     @RequestMapping(value = "/snow", method = RequestMethod.POST)
     public ResponseEntity<Snow> addSnow(@RequestBody CreatingSnowDto event) {
         Snow snow = toCreatingModel(event);
         Snow savedEvent = this.snowService.save(snow);
+
+        EventMapping eventMapping = new EventMapping(savedEvent.getId(), "Snow Weather");
+        eventMappingService.save(eventMapping);
 
         return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
     }
