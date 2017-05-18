@@ -34,6 +34,18 @@ public class TerroristAttackServiceImpl implements TerroristAttackService {
 
     @Override
     public TerroristAttack update(TerroristAttack entity, Long id) {
-        return null;
+        TerroristAttack terroristAttack = this.terroristattackRepository.findOne(id);
+        terroristAttack.setDescription(entity.getDescription());
+        terroristAttack.setStartingTime(entity.getStartingTime());
+        terroristAttack.setRadius(entity.getRadius());
+        terroristAttack.setName(entity.getName());
+        terroristAttack.setHints(entity.getHints());
+        terroristAttack.setEndingTime(entity.getEndingTime());
+        terroristAttack.setLatitude(entity.getLatitude());
+        terroristAttack.setLongitude(entity.getLongitude());
+        terroristAttack.setSeverity(entity.getSeverity());
+        terroristAttack.setNumberOfTerrorists(entity.getNumberOfTerrorists());
+        this.terroristattackRepository.saveAndFlush(terroristAttack);
+        return terroristAttack;
     }
 }
