@@ -85,10 +85,10 @@ public class CanicularWeatherBuilderTests {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void given_anInvalidValue_when_setPrecipitationLevelIsCalled_then_shouldThrowException(){
+    public void given_anInvalidValue_when_setTemperatureIsCalled_then_shouldThrowException(){
         CanicularWeatherBuilder canicularWeatherBuilder = new CanicularWeatherBuilder();
-        double speed = -1000;
-        canicularWeatherBuilder.setSpeed(speed);
+        Integer invalidTemperature = -1000;
+        canicularWeatherBuilder.setTemperature(invalidTemperature);
     }
 
     @Test(expected = IllegalArgumentException.class)

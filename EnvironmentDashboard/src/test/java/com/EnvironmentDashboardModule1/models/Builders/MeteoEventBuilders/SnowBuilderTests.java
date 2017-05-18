@@ -84,11 +84,11 @@ public class SnowBuilderTests {
         snowBuilder.setRadius(invalidRadius);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void given_anInvalidValue_when_setPrecipitationLevelIsCalled_then_shouldThrowException(){
+    /*@Test(expected = IllegalArgumentException.class)
+    public void given_anInvalidValue_when_setTemperatureIsCalled_then_shouldThrowException(){
         SnowBuilder snowBuilder = new SnowBuilder();
-        double temperature = -1000;
-        snowBuilder.setTemperature(temperature);
+        Integer invalidTemperature = -1000;
+        snowBuilder.setTemperature(invalidTemperature);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -96,7 +96,7 @@ public class SnowBuilderTests {
         SnowBuilder snowBuilder = new SnowBuilder();
         Integer invalidHumidity = -1000;
         snowBuilder.setHumidity(invalidHumidity);
-    }
+    }*/
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setPrecipitationLevelIsCalled_then_shouldThrowException(){

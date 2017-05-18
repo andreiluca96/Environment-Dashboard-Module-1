@@ -91,6 +91,15 @@ public class FogBuilderTests {
         fogBuilder.setHumidity(invalidHumidity);
     }
 
+
+    @Test(expected = IllegalArgumentException.class)
+    public void given_anInvalidValue_when_setTemperatureIsCalled_then_shouldThrowException(){
+        FogBuilder fogBuilder = new FogBuilder();
+        Integer invalidTemperature = -1000;
+        fogBuilder.setTemperature(invalidTemperature);
+    }
+
+
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setPrecipitationLevelIsCalled_then_shouldThrowException(){
         FogBuilder fogBuilder = new FogBuilder();

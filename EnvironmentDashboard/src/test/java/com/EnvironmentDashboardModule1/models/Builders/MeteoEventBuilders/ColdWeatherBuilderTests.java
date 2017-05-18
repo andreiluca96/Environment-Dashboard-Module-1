@@ -85,10 +85,10 @@ public class ColdWeatherBuilderTests {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void given_anInvalidValue_when_setPrecipitationLevelIsCalled_then_shouldThrowException(){
+    public void given_anInvalidValue_when_setTemperatureIsCalled_then_shouldThrowException(){
         ColdWeatherBuilder coldWeatherBuilder = new ColdWeatherBuilder();
-        double temperature = -1000;
-        coldWeatherBuilder.setTemperature(temperature);
+        Integer invalidTemperature = -1000;
+        coldWeatherBuilder.setTemperature(invalidTemperature);
     }
 
     @Test(expected = IllegalArgumentException.class)

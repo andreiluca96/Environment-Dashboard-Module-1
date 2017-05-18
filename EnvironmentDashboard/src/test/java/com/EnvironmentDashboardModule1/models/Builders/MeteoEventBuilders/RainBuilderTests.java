@@ -85,9 +85,9 @@ public class RainBuilderTests {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void given_anInvalidValue_when_setPrecipitationLevelIsCalled_then_shouldThrowException(){
+    public void given_anInvalidValue_when_setTemperatureIsCalled_then_shouldThrowException(){
         RainBuilder rainBuilder = new RainBuilder();
-        double temperature = -1000;
+        Integer temperature = -1000;
         rainBuilder.setTemperature(temperature);
     }
 
