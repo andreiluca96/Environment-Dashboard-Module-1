@@ -12,7 +12,7 @@ public class EventDto extends CreatingEventDto {
 
     protected EventDto() {};
 
-    public static class Builder implements IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude {
+    public static class Builder implements IId, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude {
         private EventDto eventDto = new EventDto();
 
         @Override
@@ -66,6 +66,12 @@ public class EventDto extends CreatingEventDto {
         @Override
         public ILatitude name(String name) {
             eventDto.name = name;
+            return this;
+        }
+
+        @Override
+        public IName id(Long id) {
+            eventDto.id = id;
             return this;
         }
     }

@@ -97,6 +97,7 @@ public class EventController {
 
     private EventDto toDto(Event event) {
         return new EventDto.Builder()
+                .id(event.getId())
                 .name(event.getName())
                 .latitude(event.getLatitude())
                 .longitude(event.getLongitude())

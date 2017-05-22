@@ -15,7 +15,7 @@ public class FireDto extends CreatingFireDto {
         super();
     };
 
-    public static class Builder implements ISpeed, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude {
+    public static class Builder implements IId, ISpeed, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude {
         private FireDto fireDto = new FireDto();
 
         @Override
@@ -76,6 +76,12 @@ public class FireDto extends CreatingFireDto {
         public FireDto speed(Double speed) {
             fireDto.speed=speed;
             return fireDto;
+        }
+
+        @Override
+        public IName id(Long id) {
+            fireDto.id = id;
+            return this;
         }
     }
 }

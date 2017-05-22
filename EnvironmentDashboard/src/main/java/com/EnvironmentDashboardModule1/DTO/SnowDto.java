@@ -19,7 +19,7 @@ public class SnowDto extends CreatingSnowDto {
     super();
     };
 
-    public static class Builder implements IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude, IPrecipitationLevel {
+    public static class Builder implements IId, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude, IPrecipitationLevel {
         private SnowDto snowDto = new SnowDto();
         
 
@@ -82,6 +82,11 @@ public class SnowDto extends CreatingSnowDto {
             snowDto.precipitationLevel=precipitationLevel;
             return snowDto;
         }
-        
+
+        @Override
+        public IName id(Long id) {
+            snowDto.id = id;
+            return this;
+        }
     }
 }

@@ -1,18 +1,7 @@
 package com.EnvironmentDashboardModule1.DTO;
 
 
-import com.EnvironmentDashboardModule1.DTO.Interfaces.RainInterfaces.IDescription;
-import com.EnvironmentDashboardModule1.DTO.Interfaces.RainInterfaces.IEndingDate;
-import com.EnvironmentDashboardModule1.DTO.Interfaces.RainInterfaces.IHints;
-import com.EnvironmentDashboardModule1.DTO.Interfaces.RainInterfaces.IHumidity;
-import com.EnvironmentDashboardModule1.DTO.Interfaces.RainInterfaces.ILatitude;
-import com.EnvironmentDashboardModule1.DTO.Interfaces.RainInterfaces.ILongitude;
-import com.EnvironmentDashboardModule1.DTO.Interfaces.RainInterfaces.IName;
-import com.EnvironmentDashboardModule1.DTO.Interfaces.RainInterfaces.IPrecipitationLevel;
-import com.EnvironmentDashboardModule1.DTO.Interfaces.RainInterfaces.IRadius;
-import com.EnvironmentDashboardModule1.DTO.Interfaces.RainInterfaces.ISeverity;
-import com.EnvironmentDashboardModule1.DTO.Interfaces.RainInterfaces.IStartingDate;
-import com.EnvironmentDashboardModule1.DTO.Interfaces.RainInterfaces.ITemperature;
+import com.EnvironmentDashboardModule1.DTO.Interfaces.RainInterfaces.*;
 
 
 import java.util.Date;
@@ -21,11 +10,11 @@ import java.util.Date;
  * Created by Andrei Sfarghiu on 5/13/2017.
  */
 public class RainDto extends CreatingMeteoEventDto{
-        private Long id;
+    private Long id;
 
     protected RainDto() {};
 
-    public static class Builder implements IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude,ITemperature, IHumidity, IPrecipitationLevel {
+    public static class Builder implements IId, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude,ITemperature, IHumidity, IPrecipitationLevel {
         private RainDto rainDto = new RainDto();
 
 
@@ -100,6 +89,12 @@ public class RainDto extends CreatingMeteoEventDto{
         @Override
         public IPrecipitationLevel radius(Double radius) {
             rainDto.radius=radius;
+            return this;
+        }
+
+        @Override
+        public IName id(Long id) {
+            rainDto.id = id;
             return this;
         }
     }

@@ -13,7 +13,7 @@ public class TerroristAttackDto extends CreatingTerroristAttackDto {
 
     private TerroristAttackDto() { super(); }
 
-    public static class Builder implements INumberOfTerrorists, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude {
+    public static class Builder implements IId, INumberOfTerrorists, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude {
         private TerroristAttackDto terroristAttackDto = new TerroristAttackDto();
 
         @Override
@@ -74,6 +74,12 @@ public class TerroristAttackDto extends CreatingTerroristAttackDto {
         public TerroristAttackDto numberOfTerrorists(Integer numberOfTerrorists) {
             terroristAttackDto.numberOfTerrorists = numberOfTerrorists;
             return terroristAttackDto;
+        }
+
+        @Override
+        public IName id(Long id) {
+            terroristAttackDto.id = id;
+            return this;
         }
     }
 }

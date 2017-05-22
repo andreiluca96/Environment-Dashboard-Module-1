@@ -16,7 +16,7 @@ public class MeteoEventDto extends CreatingMeteoEventDto{
 
     protected MeteoEventDto() {};
 
-    public static class Builder implements IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude,ITemperature, IHumidity, IPrecipitationLevel {
+    public static class Builder implements IId, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude,ITemperature, IHumidity, IPrecipitationLevel {
         private MeteoEventDto meteoEventDto = new MeteoEventDto();
 
 
@@ -91,6 +91,12 @@ public class MeteoEventDto extends CreatingMeteoEventDto{
         @Override
         public IPrecipitationLevel radius(Double radius) {
             meteoEventDto.radius=radius;
+            return this;
+        }
+
+        @Override
+        public IName id(Long id) {
+            meteoEventDto.id = id;
             return this;
         }
     }

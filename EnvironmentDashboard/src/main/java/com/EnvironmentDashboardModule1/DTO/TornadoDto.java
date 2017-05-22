@@ -13,7 +13,7 @@ public class TornadoDto extends CreatingTornadoDto {
 
     private TornadoDto() { super(); }
 
-    public static class Builder implements IWindspeed, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude {
+    public static class Builder implements IId, IWindspeed, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude {
         private TornadoDto tornadoDto = new TornadoDto();
 
         @Override
@@ -74,6 +74,12 @@ public class TornadoDto extends CreatingTornadoDto {
         public TornadoDto windspeed(Double windspeed) {
             tornadoDto.windspeed = windspeed;
             return tornadoDto;
+        }
+
+        @Override
+        public IName id(Long id) {
+            tornadoDto.id = id;
+            return this;
         }
     }
 }
