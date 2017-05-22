@@ -38,7 +38,7 @@ public class CanicularWeatherController {
         CanicularWeather canicularWeather = toCreatingModel(meteoEvent);
         CanicularWeather savedMeteoEvent = this.canicularWeatherService.save(canicularWeather);
 
-        EventMapping eventMapping = new EventMapping(savedMeteoEvent.getId(), "Canicular Weather");
+        EventMapping eventMapping = new EventMapping(savedMeteoEvent.getId(), "CanicularWeather");
         eventMappingService.save(eventMapping);
 
         return new ResponseEntity<>(savedMeteoEvent, HttpStatus.CREATED);

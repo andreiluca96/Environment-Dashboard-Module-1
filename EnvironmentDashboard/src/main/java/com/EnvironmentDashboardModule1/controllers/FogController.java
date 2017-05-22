@@ -38,7 +38,7 @@ public class FogController {
         Fog fog = toCreatingModel(meteoEvent);
         Fog savedMeteoEvent = this.fogService.save(fog);
 
-        EventMapping eventMapping = new EventMapping(savedMeteoEvent.getId(), "Fog Weather");
+        EventMapping eventMapping = new EventMapping(savedMeteoEvent.getId(), "Fog");
         eventMappingService.save(eventMapping);
 
         return new ResponseEntity<>(savedMeteoEvent, HttpStatus.CREATED);

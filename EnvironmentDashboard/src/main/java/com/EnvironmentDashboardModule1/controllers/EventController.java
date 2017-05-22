@@ -23,7 +23,6 @@ import java.util.List;
 /**
  * Created by Luca Andrei on 5/4/2017.
  */
-
 @RestController
 @RequestMapping("v1/events")
 public class EventController {

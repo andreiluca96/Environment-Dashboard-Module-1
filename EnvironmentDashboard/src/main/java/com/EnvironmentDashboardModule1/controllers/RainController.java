@@ -38,7 +38,7 @@ public class RainController {
         Rain rain = toCreatingModel(meteoEvent);
         Rain savedMeteoEvent = this.rainService.save(rain);
 
-        EventMapping eventMapping = new EventMapping(savedMeteoEvent.getId(), "Rain Weather");
+        EventMapping eventMapping = new EventMapping(savedMeteoEvent.getId(), "Rain");
         eventMappingService.save(eventMapping);
 
         return new ResponseEntity<>(savedMeteoEvent, HttpStatus.CREATED);

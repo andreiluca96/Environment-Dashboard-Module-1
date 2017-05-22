@@ -38,7 +38,7 @@ public class ColdWeatherController {
         ColdWeather coldWeather = toCreatingModel(meteoEvent);
         ColdWeather savedMeteoEvent = this.coldWeatherService.save(coldWeather);
 
-        EventMapping eventMapping = new EventMapping(savedMeteoEvent.getId(), "Cold Weather");
+        EventMapping eventMapping = new EventMapping(savedMeteoEvent.getId(), "ColdWeather");
         eventMappingService.save(eventMapping);
 
         return new ResponseEntity<>(savedMeteoEvent, HttpStatus.CREATED);

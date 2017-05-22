@@ -38,7 +38,7 @@ public class FloodController {
         Snow snow = toCreatingModel(event);
         Snow savedEvent = this.snowService.save(snow);
 
-        EventMapping eventMapping = new EventMapping(savedEvent.getId(), "Snow Weather");
+        EventMapping eventMapping = new EventMapping(savedEvent.getId(), "Snow");
         eventMappingService.save(eventMapping);
 
         return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
