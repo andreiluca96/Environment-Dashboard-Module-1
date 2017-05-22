@@ -13,7 +13,15 @@ import java.util.Date;
  * @author Vladut
  */
 public class SnowDto extends CreatingSnowDto {
-      private Long id;
+  private Long id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     private SnowDto() {
     super();

@@ -10,6 +10,14 @@ import java.util.Date;
 public class EventDto extends CreatingEventDto {
     private Long id;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     protected EventDto() {};
 
     public static class Builder implements IId, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude {

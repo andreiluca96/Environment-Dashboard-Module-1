@@ -11,6 +11,14 @@ import java.util.Date;
 public class EarthquakeDto extends CreatingEarthquakeDto {
     private Long id;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     private EarthquakeDto() { super(); };
 
     public static class Builder implements IId, IName, IDepth, IDescription, IEndingDate, IHints, ILatitude, ILongitude, IMercaliDegree, IRadius, IRichterDegree, ISeverity, IStartingDate {

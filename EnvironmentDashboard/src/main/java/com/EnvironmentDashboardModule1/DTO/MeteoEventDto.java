@@ -12,7 +12,15 @@ import java.util.Date;
  * Created by Ariana on 5/13/2017.
  */
 public class MeteoEventDto extends CreatingMeteoEventDto{
-        private Long id;
+    private Long id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     protected MeteoEventDto() {};
 

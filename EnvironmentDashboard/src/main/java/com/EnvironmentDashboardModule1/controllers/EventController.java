@@ -95,7 +95,7 @@ public class EventController {
         return new ResponseEntity<>(toDto(event), HttpStatus.OK);
     }
 
-    private EventDto toDto(Event event) {
+    public EventDto toDto(Event event) {
         return new EventDto.Builder()
                 .id(event.getId())
                 .name(event.getName())

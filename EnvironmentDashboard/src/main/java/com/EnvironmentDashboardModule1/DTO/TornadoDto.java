@@ -11,6 +11,14 @@ import java.util.Date;
 public class TornadoDto extends CreatingTornadoDto {
     private Long id;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     private TornadoDto() { super(); }
 
     public static class Builder implements IId, IWindspeed, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude {

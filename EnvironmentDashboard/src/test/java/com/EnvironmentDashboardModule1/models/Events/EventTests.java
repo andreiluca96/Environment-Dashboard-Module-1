@@ -1,5 +1,7 @@
 package com.EnvironmentDashboardModule1.models.Events;
 
+import com.EnvironmentDashboardModule1.DTO.EventDto;
+import com.EnvironmentDashboardModule1.controllers.EventController;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -193,5 +195,16 @@ public class EventTests {
         double radius = -1000;
 
         event.setRadius(radius);
+    }
+
+    @Test
+    public void given_aValidEventWithId_when_createEventDTO_then_shouldGetDto_Id() {
+        Event event = new Event();
+        event.setId(new Long(10));
+
+        EventController eventController = new EventController();
+        EventDto eventDto = eventController.toDto(event)
+
+        Assert.assertEquals(event.getId(),eventDto.());
     }
 }
