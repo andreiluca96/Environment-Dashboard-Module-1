@@ -203,8 +203,8 @@ public class EventTests {
         event.setId(new Long(10));
 
         EventController eventController = new EventController();
-        EventDto eventDto = eventController.toDto(event)
+        EventDto eventDto = eventController.toDto(event);
 
-        Assert.assertEquals(event.getId(),eventDto.());
+        Assert.assertEquals(event.getId(),eventDto.getId());
     }
 }
