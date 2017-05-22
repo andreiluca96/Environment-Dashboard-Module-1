@@ -97,6 +97,7 @@ public class CanicularWeatherController {
 
     private CanicularWeatherDto toDto(CanicularWeather canicularWeather) {
         return new CanicularWeatherDto.Builder()
+                .id(canicularWeather.getId())
                 .name(canicularWeather.getName())
                 .latitude(canicularWeather.getLatitude())
                 .longitude(canicularWeather.getLongitude())

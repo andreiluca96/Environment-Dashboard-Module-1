@@ -98,6 +98,7 @@ public class FireController {
 
     private FireDto toDto(Fire fire) {
         return new FireDto.Builder()
+                .id(fire.getId())
                 .name(fire.getName())
                 .latitude(fire.getLatitude())
                 .longitude(fire.getLongitude())

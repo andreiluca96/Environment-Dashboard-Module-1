@@ -101,6 +101,7 @@ public class EarthquakeController {
 
     private EarthquakeDto toDto(Earthquake earthquake) {
         return new EarthquakeDto.Builder()
+                .id(earthquake.getId())
                 .name(earthquake.getName())
                 .latitude(earthquake.getLatitude())
                 .longitude(earthquake.getLongitude())

@@ -97,6 +97,7 @@ public class MeteoEventController {
 
     private MeteoEventDto toDto(MeteoEvent meteoEvent) {
         return new MeteoEventDto.Builder()
+                .id(meteoEvent.getId())
                 .name(meteoEvent.getName())
                 .latitude(meteoEvent.getLatitude())
                 .longitude(meteoEvent.getLongitude())

@@ -98,6 +98,7 @@ public class TsunamiController {
 
     private TsunamiDto toDto(Tsunami tsunami) {
         return new TsunamiDto.Builder()
+                .id(tsunami.getId())
                 .name(tsunami.getName())
                 .latitude(tsunami.getLatitude())
                 .longitude(tsunami.getLongitude())

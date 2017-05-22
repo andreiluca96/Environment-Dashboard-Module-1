@@ -97,6 +97,7 @@ public class FloodController {
 
     private FloodDto toDto(Flood flood) {
         return new FloodDto.Builder()
+                .id(flood.getId())
                 .name(flood.getName())
                 .latitude(flood.getLatitude())
                 .longitude(flood.getLongitude())

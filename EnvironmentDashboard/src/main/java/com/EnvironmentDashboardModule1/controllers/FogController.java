@@ -97,6 +97,7 @@ public class FogController {
 
     private FogDto toDto(Fog fog) {
         return new FogDto.Builder()
+                .id(fog.getId())
                 .name(fog.getName())
                 .latitude(fog.getLatitude())
                 .longitude(fog.getLongitude())

@@ -98,6 +98,7 @@ public class FloodController {
 
     private SnowDto toDto(Snow snow) {
         return new SnowDto.Builder()
+                .id(snow.getId())
                 .name(snow.getName())
                 .latitude(snow.getLatitude())
                 .longitude(snow.getLongitude())

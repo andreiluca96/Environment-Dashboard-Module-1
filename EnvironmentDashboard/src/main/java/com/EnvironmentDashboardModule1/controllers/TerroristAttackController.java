@@ -96,6 +96,7 @@ import java.util.List;
 
         private TerroristAttackDto toDto(TerroristAttack terroristAttack) {
             return new TerroristAttackDto.Builder()
+                    .id(terroristAttack.getId())
                     .name(terroristAttack.getName())
                     .latitude(terroristAttack.getLatitude())
                     .longitude(terroristAttack.getLongitude())

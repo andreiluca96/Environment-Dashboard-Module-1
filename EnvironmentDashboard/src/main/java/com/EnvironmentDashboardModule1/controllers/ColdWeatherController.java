@@ -97,6 +97,7 @@ public class ColdWeatherController {
 
     private ColdWeatherDto toDto(ColdWeather coldWeather) {
         return new ColdWeatherDto.Builder()
+                .id(coldWeather.getId())
                 .name(coldWeather.getName())
                 .latitude(coldWeather.getLatitude())
                 .longitude(coldWeather.getLongitude())

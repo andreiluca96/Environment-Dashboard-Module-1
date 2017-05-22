@@ -97,6 +97,7 @@ public class RainController {
 
     private RainDto toDto(Rain rain) {
         return new RainDto.Builder()
+                .id(rain.getId())
                 .name(rain.getName())
                 .latitude(rain.getLatitude())
                 .longitude(rain.getLongitude())
