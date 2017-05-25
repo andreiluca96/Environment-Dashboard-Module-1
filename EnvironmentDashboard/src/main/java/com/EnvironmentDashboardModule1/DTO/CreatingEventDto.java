@@ -1,8 +1,5 @@
 package com.EnvironmentDashboardModule1.DTO;
 
-import com.EnvironmentDashboardModule1.models.Location;
-import com.EnvironmentDashboardModule1.models.Severity;
-
 import java.util.Date;
 
 /**
