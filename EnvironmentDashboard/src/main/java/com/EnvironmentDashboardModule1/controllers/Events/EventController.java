@@ -37,7 +37,7 @@ public class EventController {
     public ResponseEntity<Event> addEvent(@RequestBody CreatingEventDto eventDto) {
         Event event = toCreatingModel(eventDto);
         Event savedEvent = this.eventService.save(event);
-        if(meteoEvent==null) {
+        if(event==null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         EventMapping eventMapping = new EventMapping(savedEvent.getId(), "Event");
@@ -79,7 +79,7 @@ public class EventController {
     @RequestMapping(method = RequestMethod.DELETE)
     public ResponseEntity<List<EventDto>> delete() {
         List<Event> eventList = this.eventService.getAll();
-        if(meteoEvent == null){
+        if(eventList == null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         for (Event event : eventList) {
