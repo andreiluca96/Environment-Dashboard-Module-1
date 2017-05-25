@@ -41,7 +41,9 @@ public class EarthquakeController {
     public ResponseEntity<Earthquake> addEarthquake(@RequestBody CreatingEarthquakeDto event) {
         Earthquake earthquake = toCreatingModel(event);
         Earthquake savedEvent = this.earthquakeService.save(earthquake);
-
+        if(event==null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
         EventMapping eventMapping = new EventMapping(savedEvent.getId(), "Earthquake");
         eventMappingService.save(eventMapping);
 
@@ -81,7 +83,9 @@ public class EarthquakeController {
     @RequestMapping(value = "/earthquake", method = RequestMethod.DELETE)
     public ResponseEntity<List<EarthquakeDto>> deleteEarthquakes(){
         List<Earthquake> earthquakeList = this.earthquakeService.getAll();
-
+        if(earthquakeList == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+}
         for(Earthquake earthquake : earthquakeList){
             this.eventService.delete(earthquake.getId());
         }
