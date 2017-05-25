@@ -37,7 +37,9 @@ public class FireController {
     public ResponseEntity<Fire> addFire(@RequestBody CreatingFireDto event) {
         Fire fire = toCreatingModel(event);
         Fire savedEvent = this.fireService.save(fire);
-
+        if(fire==null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
         EventMapping eventMapping = new EventMapping(savedEvent.getId(), "Fire");
         eventMappingService.save(eventMapping);
 
@@ -77,7 +79,9 @@ public class FireController {
     @RequestMapping(value = "/fire", method = RequestMethod.DELETE)
     public ResponseEntity<List<FireDto>> deleteFire() {
         List<Fire> fireList = this.fireService.getAll();
-
+        if(fireList == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
         for (Fire fire : fireList) {
             this.eventService.delete(fire.getId());
         }
