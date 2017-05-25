@@ -40,7 +40,9 @@ public class TornadoController {
     public ResponseEntity<Tornado> addTornado(@RequestBody CreatingTornadoDto event) {
         Tornado tornado = toCreatingModel(event);
         Tornado savedEvent = this.tornadoService.save(tornado);
-
+        if(tornado==null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
         EventMapping eventMapping = new EventMapping(savedEvent.getId(), "Tornado");
         eventMappingService.save(eventMapping);
 
@@ -80,7 +82,9 @@ public class TornadoController {
     @RequestMapping(value = "/tornado", method = RequestMethod.DELETE)
     public ResponseEntity<List<TornadoDto>> deleteTornados() {
         List<Tornado> tornadoList = this.tornadoService.getAll();
-
+        if(tornadoList == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
         for (Tornado tornado : tornadoList) {
             this.eventService.delete(tornado.getId());
         }
