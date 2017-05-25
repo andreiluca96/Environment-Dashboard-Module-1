@@ -175,4 +175,20 @@ public class Event implements Serializable {
             throw new IllegalArgumentException("null time");
         }
     }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", startingTime=" + startingTime +
+                ", endingTime=" + endingTime +
+                ", severity='" + severity + '\'' +
+                ", description='" + description + '\'' +
+                ", hints='" + hints + '\'' +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", radius=" + radius +
+                '}';
+    }
 }
