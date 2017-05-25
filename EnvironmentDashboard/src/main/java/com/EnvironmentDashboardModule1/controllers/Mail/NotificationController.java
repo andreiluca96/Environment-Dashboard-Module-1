@@ -35,14 +35,13 @@ public class NotificationController {
     @RequestMapping(value = "/current-event-notification", method = RequestMethod.GET)
     public void notifyUsers() {
         List<Event> eventList = eventService.getAll();
-
         for (Event event : eventList) {
             Date currentDate = new Date();
             System.out.println(currentDate);
             if (event.getStartingTime().before(currentDate) && event.getEndingTime().after(currentDate)) {
+                System.out.println("Am gasit un event cu data corespunzatoare");
                 RestTemplate restTemplate = new RestTemplate();
-                User[] users = restTemplate.getForObject("http://localhost:8100/v1/users", User[].class);
-
+                User[] users = restTemplate.getForObject("http://localhost:8100/v1/users/" + event.getLatitude() + "/" + event.getLongitude() + "/" + event.getRadius(), User[].class);
                 for (User user : users) {
                     notificationService.sendMail(user.getEmail(), "New event just happened!", event.toString());
                 }
