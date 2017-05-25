@@ -1,7 +1,7 @@
 package com.EnvironmentDashboardModule1.models.Events;
 
 import com.EnvironmentDashboardModule1.DTO.EventDto;
-import com.EnvironmentDashboardModule1.controllers.EventController;
+import com.EnvironmentDashboardModule1.controllers.Events.EventController;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

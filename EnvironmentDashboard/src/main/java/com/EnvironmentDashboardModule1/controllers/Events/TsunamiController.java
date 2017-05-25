@@ -1,4 +1,4 @@
-package com.EnvironmentDashboardModule1.controllers;
+package com.EnvironmentDashboardModule1.controllers.Events;
 
 /**
  * Created by Ariana on 5/12/2017.

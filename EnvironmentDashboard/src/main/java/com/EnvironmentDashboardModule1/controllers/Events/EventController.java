@@ -1,4 +1,4 @@
-package com.EnvironmentDashboardModule1.controllers;
+package com.EnvironmentDashboardModule1.controllers.Events;
 
 import com.EnvironmentDashboardModule1.DTO.*;
 import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.EarthquakeBuilder;

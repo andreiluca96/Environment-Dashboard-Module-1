@@ -1,4 +1,4 @@
-package com.EnvironmentDashboardModule1.controllers;
+package com.EnvironmentDashboardModule1.controllers.Events;
 
 import com.EnvironmentDashboardModule1.DTO.CreatingMeteoEventDto;
 import com.EnvironmentDashboardModule1.DTO.MeteoEventDto;
