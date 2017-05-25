@@ -4,21 +4,22 @@ package com.EnvironmentDashboardModule1.controllers.Mail;
  * Created by Luca Andrei on 5/25/2017.
  */
 
-import com.EnvironmentDashboardModule1.models.EventMapping;
 import com.EnvironmentDashboardModule1.models.Events.Event;
 import com.EnvironmentDashboardModule1.models.Users.User;
 import com.EnvironmentDashboardModule1.services.EventMappingService;
 import com.EnvironmentDashboardModule1.services.EventService;
 import com.EnvironmentDashboardModule1.services.Mail.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("v1/notification")
@@ -48,6 +49,40 @@ public class NotificationController {
                 sendEmailToUsersWithEvent(users, event);
             }
         }
+    }
+
+    @RequestMapping(value = "/event/{id}", method = RequestMethod.GET)
+    public void notifyUsersForEvent(@PathVariable Long id) {
+        Event event = eventService.getById(id);
+        User[] users = getUsersInRange(event);
+
+        sendEmailToUsersWithEvent(users, event);
+    }
+
+    @RequestMapping(value = "/notification-daemon", method = RequestMethod.GET)
+    public void startDaemon() {
+        new Thread(() -> {
+            Map<Long, Boolean> notifiedEvent = new HashMap<>();
+
+            for (Event event : eventService.getAll()) {
+                notifiedEvent.put(event.getId(), Boolean.FALSE);
+            }
+
+            while (true) {
+                List<Event> events = eventService.getAll();
+
+                for (Event event : events) {
+                    Date currentDate = new Date();
+                    event.toString();
+                    if (notifiedEvent.get(event.getId()).equals(Boolean.FALSE) &&
+                        event.getStartingTime().before(currentDate) &&
+                        event.getEndingTime().after(currentDate)) {
+                        notifyUsersForEvent(event.getId());
+                        notifiedEvent.put(event.getId(), Boolean.TRUE);
+                    }
+                }
+            }
+        }).start();
     }
 
     private void sendEmailToUsersWithEvent(User[] users, Event event) {
