@@ -67,13 +67,12 @@ public class NotificationController {
             for (Event event : eventService.getAll()) {
                 notifiedEvent.put(event.getId(), Boolean.FALSE);
             }
-            List<Event> events = null;
-            Date currentDate = null;
+
             while (true) {
-                events = eventService.getAll();
+                List<Event> events = eventService.getAll();
 
                 for (Event event : events) {
-                    currentDate = new Date();
+                    Date currentDate = new Date();
                     if ((notifiedEvent.get(event.getId()) == null || notifiedEvent.get(event.getId()).equals(Boolean.FALSE))  &&
                         event.getStartingTime().before(currentDate) &&
                         event.getEndingTime().after(currentDate)) {
