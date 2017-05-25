@@ -41,7 +41,7 @@ public class EarthquakeController {
     public ResponseEntity<Earthquake> addEarthquake(@RequestBody CreatingEarthquakeDto event) {
         Earthquake earthquake = toCreatingModel(event);
         Earthquake savedEvent = this.earthquakeService.save(earthquake);
-        if(event==null) {
+        if(earthquake==null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         EventMapping eventMapping = new EventMapping(savedEvent.getId(), "Earthquake");
