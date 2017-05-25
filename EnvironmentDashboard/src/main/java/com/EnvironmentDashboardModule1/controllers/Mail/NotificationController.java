@@ -73,8 +73,7 @@ public class NotificationController {
 
                 for (Event event : events) {
                     Date currentDate = new Date();
-                    event.toString();
-                    if (notifiedEvent.get(event.getId()).equals(Boolean.FALSE) &&
+                    if ((notifiedEvent.get(event.getId()) == null || notifiedEvent.get(event.getId()).equals(Boolean.FALSE))  &&
                         event.getStartingTime().before(currentDate) &&
                         event.getEndingTime().after(currentDate)) {
                         notifyUsersForEvent(event.getId());
