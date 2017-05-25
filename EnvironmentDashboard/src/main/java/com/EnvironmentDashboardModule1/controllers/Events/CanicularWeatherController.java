@@ -37,6 +37,9 @@ public class CanicularWeatherController {
     public ResponseEntity<CanicularWeather> addCanicularWeather(@RequestBody CreatingCanicularWeatherDto meteoEvent) {
         CanicularWeather canicularWeather = toCreatingModel(meteoEvent);
         CanicularWeather savedMeteoEvent = this.canicularWeatherService.save(canicularWeather);
+        if(canicularWeather==null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
 
         EventMapping eventMapping = new EventMapping(savedMeteoEvent.getId(), "CanicularWeather");
         eventMappingService.save(eventMapping);
@@ -77,6 +80,9 @@ public class CanicularWeatherController {
     @RequestMapping(value = "/canicularWeather", method = RequestMethod.DELETE)
     public ResponseEntity<List<CanicularWeatherDto>> deleteCanicularWeather(){
         List<CanicularWeather> canicularWeatherList = this.canicularWeatherService.getAll();
+            if(canicularWeatherList == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+}
 
         for(CanicularWeather canicularWeather : canicularWeatherList){
             this.canicularWeatherService.delete(canicularWeather.getId());

@@ -37,7 +37,9 @@ public class ColdWeatherController {
     public ResponseEntity<ColdWeather> addColdWeather(@RequestBody CreatingColdWeatherDto meteoEvent) {
         ColdWeather coldWeather = toCreatingModel(meteoEvent);
         ColdWeather savedMeteoEvent = this.coldWeatherService.save(coldWeather);
-
+        if(coldWeather==null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
         EventMapping eventMapping = new EventMapping(savedMeteoEvent.getId(), "ColdWeather");
         eventMappingService.save(eventMapping);
 
@@ -77,7 +79,9 @@ public class ColdWeatherController {
     @RequestMapping(value = "/coldWeather", method = RequestMethod.DELETE)
     public ResponseEntity<List<ColdWeatherDto>> deleteColdWeather(){
         List<ColdWeather> coldWeatherList = this.coldWeatherService.getAll();
-
+    if(coldWeatherList == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+}
         for(ColdWeather coldWeather : coldWeatherList){
             this.coldWeatherService.delete(coldWeather.getId());
         }

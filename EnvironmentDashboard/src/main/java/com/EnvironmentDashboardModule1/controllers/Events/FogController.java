@@ -37,7 +37,9 @@ public class FogController {
     public ResponseEntity<Fog> addFog(@RequestBody CreatingFogDto meteoEvent) {
         Fog fog = toCreatingModel(meteoEvent);
         Fog savedMeteoEvent = this.fogService.save(fog);
-
+        if(fog==null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
         EventMapping eventMapping = new EventMapping(savedMeteoEvent.getId(), "Fog");
         eventMappingService.save(eventMapping);
 
@@ -77,7 +79,9 @@ public class FogController {
     @RequestMapping(value = "/fog", method = RequestMethod.DELETE)
     public ResponseEntity<List<FogDto>> deleteFog(){
         List<Fog> fogList = this.fogService.getAll();
-
+            if(fogList == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+}
         for(Fog fog : fogList){
             this.fogService.delete(fog.getId());
         }

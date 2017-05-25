@@ -78,9 +78,10 @@ public class FloodController {
     @RequestMapping(value = "/flood", method = RequestMethod.DELETE)
     public ResponseEntity<List<FloodDto>> deleteFlood() {
         List<Flood> floodList = this.floodService.getAll();
-        if(flood == null){
+            if(floodList == null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+}
+
         for (Flood flood : floodList) {
             this.eventService.delete(flood.getId());
         }

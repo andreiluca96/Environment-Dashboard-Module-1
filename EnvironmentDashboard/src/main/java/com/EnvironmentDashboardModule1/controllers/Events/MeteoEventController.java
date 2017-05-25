@@ -37,9 +37,12 @@ public class MeteoEventController {
     public ResponseEntity<MeteoEvent> addMeteoEvent(@RequestBody CreatingMeteoEventDto event) {
         MeteoEvent meteoEvent = toCreatingModel(event);
         MeteoEvent savedMeteoEvent = this.meteoEventService.save(meteoEvent);
-
+        if(meteoEvent==null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
         EventMapping eventMapping = new EventMapping(savedMeteoEvent.getId(), "MeteoEvent");
         eventMappingService.save(eventMapping);
+        
 
         return new ResponseEntity<>(savedMeteoEvent, HttpStatus.CREATED);
     }
@@ -77,6 +80,9 @@ public class MeteoEventController {
     @RequestMapping(value = "/meteoevent", method = RequestMethod.DELETE)
     public ResponseEntity<List<MeteoEventDto>> deleteMeteoEvent(){
         List<MeteoEvent> meteoEventsList = this.meteoEventService.getAll();
+        if(meteoEventsList == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+}
 
         for(MeteoEvent meteoEvent : meteoEventsList){
             this.eventService.delete(meteoEvent.getId());
