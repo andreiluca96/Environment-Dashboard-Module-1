@@ -35,10 +35,12 @@ public class TsunamiController {
     private EventMappingService eventMappingService;
 
     @RequestMapping(value = "/tsunami", method = RequestMethod.POST)
-    public ResponseEntity<Tsunami> addTornado(@RequestBody CreatingTsunamiDto event) {
-        Tsunami tornado = toCreatingModel(event);
+    public ResponseEntity<Tsunami> addTsunami(@RequestBody CreatingTsunamiDto event) {
+        Tsunami tsunami = toCreatingModel(event);
         Tsunami savedEvent = this.tsunamiService.save(tornado);
-
+        if(tsunami==null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
         EventMapping eventMapping = new EventMapping(savedEvent.getId(), "Tsunami");
         eventMappingService.save(eventMapping);
 
@@ -78,7 +80,9 @@ public class TsunamiController {
     @RequestMapping(value = "/tsunami", method = RequestMethod.DELETE)
     public ResponseEntity<List<TsunamiDto>> deleteTsunamis() {
         List<Tsunami> tsunamiList = this.tsunamiService.getAll();
-
+        if(tsunamiList == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
         for (Tsunami tsunami : tsunamiList) {
             this.eventService.delete(tsunami.getId());
         }
