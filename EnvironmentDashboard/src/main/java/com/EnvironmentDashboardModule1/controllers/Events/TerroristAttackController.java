@@ -36,7 +36,9 @@ import java.util.List;
         public ResponseEntity<TerroristAttack> addTerroristAttack(@RequestBody CreatingTerroristAttackDto event) {
             TerroristAttack terroristAttack = toCreatingModel(event);
             TerroristAttack savedEvent = this.terroristAttackService.save(terroristAttack);
-
+            if(terroristAttack==null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
             EventMapping eventMapping = new EventMapping(savedEvent.getId(), "TerroristAttack");
             eventMappingService.save(eventMapping);
 
@@ -76,7 +78,9 @@ import java.util.List;
         @RequestMapping(value = "/terroristAttack", method = RequestMethod.DELETE)
         public ResponseEntity<List<TerroristAttackDto>> deleteTerroristAttacks() {
             List<TerroristAttack> terroristAttackList = this.terroristAttackService.getAll();
-
+            if(terroristAttackList == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
             for (TerroristAttack terroristAttack : terroristAttackList) {
                 this.eventService.delete(terroristAttack.getId());
             }
