@@ -36,7 +36,9 @@ public class FloodController {
     public ResponseEntity<Flood> addFlood(@RequestBody CreatingFloodDto event) {
         Flood flood = toCreatingModel(event);
         Flood savedEvent = this.floodService.save(flood);
-
+        if(flood==null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
         EventMapping eventMapping = new EventMapping(savedEvent.getId(), "Flood");
         eventMappingService.save(eventMapping);
 
@@ -76,7 +78,9 @@ public class FloodController {
     @RequestMapping(value = "/flood", method = RequestMethod.DELETE)
     public ResponseEntity<List<FloodDto>> deleteFlood() {
         List<Flood> floodList = this.floodService.getAll();
-
+        if(flood == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
         for (Flood flood : floodList) {
             this.eventService.delete(flood.getId());
         }
