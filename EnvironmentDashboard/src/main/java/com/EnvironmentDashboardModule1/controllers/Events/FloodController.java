@@ -119,7 +119,7 @@ public class FloodController {
         return new FloodBuilder()
                 .setName(dto.getName())
                 .setLongitude(dto.getLongitude())
-                .setLatitude(dto.getLongitude())
+                .setLatitude(dto.getLatitude())
                 .setDescription(dto.getDescription())
                 .setEndingTime(dto.getEndingDate())
                 .setStartingTime(dto.getStartingDate())

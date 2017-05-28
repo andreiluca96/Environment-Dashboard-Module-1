@@ -120,7 +120,7 @@ public class RainController {
         return new RainBuilder()
                 .setName(dto.getName())
                 .setLongitude(dto.getLongitude())
-                .setLatitude(dto.getLongitude())
+                .setLatitude(dto.getLatitude())
                 .setDescription(dto.getDescription())
                 .setEndingTime(dto.getEndingDate())
                 .setStartingTime(dto.getStartingDate())
