@@ -37,7 +37,7 @@ public class TsunamiController {
     @RequestMapping(value = "/tsunami", method = RequestMethod.POST)
     public ResponseEntity<Tsunami> addTsunami(@RequestBody CreatingTsunamiDto event) {
         Tsunami tsunami = toCreatingModel(event);
-        Tsunami savedEvent = this.tsunamiService.save(tornado);
+        Tsunami savedEvent = this.tsunamiService.save(tsunami);
         if(tsunami==null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
