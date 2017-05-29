@@ -49,106 +49,6 @@ public class NotificationController {
         notificationService.sendMail("sabisav@yahoo.com", title, content);
     }
 
-    public String getContent(Event event){
-        String content="";
-        String eventType = eventMappingService.getById(event.getId()).getEventType();
-        String headerColor;
-        String severityColor;
-        StringBuilder message = new StringBuilder();
-        String header;
-        String specialAttributes = "";
-
-        header = getHeader(eventType);
-        specialAttributes = getSpecialAttributes(eventType, event);
-
-        headerColor = getHeaderColor(event.getSeverity());
-        severityColor = getSeverityColor(event.getSeverity());
-
-        message.append("<table style=\"margin: 0px auto; width:500px\">");
-        message.append(headerColor);
-        message.append("<td style='padding:30px 30px 0px;text-align:center;font-family: Arial, Helvetica, sans-serif;'>");
-        //content = "<p style=\"font-size:22px\"><b>A new event just happened in one of your locations</b></p><br>";
-        message.append(header);
-        message.append("</td>");
-        message.append("</tr>");
-        content = "";
-        content += severityColor;
-        message.append("<tr bgcolor=\"#F5F5F5\" style='font-family: Arial, Helvetica, sans-serif;'>");
-
-        content += specialAttributes;
-        content += "<br>Description: " + event.getDescription();
-        content += "<br>We recommend you to: " + event.getHints();
-        content += "<br>Starting time: " + event.getStartingTime();
-        content += "<br>Ending time: " + event.getEndingTime();
-        content += "<br><br>Stay safe.<br><i>Environment Dashboard Team</i>";
-
-        message.append("<td style='padding:30px;font-size:14px'>");
-        message.append(content);
-        message.append("</td>");
-        message.append("</tr>");
-        message.append("</table>");
-        content = message.toString();
-
-        return content;
-    }
-    public String getHeaderColor(String severity) {
-        String headerColor;
-        if (severity.equals("RED")) {
-            headerColor = "<tr bgcolor=\"#DC143C\" style='color:white'>";
-        } else if (severity.equals("GREEN")) {
-            headerColor = "<tr bgcolor=\"#3CB371\" style='color:white'>";
-        } else if (severity.equals("YELLOW")) {
-            headerColor = "<tr bgcolor=\"#FFDF00\" style='color:white'>";
-        } else {
-            headerColor = "<tr bgcolor=\" #FF7F50\" style='color:white'>";
-        }
-        return headerColor;
-
-    }
-
-    public String getSeverityColor(String severity) {
-        String severityColor;
-        if (severity.equals("RED")) {
-            severityColor = "Severity: <font color='#DC143C'><b>RED</b></font>";
-        } else if (severity.equals("GREEN")) {
-            severityColor = "Severity: <font color='#3CB371'><b>GREEN</b></font>";
-        } else if (severity.equals("YELLOW")) {
-            severityColor = "Severity: <font color='#FFDF00'><b>YELLOW</b></font>";
-        } else {
-            severityColor = "Severity: <font color= '#FF7F50'><b>ORANGE</b></font>";
-        }
-
-        return severityColor;
-    }
-
-
-    public String getHeader(String eventType) {
-        String header="";
-        switch (eventType) {
-            case "Event":
-                header = "<p style=\"font-size:22px\"><b>There's a new event in your area</b></p><br>";
-                break;
-            case "Fire":
-                header = "<p style=\"font-size:22px\"><b>There's a fire in your area</b></p><br>";
-                break;
-
-        }
-        return header;
-    }
-
-    public String getSpecialAttributes(String eventType, Event event) {
-        String specialAttributes="";
-        switch (eventType) {
-            case "Fire":
-                Fire fire = fireService.getById(event.getId());
-                specialAttributes += "<br>Speed: " + fire.getSpeed();
-                break;
-
-        }
-        return specialAttributes;
-
-    }
-
     @RequestMapping(value = "/current-event-notification", method = RequestMethod.GET)
     public void notifyUsers() throws MessagingException {
         List<Event> eventList = eventService.getAll();
@@ -206,6 +106,109 @@ public class NotificationController {
             }
         }).start();
     }
+
+    private String getContent(Event event){
+        String content="";
+        String eventType = eventMappingService.getById(event.getId()).getEventType();
+        String headerColor;
+        String severityColor;
+        StringBuilder message = new StringBuilder();
+        String header;
+        String specialAttributes = "";
+
+        header = getHeader(eventType);
+        specialAttributes = getSpecialAttributes(eventType, event);
+
+        headerColor = getHeaderColor(event.getSeverity());
+        severityColor = getSeverityColor(event.getSeverity());
+
+        message.append("<table style=\"margin: 0px auto; width:500px\">");
+        message.append(headerColor);
+        message.append("<td style='padding:30px 30px 0px;text-align:center;font-family: Arial, Helvetica, sans-serif;'>");
+        //content = "<p style=\"font-size:22px\"><b>A new event just happened in one of your locations</b></p><br>";
+        message.append(header);
+        message.append("</td>");
+        message.append("</tr>");
+        content = "";
+        content += severityColor;
+        message.append("<tr bgcolor=\"#F5F5F5\" style='font-family: Arial, Helvetica, sans-serif;'>");
+
+        content += specialAttributes;
+        content += "<br>Description: " + event.getDescription();
+        content += "<br>We recommend you to: " + event.getHints();
+        content += "<br>Starting time: " + event.getStartingTime();
+        content += "<br>Ending time: " + event.getEndingTime();
+        content += "<br><br>Stay safe.<br><i>Environment Dashboard Team</i>";
+
+        message.append("<td style='padding:30px;font-size:14px'>");
+        message.append(content);
+        message.append("</td>");
+        message.append("</tr>");
+        message.append("</table>");
+        content = message.toString();
+
+        return content;
+    }
+
+    private String getHeaderColor(String severity) {
+        String headerColor;
+        if (severity.equals("RED")) {
+            headerColor = "<tr bgcolor=\"#DC143C\" style='color:white'>";
+        } else if (severity.equals("GREEN")) {
+            headerColor = "<tr bgcolor=\"#3CB371\" style='color:white'>";
+        } else if (severity.equals("YELLOW")) {
+            headerColor = "<tr bgcolor=\"#FFDF00\" style='color:white'>";
+        } else {
+            headerColor = "<tr bgcolor=\" #FF7F50\" style='color:white'>";
+        }
+        return headerColor;
+
+    }
+
+    private String getSeverityColor(String severity) {
+        String severityColor;
+        if (severity.equals("RED")) {
+            severityColor = "Severity: <font color='#DC143C'><b>RED</b></font>";
+        } else if (severity.equals("GREEN")) {
+            severityColor = "Severity: <font color='#3CB371'><b>GREEN</b></font>";
+        } else if (severity.equals("YELLOW")) {
+            severityColor = "Severity: <font color='#FFDF00'><b>YELLOW</b></font>";
+        } else {
+            severityColor = "Severity: <font color= '#FF7F50'><b>ORANGE</b></font>";
+        }
+
+        return severityColor;
+    }
+
+
+    private String getHeader(String eventType) {
+        String header="";
+        switch (eventType) {
+            case "Event":
+                header = "<p style=\"font-size:22px\"><b>There's a new event in your area</b></p><br>";
+                break;
+            case "Fire":
+                header = "<p style=\"font-size:22px\"><b>There's a fire in your area</b></p><br>";
+                break;
+
+        }
+        return header;
+    }
+
+    private String getSpecialAttributes(String eventType, Event event) {
+        String specialAttributes="";
+        switch (eventType) {
+            case "Fire":
+                Fire fire = fireService.getById(event.getId());
+                specialAttributes += "<br>Speed: " + fire.getSpeed();
+                break;
+
+        }
+        return specialAttributes;
+
+    }
+
+
 
     private void sendEmailToUsersWithEvent(User[] users, Event event) throws MessagingException {
         String eventType = eventMappingService.getById(event.getId()).getEventType();
