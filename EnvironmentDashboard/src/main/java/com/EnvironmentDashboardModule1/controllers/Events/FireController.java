@@ -68,6 +68,7 @@ public class FireController {
     }
 
     @RequestMapping(value = "/fire/{id}", method = RequestMethod.PUT)
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<FireDto> updateFire(@PathVariable("id") Long id, @RequestBody CreatingFireDto fireDto) {
         Fire fire = toCreatingModel(fireDto);
         Fire fireCheck = this.fireService.getById(id);

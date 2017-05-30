@@ -68,6 +68,7 @@ public class EarthquakeController {
     }
 
     @RequestMapping(value = "/earthquake/{id}", method = RequestMethod.PUT)
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<EarthquakeDto> updateEarthquake(@PathVariable("id") Long id,@RequestBody CreatingEarthquakeDto earthquakeDto){
         Earthquake earthquake = toCreatingModel(earthquakeDto);
         Earthquake earthquaketCheck = this.earthquakeService.getById(id);
