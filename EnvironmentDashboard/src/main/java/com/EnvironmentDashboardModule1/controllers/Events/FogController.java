@@ -68,6 +68,7 @@ public class FogController {
     }
 
     @RequestMapping(value = "/fog/{id}", method = RequestMethod.PUT)
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<FogDto> updateFog(@PathVariable("id") Long id,@RequestBody CreatingFogDto fogDto){
         Fog fog = toCreatingModel(fogDto);
         Fog fogChecked = this.fogService.getById(id);

@@ -69,6 +69,7 @@ public class MeteoEventController {
     }
 
     @RequestMapping(value = "/meteoevent/{id}", method = RequestMethod.PUT)
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<MeteoEventDto> updateMeteoEvent(@PathVariable("id") Long id,@RequestBody CreatingMeteoEventDto meteoEventDto){
         MeteoEvent meteoEvent = toCreatingModel(meteoEventDto);
         MeteoEvent meteoEventChecked = this.meteoEventService.getById(id);

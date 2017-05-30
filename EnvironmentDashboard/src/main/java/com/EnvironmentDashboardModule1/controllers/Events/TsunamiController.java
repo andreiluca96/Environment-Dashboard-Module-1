@@ -69,6 +69,7 @@ public class TsunamiController {
     }
 
     @RequestMapping(value = "/tsunami/{id}", method = RequestMethod.PUT)
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<TsunamiDto> updateTsunami(@PathVariable("id") Long id, @RequestBody CreatingTsunamiDto tsunamiDto) {
         Tsunami tsunami = toCreatingModel(tsunamiDto);
         Tsunami tsunamiCheck = this.tsunamiService.getById(id);

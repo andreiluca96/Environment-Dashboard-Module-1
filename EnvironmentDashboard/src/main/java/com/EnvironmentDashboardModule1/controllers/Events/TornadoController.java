@@ -67,6 +67,7 @@ public class TornadoController {
     }
 
     @RequestMapping(value = "/tornado/{id}", method = RequestMethod.PUT)
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<TornadoDto> updateTornado(@PathVariable("id") Long id, @RequestBody CreatingTornadoDto tornadoDto) {
         Tornado tornado = toCreatingModel(tornadoDto);
         Tornado tornadoCheck = this.tornadoService.getById(id);

@@ -67,6 +67,7 @@ import java.util.List;
         }
 
         @RequestMapping(value = "/terroristAttack/{id}", method = RequestMethod.PUT)
+        @CrossOrigin(origins = "http://localhost:4200")
         public ResponseEntity<TerroristAttackDto> updateTerroristAttack(@PathVariable("id") Long id, @RequestBody CreatingTerroristAttackDto terroristAttackDto) {
             TerroristAttack terroristAttack = toCreatingModel(terroristAttackDto);
             TerroristAttack terroristAttackCheck = this.terroristAttackService.getById(id);

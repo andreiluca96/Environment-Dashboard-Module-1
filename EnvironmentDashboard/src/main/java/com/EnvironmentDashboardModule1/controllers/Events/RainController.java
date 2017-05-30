@@ -66,6 +66,7 @@ public class RainController {
     }
 
     @RequestMapping(value = "/rain/{id}", method = RequestMethod.PUT)
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<RainDto> updateRain(@PathVariable("id") Long id,@RequestBody CreatingRainDto rainDto){
         Rain rain = toCreatingModel(rainDto);
         Rain rainChecked = this.rainService.getById(id);

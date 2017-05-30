@@ -67,6 +67,7 @@ public class FloodController {
     }
 
     @RequestMapping(value = "/flood/{id}", method = RequestMethod.PUT)
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<FloodDto> updateFlood(@PathVariable("id") Long id,@RequestBody CreatingFloodDto floodDto){
         Flood flood = toCreatingModel(floodDto);
         Flood floodCheck = this.floodService.getById(id);
