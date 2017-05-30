@@ -1,15 +1,11 @@
 package com.EnvironmentDashboardModule1.controllers.Events;
 
 import com.EnvironmentDashboardModule1.models.EventMapping;
-import com.EnvironmentDashboardModule1.models.Events.Event;
 import com.EnvironmentDashboardModule1.services.EventMappingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,6 +29,7 @@ public class EventMappingController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<EventMapping> getById(@PathVariable("id") Long id) {
         EventMapping eventMapping = this.eventMappingService.getById(id);
         if (eventMapping == null) {

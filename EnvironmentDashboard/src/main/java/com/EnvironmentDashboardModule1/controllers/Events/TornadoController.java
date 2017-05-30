@@ -1,14 +1,10 @@
 package com.EnvironmentDashboardModule1.controllers.Events;
 
-import com.EnvironmentDashboardModule1.DTO.*;
-import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.EarthquakeBuilder;
+import com.EnvironmentDashboardModule1.DTO.CreatingTornadoDto;
+import com.EnvironmentDashboardModule1.DTO.TornadoDto;
 import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.TornadoBuilder;
 import com.EnvironmentDashboardModule1.models.EventMapping;
-import com.EnvironmentDashboardModule1.models.Events.Earthquake;
-import com.EnvironmentDashboardModule1.models.Events.Event;
-import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.EventBuilder;
 import com.EnvironmentDashboardModule1.models.Events.Tornado;
-import com.EnvironmentDashboardModule1.services.EarthquakeService;
 import com.EnvironmentDashboardModule1.services.EventMappingService;
 import com.EnvironmentDashboardModule1.services.EventService;
 import com.EnvironmentDashboardModule1.services.TornadoService;
@@ -37,6 +33,7 @@ public class TornadoController {
     private EventMappingService eventMappingService;
 
     @RequestMapping(value = "/tornado", method = RequestMethod.POST)
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Tornado> addTornado(@RequestBody CreatingTornadoDto event) {
         Tornado tornado = toCreatingModel(event);
         Tornado savedEvent = this.tornadoService.save(tornado);
@@ -59,6 +56,7 @@ public class TornadoController {
     }
 
     @RequestMapping(value = "/tornado/{id}", method = RequestMethod.GET)
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<TornadoDto> getTornadoById(@PathVariable("id") Long id) {
         Tornado tornado = this.tornadoService.getById(id);
         if (tornado == null) {

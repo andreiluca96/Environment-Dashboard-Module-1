@@ -1,17 +1,13 @@
 package com.EnvironmentDashboardModule1.controllers.Events;
 
-import com.EnvironmentDashboardModule1.DTO.*;
+import com.EnvironmentDashboardModule1.DTO.CreatingEarthquakeDto;
+import com.EnvironmentDashboardModule1.DTO.EarthquakeDto;
 import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.EarthquakeBuilder;
-import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.TornadoBuilder;
 import com.EnvironmentDashboardModule1.models.EventMapping;
 import com.EnvironmentDashboardModule1.models.Events.Earthquake;
-import com.EnvironmentDashboardModule1.models.Events.Event;
-import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.EventBuilder;
-import com.EnvironmentDashboardModule1.models.Events.Tornado;
 import com.EnvironmentDashboardModule1.services.EarthquakeService;
 import com.EnvironmentDashboardModule1.services.EventMappingService;
 import com.EnvironmentDashboardModule1.services.EventService;
-import com.EnvironmentDashboardModule1.services.TornadoService;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,6 +34,7 @@ public class EarthquakeController {
     private EventMappingService eventMappingService;
 
     @RequestMapping(value = "/earthquake", method = RequestMethod.POST)
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Earthquake> addEarthquake(@RequestBody CreatingEarthquakeDto event) {
         Earthquake earthquake = toCreatingModel(event);
         Earthquake savedEvent = this.earthquakeService.save(earthquake);
@@ -60,6 +57,7 @@ public class EarthquakeController {
     }
 
     @RequestMapping(value = "/earthquake/{id}", method = RequestMethod.GET)
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<EarthquakeDto> getEarthquakeById(@PathVariable("id") Long id) {
         Earthquake earthquake = this.earthquakeService.getById(id);
         if (earthquake == null) {

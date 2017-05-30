@@ -35,6 +35,7 @@ public class TsunamiController {
     private EventMappingService eventMappingService;
 
     @RequestMapping(value = "/tsunami", method = RequestMethod.POST)
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Tsunami> addTsunami(@RequestBody CreatingTsunamiDto event) {
         Tsunami tsunami = toCreatingModel(event);
         Tsunami savedEvent = this.tsunamiService.save(tsunami);
@@ -57,6 +58,7 @@ public class TsunamiController {
     }
 
     @RequestMapping(value = "/tsunami/{id}", method = RequestMethod.GET)
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<TsunamiDto> getTsunamiById(@PathVariable("id") Long id) {
         Tsunami tsunami = this.tsunamiService.getById(id);
         if (tsunami == null) {

@@ -34,6 +34,7 @@ public class FogController {
     private EventMappingService eventMappingService;
 
     @RequestMapping(value = "/fog", method = RequestMethod.POST)
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Fog> addFog(@RequestBody CreatingFogDto meteoEvent) {
         Fog fog = toCreatingModel(meteoEvent);
         Fog savedMeteoEvent = this.fogService.save(fog);
@@ -56,6 +57,7 @@ public class FogController {
     }
 
     @RequestMapping(value = "/fog/{id}", method = RequestMethod.GET)
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<FogDto> getFogById(@PathVariable("id") Long id) {
         Fog fog = this.fogService.getById(id);
         if (fog == null) {

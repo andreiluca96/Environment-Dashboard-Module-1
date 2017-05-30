@@ -33,6 +33,7 @@ public class FloodController {
     private EventMappingService eventMappingService;
 
     @RequestMapping(value = "/flood", method = RequestMethod.POST)
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Flood> addFlood(@RequestBody CreatingFloodDto event) {
         Flood flood = toCreatingModel(event);
         Flood savedEvent = this.floodService.save(flood);
@@ -55,6 +56,7 @@ public class FloodController {
     }
 
     @RequestMapping(value = "/flood/{id}", method = RequestMethod.GET)
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<FloodDto> getFloodById(@PathVariable("id") Long id) {
         Flood flood = this.floodService.getById(id);
         if (flood == null) {

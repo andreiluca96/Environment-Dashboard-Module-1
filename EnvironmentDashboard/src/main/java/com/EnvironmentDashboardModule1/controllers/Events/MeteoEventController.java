@@ -34,6 +34,7 @@ public class MeteoEventController {
     private EventMappingService eventMappingService;
 
     @RequestMapping(value = "/meteoevent", method = RequestMethod.POST)
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<MeteoEvent> addMeteoEvent(@RequestBody CreatingMeteoEventDto event) {
         MeteoEvent meteoEvent = toCreatingModel(event);
         MeteoEvent savedMeteoEvent = this.meteoEventService.save(meteoEvent);
@@ -57,6 +58,7 @@ public class MeteoEventController {
     }
 
     @RequestMapping(value = "/meteoevent/{id}", method = RequestMethod.GET)
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<MeteoEventDto> getMeteoEventById(@PathVariable("id") Long id) {
         MeteoEvent meteoEvent = this.meteoEventService.getById(id);
         if (meteoEvent == null) {

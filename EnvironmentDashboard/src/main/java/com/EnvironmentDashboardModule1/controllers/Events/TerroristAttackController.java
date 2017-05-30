@@ -33,6 +33,7 @@ import java.util.List;
         private EventMappingService eventMappingService;
 
         @RequestMapping(value = "/terroristAttack", method = RequestMethod.POST)
+        @CrossOrigin(origins = "http://localhost:4200")
         public ResponseEntity<TerroristAttack> addTerroristAttack(@RequestBody CreatingTerroristAttackDto event) {
             TerroristAttack terroristAttack = toCreatingModel(event);
             TerroristAttack savedEvent = this.terroristAttackService.save(terroristAttack);
@@ -55,6 +56,7 @@ import java.util.List;
         }
 
         @RequestMapping(value = "/terroristAttack/{id}", method = RequestMethod.GET)
+        @CrossOrigin(origins = "http://localhost:4200")
         public ResponseEntity<TerroristAttackDto> getTerroristAttackById(@PathVariable("id") Long id) {
             TerroristAttack terroristAttack = this.terroristAttackService.getById(id);
             if (terroristAttack == null) {

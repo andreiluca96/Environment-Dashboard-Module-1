@@ -4,10 +4,10 @@ package com.EnvironmentDashboardModule1.controllers.Events;
  * Created by Sabina on 5/8/2017.
  */
 
-import com.EnvironmentDashboardModule1.DTO.*;
+import com.EnvironmentDashboardModule1.DTO.CreatingFireDto;
+import com.EnvironmentDashboardModule1.DTO.FireDto;
 import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.FireBuilder;
 import com.EnvironmentDashboardModule1.models.EventMapping;
-import com.EnvironmentDashboardModule1.models.Events.Fire;
 import com.EnvironmentDashboardModule1.models.Events.Fire;
 import com.EnvironmentDashboardModule1.services.EventMappingService;
 import com.EnvironmentDashboardModule1.services.EventService;
@@ -34,6 +34,7 @@ public class FireController {
     private EventMappingService eventMappingService;
 
     @RequestMapping(value = "/fire", method = RequestMethod.POST)
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Fire> addFire(@RequestBody CreatingFireDto event) {
         Fire fire = toCreatingModel(event);
         Fire savedEvent = this.fireService.save(fire);
@@ -56,6 +57,7 @@ public class FireController {
     }
 
     @RequestMapping(value = "/fire/{id}", method = RequestMethod.GET)
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<FireDto> getFireById(@PathVariable("id") Long id) {
         Fire fire = this.fireService.getById(id);
         if (fire == null) {

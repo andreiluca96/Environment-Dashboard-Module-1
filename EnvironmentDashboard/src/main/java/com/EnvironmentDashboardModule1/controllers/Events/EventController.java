@@ -1,17 +1,12 @@
 package com.EnvironmentDashboardModule1.controllers.Events;
 
-import com.EnvironmentDashboardModule1.DTO.*;
-import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.EarthquakeBuilder;
-import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.TornadoBuilder;
-import com.EnvironmentDashboardModule1.models.EventMapping;
-import com.EnvironmentDashboardModule1.models.Events.Earthquake;
-import com.EnvironmentDashboardModule1.models.Events.Event;
+import com.EnvironmentDashboardModule1.DTO.CreatingEventDto;
+import com.EnvironmentDashboardModule1.DTO.EventDto;
 import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.EventBuilder;
-import com.EnvironmentDashboardModule1.models.Events.Tornado;
-import com.EnvironmentDashboardModule1.services.EarthquakeService;
+import com.EnvironmentDashboardModule1.models.EventMapping;
+import com.EnvironmentDashboardModule1.models.Events.Event;
 import com.EnvironmentDashboardModule1.services.EventMappingService;
 import com.EnvironmentDashboardModule1.services.EventService;
-import com.EnvironmentDashboardModule1.services.TornadoService;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -47,6 +42,7 @@ public class EventController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<List<EventDto>> get() {
         List<Event> events = this.eventService.getAll();
         if (events.isEmpty()) {
@@ -90,6 +86,7 @@ public class EventController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<EventDto> deleteById(@PathVariable("id") Long id) {
         Event event = this.eventService.getById(id);
         if (event == null) {
