@@ -12,12 +12,6 @@ import java.util.Date;
 
 public class ColdWeatherBuilder extends MeteoEventBuilder{
 
-    private Integer temperature;
-
-    private Integer humidity;
-
-    private Integer precipitationLevel;
-
     public ColdWeatherBuilder setName(String name) {
         validateString(name);
         this.name = name;
@@ -72,6 +66,7 @@ public class ColdWeatherBuilder extends MeteoEventBuilder{
     }
 
     public ColdWeatherBuilder setTemperature(Integer temperature) {
+        validateTemperature(temperature);
         this.temperature = temperature;
         return this;
     }
@@ -89,8 +84,8 @@ public class ColdWeatherBuilder extends MeteoEventBuilder{
     }
 
     public ColdWeatherBuilder setUserId(String userId) {
+        validateString(userId);
         this.userId = userId;
-
         return this;
     }
 
@@ -112,12 +107,5 @@ public class ColdWeatherBuilder extends MeteoEventBuilder{
         coldWeather.setPrecipitationLevel(precipitationLevel);
         coldWeather.setTemperature(temperature);
         return coldWeather;
-    }
-
-    
-    protected void validateNonNegativeValue(Integer value) {
-        if (value < 0) {
-            throw new IllegalArgumentException(Integer.toString(value));
-        }
     }
 }

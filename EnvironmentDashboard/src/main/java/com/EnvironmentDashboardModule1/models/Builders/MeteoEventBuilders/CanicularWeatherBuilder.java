@@ -12,12 +12,6 @@ import java.util.Date;
 
 public class CanicularWeatherBuilder extends MeteoEventBuilder{
 
-    private Integer temperature;
-
-    private Integer humidity;
-
-    private Integer precipitationLevel;
-
     public CanicularWeatherBuilder setName(String name) {
         validateString(name);
         this.name = name;
@@ -72,6 +66,7 @@ public class CanicularWeatherBuilder extends MeteoEventBuilder{
     }
 
     public CanicularWeatherBuilder setTemperature(Integer temperature) {
+        validateTemperature(temperature);
         this.temperature = temperature;
         return this;
     }

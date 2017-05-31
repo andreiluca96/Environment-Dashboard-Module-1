@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c704553-a875-4a7c-a296-770372eff31d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/CanicularWeatherBuilder.java" afterPath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/CanicularWeatherBuilder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/ColdWeatherBuilder.java" afterPath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/ColdWeatherBuilder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/FogBuilder.java" afterPath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/FogBuilder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/MeteoEventBuilder.java" afterPath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/MeteoEventBuilder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/RainBuilder.java" afterPath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/RainBuilder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/SnowBuilder.java" afterPath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/SnowBuilder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/CanicularWeatherBuilderTests.java" afterPath="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/CanicularWeatherBuilderTests.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/MeteoBuilderTests.java" afterPath="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/MeteoEventBuilderTests.java" />
     </list>
     <ignored path="$PROJECT_DIR$/EnvironmentDashboard/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,9 +33,11 @@
           <file leaf-file-name="CanicularWeatherBuilderTests.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/CanicularWeatherBuilderTests.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="918">
-                  <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-                  <folding />
+                <state relative-caret-position="17">
+                  <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -40,11 +46,95 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="CanicularWeatherBuilder.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="FireBuilder.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/FireBuilder.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1479">
+                  <caret line="91" column="29" lean-forward="false" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CanicularWeatherBuilder.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/CanicularWeatherBuilder.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1089">
+                <state relative-caret-position="170">
+                  <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ColdWeatherBuilder.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/ColdWeatherBuilder.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="339">
+                  <caret line="23" column="18" lean-forward="true" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="FogBuilder.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/FogBuilder.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="170">
+                  <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MeteoEventBuilder.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/MeteoEventBuilder.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
                   <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="RainBuilder.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/RainBuilder.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="34">
+                  <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SnowBuilder.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/SnowBuilder.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1768">
+                  <caret line="104" column="5" lean-forward="false" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="EarthquakeBuilder.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/EarthquakeBuilder.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="323">
+                  <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="EventBuilder.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/EventBuilder.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="696">
+                  <caret line="134" column="32" lean-forward="false" selection-start-line="134" selection-start-column="32" selection-end-line="134" selection-end-column="32" />
                   <folding />
                 </state>
               </provider>
@@ -88,8 +178,12 @@
         <option value="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TerroristAttackBuilderTests.java" />
         <option value="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TsunamiBuilderTests.java" />
         <option value="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/controllers/Mail/NotificationController.java" />
+        <option value="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/FogBuilder.java" />
         <option value="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/CanicularWeatherBuilder.java" />
+        <option value="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/ColdWeatherBuilder.java" />
         <option value="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/CanicularWeatherBuilderTests.java" />
+        <option value="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/SnowBuilder.java" />
+        <option value="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/RainBuilder.java" />
         <option value="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/MeteoEventBuilder.java" />
       </list>
     </option>
@@ -1319,7 +1413,7 @@
       <workItem from="1496229538378" duration="99000" />
       <workItem from="1496229736087" duration="38000" />
       <workItem from="1496229794646" duration="7265000" />
-      <workItem from="1496237911255" duration="764000" />
+      <workItem from="1496237911255" duration="1443000" />
     </task>
     <servers />
   </component>
@@ -1330,8 +1424,8 @@
     <history-entry file="CanicularWeatherBuilderTests - 2017.05.31 at 16h 45m 27s.xml">
       <configuration name="CanicularWeatherBuilderTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TerroristAttackBuilderTests - 2017.05.31 at 15h 59m 48s.xml">
-      <configuration name="TerroristAttackBuilderTests" configurationId="JUnit" />
+    <history-entry file="CanicularWeatherBuilderTests - 2017.05.31 at 16h 53m 20s.xml">
+      <configuration name="CanicularWeatherBuilderTests" configurationId="JUnit" />
     </history-entry>
     <history-entry file="TornadoBuilderTests - 2017.05.31 at 16h 08m 42s.xml">
       <configuration name="TornadoBuilderTests" configurationId="JUnit" />
@@ -1356,7 +1450,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8216000" />
+    <option name="totallyTimeSpent" value="8895000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1176" extended-state="6" />
@@ -1411,7 +1505,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1420,30 +1514,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Events/TerroristAttack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Events/Tornado.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Events/Tsunami.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/MeteoEvents/CanicularWeather.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1664,34 +1734,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/ColdWeatherBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1904">
-          <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TornadoBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1581">
           <caret line="96" column="5" lean-forward="false" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/EarthquakeBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/FireBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
-          <caret line="91" column="29" lean-forward="false" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -1786,14 +1832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/CanicularWeatherBuilderTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/MeteoEventBuilderTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1802,25 +1840,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/EarthquakeBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/EventBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
+        <state relative-caret-position="696">
           <caret line="134" column="32" lean-forward="false" selection-start-line="134" selection-start-column="32" selection-end-line="134" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/MeteoEventBuilder.java">
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/FireBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="122" column="5" lean-forward="true" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
+        <state relative-caret-position="1479">
+          <caret line="91" column="29" lean-forward="false" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/CanicularWeatherBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1089">
+        <state relative-caret-position="170">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/CanicularWeatherBuilderTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/SnowBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1768">
+          <caret line="104" column="5" lean-forward="false" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/RainBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/FogBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/ColdWeatherBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="23" column="18" lean-forward="true" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/MeteoEventBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>

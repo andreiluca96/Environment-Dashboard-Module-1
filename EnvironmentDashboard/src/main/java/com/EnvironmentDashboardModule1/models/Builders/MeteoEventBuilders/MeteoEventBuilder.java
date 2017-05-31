@@ -13,11 +13,12 @@ import java.util.Date;
 //Dragos -> refactorization: renamed from MeteoBuilder to MeteoEventBuilder
 public class MeteoEventBuilder extends EventBuilder{
 
-    private Integer temperature;
+    //Dragos -> refactorization: made members protected, so they can be inherited
+    protected Integer temperature;
 
-    private Integer humidity;
+    protected Integer humidity;
 
-    private Integer precipitationLevel;
+    protected Integer precipitationLevel;
 
     public MeteoEventBuilder setName(String name) {
         validateString(name);

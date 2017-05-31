@@ -1,6 +1,5 @@
 package com.EnvironmentDashboardModule1.models.Builders.MeteoEventBuilders;
 
-import com.EnvironmentDashboardModule1.models.Builders.MeteoEventBuilders.CanicularWeatherBuilder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -70,6 +69,11 @@ public class CanicularWeatherBuilderTests {
         canicularWeatherBuilder.setRadius(invalidRadius);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void given_anInvalidValue_when_setTemperatureIsCalled_then_shouldThrowException(){
+        Integer invalidTemperature = -1000;
+        canicularWeatherBuilder.setTemperature(invalidTemperature);
+    }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setHumidityIsCalled_then_shouldThrowException(){

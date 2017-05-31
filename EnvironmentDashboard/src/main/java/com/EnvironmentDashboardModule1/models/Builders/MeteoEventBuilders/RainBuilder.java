@@ -12,12 +12,6 @@ import java.util.Date;
 
 public class RainBuilder extends MeteoEventBuilder{
 
-    private Integer temperature;
-
-    private Integer humidity;
-
-    private Integer precipitationLevel;
-
     public RainBuilder setName(String name) {
         validateString(name);
         this.name = name;
@@ -72,6 +66,7 @@ public class RainBuilder extends MeteoEventBuilder{
     }
 
     public RainBuilder setTemperature(Integer temperature) {
+        validateTemperature(temperature);
         this.temperature = temperature;
         return this;
     }
@@ -89,8 +84,8 @@ public class RainBuilder extends MeteoEventBuilder{
     }
 
     public RainBuilder setUserId(String userId) {
+        validateString(userId);
         this.userId = userId;
-
         return this;
     }
 
@@ -112,12 +107,5 @@ public class RainBuilder extends MeteoEventBuilder{
         rain.setPrecipitationLevel(precipitationLevel);
         rain.setTemperature(temperature);
         return rain;
-    }
-
-    
-    protected void validateNonNegativeValue(Integer value) {
-        if (value < 0) {
-            throw new IllegalArgumentException(Integer.toString(value));
-        }
     }
 }

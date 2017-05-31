@@ -12,12 +12,6 @@ import java.util.Date;
 
 public class FogBuilder extends MeteoEventBuilder{
 
-    private Integer temperature;
-
-    private Integer humidity;
-
-    private Integer precipitationLevel;
-
     public FogBuilder setName(String name) {
         validateString(name);
         this.name = name;
@@ -72,6 +66,7 @@ public class FogBuilder extends MeteoEventBuilder{
     }
 
     public FogBuilder setTemperature(Integer temperature) {
+        validateTemperature(temperature);
         this.temperature = temperature;
         return this;
     }
@@ -89,8 +84,8 @@ public class FogBuilder extends MeteoEventBuilder{
     }
 
     public FogBuilder setUserId(String userId) {
+        validateString(userId);
         this.userId = userId;
-
         return this;
     }
 
@@ -112,12 +107,5 @@ public class FogBuilder extends MeteoEventBuilder{
         fog.setPrecipitationLevel(precipitationLevel);
         fog.setTemperature(temperature);
         return fog;
-    }
-
-    
-    protected void validateNonNegativeValue(Integer value) {
-        if (value < 0) {
-            throw new IllegalArgumentException(Integer.toString(value));
-        }
     }
 }

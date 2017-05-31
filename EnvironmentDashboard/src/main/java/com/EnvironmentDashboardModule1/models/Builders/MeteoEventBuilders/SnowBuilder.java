@@ -1,15 +1,13 @@
 package com.EnvironmentDashboardModule1.models.Builders.MeteoEventBuilders;
 
-import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.EventBuilder;
+
 import com.EnvironmentDashboardModule1.models.MeteoEvents.Snow;
 import com.EnvironmentDashboardModule1.models.Severity;
 
 import java.util.Date;
 
 
-public class SnowBuilder extends EventBuilder{
-
-    private Integer precipitationLevel;
+public class SnowBuilder extends MeteoEventBuilder{
 
     public SnowBuilder setName(String name) {
         validateString(name);
@@ -64,6 +62,18 @@ public class SnowBuilder extends EventBuilder{
         return this;
     }
 
+    public SnowBuilder setTemperature(Integer temperature) {
+        validateTemperature(temperature);
+        this.temperature = temperature;
+        return this;
+    }
+
+    public SnowBuilder setHumidity(Integer humidity) {
+        validateNonNegativeValue(humidity);
+        this.humidity = humidity;
+        return this;
+    }
+
     public SnowBuilder setPrecipitationLevel(Integer precipitationLevel) {
         validateNonNegativeValue(precipitationLevel);
         this.precipitationLevel = precipitationLevel;
@@ -71,8 +81,8 @@ public class SnowBuilder extends EventBuilder{
     }
 
     public SnowBuilder setUserId(String userId) {
+        validateString(userId);
         this.userId = userId;
-
         return this;
     }
 
@@ -93,5 +103,4 @@ public class SnowBuilder extends EventBuilder{
 
         return snow;
     }
-
 }
