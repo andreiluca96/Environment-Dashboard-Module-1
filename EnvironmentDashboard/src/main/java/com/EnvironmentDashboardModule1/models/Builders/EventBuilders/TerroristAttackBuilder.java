@@ -1,6 +1,7 @@
 package com.EnvironmentDashboardModule1.models.Builders.EventBuilders;
 
 import com.EnvironmentDashboardModule1.models.Events.TerroristAttack;
+import com.EnvironmentDashboardModule1.models.Severity;
 
 import java.util.Date;
 
@@ -42,8 +43,7 @@ public class TerroristAttackBuilder extends EventBuilder{
         return this;
     }
 
-    public TerroristAttackBuilder setSeverity(String severity) {
-        validateSeverity(severity);
+    public TerroristAttackBuilder setSeverity(Severity severity) {
         this.severity = severity;
         return this;
     }

@@ -2,6 +2,7 @@ package com.EnvironmentDashboardModule1.models.Builders.MeteoEventBuilders;
 
 import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.EventBuilder;
 import com.EnvironmentDashboardModule1.models.MeteoEvents.Snow;
+import com.EnvironmentDashboardModule1.models.Severity;
 
 import java.util.Date;
 
@@ -40,8 +41,7 @@ public class SnowBuilder extends EventBuilder{
         return this;
     }
 
-    public SnowBuilder setSeverity(String severity) {
-        validateSeverity(severity);
+    public SnowBuilder setSeverity(Severity severity) {
         this.severity = severity;
         return this;
     }

@@ -1,6 +1,7 @@
 package com.EnvironmentDashboardModule1.models.Builders.EventBuilders;
 
 import com.EnvironmentDashboardModule1.models.Events.Earthquake;
+import com.EnvironmentDashboardModule1.models.Severity;
 
 import java.util.Date;
 
@@ -47,8 +48,7 @@ public class EarthquakeBuilder extends EventBuilder{
         return this;
     }
 
-    public EarthquakeBuilder setSeverity(String severity) {
-        validateSeverity(severity);
+    public EarthquakeBuilder setSeverity(Severity severity) {
         this.severity = severity;
         return this;
     }

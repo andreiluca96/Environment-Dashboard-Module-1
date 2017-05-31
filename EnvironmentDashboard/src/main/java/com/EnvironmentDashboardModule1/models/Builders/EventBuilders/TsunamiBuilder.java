@@ -1,6 +1,7 @@
 package com.EnvironmentDashboardModule1.models.Builders.EventBuilders;
 
 import com.EnvironmentDashboardModule1.models.Events.Tsunami;
+import com.EnvironmentDashboardModule1.models.Severity;
 
 import java.util.Date;
 
@@ -42,8 +43,7 @@ public class TsunamiBuilder extends EventBuilder{
         return this;
     }
 
-    public TsunamiBuilder setSeverity(String severity) {
-        validateSeverity(severity);
+    public TsunamiBuilder setSeverity(Severity severity) {
         this.severity = severity;
         return this;
     }

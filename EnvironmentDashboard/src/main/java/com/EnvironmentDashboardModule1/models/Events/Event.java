@@ -1,5 +1,7 @@
 package com.EnvironmentDashboardModule1.models.Events;
 
+import com.EnvironmentDashboardModule1.models.Severity;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -22,7 +24,7 @@ public class Event implements Serializable {
 
     protected Date endingTime;
 
-    protected String severity;
+    protected Severity severity;
 
     protected String description;
 
@@ -44,12 +46,11 @@ public class Event implements Serializable {
         this.userId = userId;
     }
 
-    public String getSeverity() {
-        return this.severity;
+    public Severity getSeverity() {
+        return severity;
     }
 
-    public void setSeverity(String severity) {
-        validateSeverity(severity);
+    public void setSeverity(Severity severity) {
         this.severity = severity;
     }
 

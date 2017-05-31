@@ -1,6 +1,7 @@
 package com.EnvironmentDashboardModule1.models.Builders.MeteoEventBuilders;
 
 import com.EnvironmentDashboardModule1.models.MeteoEvents.ColdWeather;
+import com.EnvironmentDashboardModule1.models.Severity;
 
 import java.util.Date;
 
@@ -47,8 +48,7 @@ public class ColdWeatherBuilder extends MeteoEventBuilder{
         return this;
     }
 
-    public ColdWeatherBuilder setSeverity(String severity) {
-        validateSeverity(severity);
+    public ColdWeatherBuilder setSeverity(Severity severity) {
         this.severity = severity;
         return this;
     }

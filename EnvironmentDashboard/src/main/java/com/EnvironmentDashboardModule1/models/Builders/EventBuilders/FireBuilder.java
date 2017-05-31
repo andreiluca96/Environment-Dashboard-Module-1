@@ -1,8 +1,10 @@
 package com.EnvironmentDashboardModule1.models.Builders.EventBuilders;
 
 import com.EnvironmentDashboardModule1.models.Events.Fire;
+import com.EnvironmentDashboardModule1.models.Severity;
 
 import java.util.Date;
+import java.util.concurrent.Semaphore;
 
 /**
  * Created by daioanei on 5/4/2017.
@@ -42,8 +44,7 @@ public class FireBuilder extends EventBuilder{
         return this;
     }
 
-    public FireBuilder setSeverity(String severity) {
-        validateSeverity(severity);
+    public FireBuilder setSeverity(Severity severity) {
         this.severity = severity;
         return this;
     }

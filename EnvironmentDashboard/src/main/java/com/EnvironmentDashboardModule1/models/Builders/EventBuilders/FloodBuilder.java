@@ -1,6 +1,7 @@
 package com.EnvironmentDashboardModule1.models.Builders.EventBuilders;
 
 import com.EnvironmentDashboardModule1.models.Events.Flood;
+import com.EnvironmentDashboardModule1.models.Severity;
 
 import java.util.Date;
 
@@ -42,8 +43,7 @@ public class FloodBuilder extends EventBuilder{
         return this;
     }
 
-    public FloodBuilder setSeverity(String severity) {
-        validateSeverity(severity);
+    public FloodBuilder setSeverity(Severity severity) {
         this.severity = severity;
         return this;
     }

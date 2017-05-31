@@ -1,6 +1,7 @@
 package com.EnvironmentDashboardModule1.models.Builders.EventBuilders;
 
 import com.EnvironmentDashboardModule1.models.Events.Tornado;
+import com.EnvironmentDashboardModule1.models.Severity;
 
 import java.util.Date;
 
@@ -42,8 +43,7 @@ public class TornadoBuilder extends EventBuilder {
         return this;
     }
 
-    public TornadoBuilder setSeverity(String severity) {
-        validateSeverity(severity);
+    public TornadoBuilder setSeverity(Severity severity) {
         this.severity = severity;
         return this;
     }

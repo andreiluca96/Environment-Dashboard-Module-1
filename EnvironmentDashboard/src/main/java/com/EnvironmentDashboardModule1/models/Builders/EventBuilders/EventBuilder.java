@@ -1,6 +1,7 @@
 package com.EnvironmentDashboardModule1.models.Builders.EventBuilders;
 
 import com.EnvironmentDashboardModule1.models.Events.Event;
+import com.EnvironmentDashboardModule1.models.Severity;
 
 import java.util.Date;
 
@@ -20,7 +21,7 @@ public class EventBuilder {
 
     protected Date endingTime;
 
-    protected String severity;
+    protected Severity severity;
 
     protected String description;
 
@@ -66,8 +67,7 @@ public class EventBuilder {
         return this;
     }
 
-    public EventBuilder setSeverity(String severity) {
-        validateSeverity(severity);
+    public EventBuilder setSeverity(Severity severity) {
         this.severity = severity;
         return this;
     }
@@ -107,13 +107,6 @@ public class EventBuilder {
         return event;
     }
 
-
-    //Dragos -> validate severity
-    protected void validateSeverity(String severity) {
-        if (!severity.equals("GREEN") && !severity.equals("YELLOW") && !severity.equals("ORANGE") && !severity.equals("RED")) {
-            throw new IllegalArgumentException(severity);
-        }
-    }
 
     //Dragos -> validate latitude
     protected void validateLatitude(Double latitude) {
