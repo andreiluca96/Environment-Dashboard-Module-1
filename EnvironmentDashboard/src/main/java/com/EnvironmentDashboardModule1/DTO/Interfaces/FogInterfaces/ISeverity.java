@@ -1,8 +1,10 @@
 package com.EnvironmentDashboardModule1.DTO.Interfaces.FogInterfaces;
 
+import com.EnvironmentDashboardModule1.models.Severity;
+
 /**
  * Created by Andrei Sfarghiu on 5/13/2017.
  */
 public interface ISeverity {
-    IDescription severity(String severity);
+    IDescription severity(Severity severity);
 }

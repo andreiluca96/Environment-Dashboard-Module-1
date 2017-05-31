@@ -1,5 +1,7 @@
 package com.EnvironmentDashboardModule1.DTO;
 
+import com.EnvironmentDashboardModule1.models.Severity;
+
 import java.util.Date;
 
 /**
@@ -11,7 +13,7 @@ public class CreatingEventDto {
     protected Double latitude;
     protected Date startingDate;
     protected Date endingDate;
-    protected String severity;
+    protected Severity severity;
     protected String description;
     protected String hints;
     protected Double radius;
@@ -61,11 +63,11 @@ public class CreatingEventDto {
         this.endingDate = endingDate;
     }
 
-    public String getSeverity() {
+    public Severity getSeverity() {
         return severity;
     }
 
-    public void setSeverity(String severity) {
+    public void setSeverity(Severity severity) {
         this.severity = severity;
     }
 
