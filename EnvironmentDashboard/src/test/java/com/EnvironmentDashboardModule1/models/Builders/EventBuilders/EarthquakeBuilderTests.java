@@ -56,13 +56,6 @@ public class EarthquakeBuilderTests {
         earthquakeBuilder.setEndingTime(invalidEndingTime);
     }
 
-//    @Test(expected = IllegalArgumentException.class)
-//    public void given_anInvalidValue_when_setSeverityIsCalled_then_shouldThrowException(){
-//        EarthquakeBuilder earthquakeBuilder = new EarthquakeBuilder();
-//        String invalidSeverity = "BLUE";
-//        earthquakeBuilder.setSeverity(invalidSeverity);
-//    }
-
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setDescriptionTimeIsCalled_then_shouldThrowException(){
         EarthquakeBuilder earthquakeBuilder = new EarthquakeBuilder();
