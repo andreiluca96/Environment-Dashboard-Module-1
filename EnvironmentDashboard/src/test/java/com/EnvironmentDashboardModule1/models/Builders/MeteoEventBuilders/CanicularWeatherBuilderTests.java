@@ -16,6 +16,7 @@ import java.util.Date;
 public class CanicularWeatherBuilderTests {
 
     private CanicularWeatherBuilder canicularWeatherBuilder = new CanicularWeatherBuilder();
+
     @Test
     public void contextLoads(){
 

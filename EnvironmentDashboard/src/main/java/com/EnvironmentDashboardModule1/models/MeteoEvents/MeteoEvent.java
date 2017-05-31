@@ -1,6 +1,5 @@
 package com.EnvironmentDashboardModule1.models.MeteoEvents;
 
-import com.EnvironmentDashboardModule1.models.Events.Earthquake;
 import com.EnvironmentDashboardModule1.models.Events.Event;
 
 import javax.persistence.*;
@@ -22,6 +21,7 @@ public class MeteoEvent extends Event{
     }
 
     public void setTemperature(Integer temperature) {
+        validateTemperature(temperature);
         this.temperature = temperature;
     }
 
@@ -34,13 +34,16 @@ public class MeteoEvent extends Event{
         this.humidity = humidity;
     }
 
-    public Integer getPrecipitationLevel() {
-        return this.precipitationLevel;
-    }
+    public Integer getPrecipitationLevel() { return this.precipitationLevel; }
 
     public void setPrecipitationLevel(Integer precipitationLevel) {
         validateNonNegativeValue(precipitationLevel);
         this.precipitationLevel = precipitationLevel;
     }
 
+    private void validateTemperature(Integer temperature){
+        if(temperature < -100 || temperature > 100){
+            throw new IllegalArgumentException(Integer.toString(temperature));
+        }
+    }
 }
