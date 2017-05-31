@@ -82,22 +82,22 @@ public class CreatingEventDtoTests {
     }
 
 
-    @Test
-    public void testGetSeverity() {
-        System.out.println("getSeverity");
-        CreatingEventDto instance = new CreatingEventDto();
-        String expResult = instance.severity;
-        String result = instance.getSeverity();
-        assertEquals(expResult, result);
-    }
+//    @Test
+//    public void testGetSeverity() {
+//        System.out.println("getSeverity");
+//        CreatingEventDto instance = new CreatingEventDto();
+//        String expResult = instance.severity;
+//        String result = instance.getSeverity();
+//        assertEquals(expResult, result);
+//    }
 
-    @Test(expected=IllegalArgumentException.class)
-    public void testSetSeverity() {
-        System.out.println("setSeverity");
-        String severity = "BLUE";
-        CreatingEventDto instance = new CreatingEventDto();
-        instance.setSeverity(severity);
-    }
+//    @Test(expected=IllegalArgumentException.class)
+//    public void testSetSeverity() {
+//        System.out.println("setSeverity");
+//        String severity = "BLUE";
+//        CreatingEventDto instance = new CreatingEventDto();
+//        instance.setSeverity(severity);
+//    }
 
     @Test
     public void testGetDescription() {

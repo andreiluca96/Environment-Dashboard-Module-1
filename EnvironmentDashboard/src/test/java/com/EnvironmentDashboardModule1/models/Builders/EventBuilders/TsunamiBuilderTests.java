@@ -56,12 +56,12 @@ public class TsunamiBuilderTests {
         tsunamiBuilder.setEndingTime(invalidEndingTime);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void given_anInvalidValue_when_setSeverityIsCalled_then_shouldThrowException(){
-        TsunamiBuilder tsunamiBuilder = new TsunamiBuilder();
-        String invalidSeverity = "BLUE";
-        tsunamiBuilder.setSeverity(invalidSeverity);
-    }
+//    @Test(expected = IllegalArgumentException.class)
+//    public void given_anInvalidValue_when_setSeverityIsCalled_then_shouldThrowException(){
+//        TsunamiBuilder tsunamiBuilder = new TsunamiBuilder();
+//        String invalidSeverity = "BLUE";
+//        tsunamiBuilder.setSeverity(invalidSeverity);
+//    }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setDescriptionTimeIsCalled_then_shouldThrowException(){

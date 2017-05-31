@@ -1,6 +1,7 @@
 package com.EnvironmentDashboardModule1.models.Builders.EventBuilders;
 
 import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.TerroristAttackBuilder;
+import com.EnvironmentDashboardModule1.models.Severity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -56,12 +57,12 @@ public class TerroristAttackBuilderTests {
         terroristAttackBuilder.setEndingTime(invalidEndingTime);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void given_anInvalidValue_when_setSeverityIsCalled_then_shouldThrowException(){
-        TerroristAttackBuilder terroristAttackBuilder = new TerroristAttackBuilder();
-        String invalidSeverity = "BLUE";
-        terroristAttackBuilder.setSeverity(invalidSeverity);
-    }
+//    @Test(expected = IllegalArgumentException.class)
+//    public void given_anInvalidValue_when_setSeverityIsCalled_then_shouldThrowException(){
+//        TerroristAttackBuilder terroristAttackBuilder = new TerroristAttackBuilder();
+//        Severity invalidSeverity = BLUE;
+//        terroristAttackBuilder.setSeverity(invalidSeverity);
+//    }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setDescriptionTimeIsCalled_then_shouldThrowException(){

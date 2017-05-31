@@ -56,12 +56,12 @@ public class FireBuilderTests {
         fireBuilder.setEndingTime(invalidEndingTime);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void given_anInvalidValue_when_setSeverityIsCalled_then_shouldThrowException(){
-        FireBuilder fireBuilder = new FireBuilder();
-        String invalidSeverity = "BLUE";
-        fireBuilder.setSeverity(invalidSeverity);
-    }
+//    @Test(expected = IllegalArgumentException.class)
+//    public void given_anInvalidValue_when_setSeverityIsCalled_then_shouldThrowException(){
+//        FireBuilder fireBuilder = new FireBuilder();
+//        String invalidSeverity = "BLUE";
+//        fireBuilder.setSeverity(invalidSeverity);
+//    }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setDescriptionTimeIsCalled_then_shouldThrowException(){

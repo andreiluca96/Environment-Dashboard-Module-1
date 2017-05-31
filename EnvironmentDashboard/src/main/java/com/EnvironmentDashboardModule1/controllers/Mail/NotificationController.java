@@ -6,6 +6,7 @@ package com.EnvironmentDashboardModule1.controllers.Mail;
 
 import com.EnvironmentDashboardModule1.models.Events.Event;
 import com.EnvironmentDashboardModule1.models.Events.Fire;
+import com.EnvironmentDashboardModule1.models.Severity;
 import com.EnvironmentDashboardModule1.models.Users.User;
 import com.EnvironmentDashboardModule1.services.EventMappingService;
 import com.EnvironmentDashboardModule1.services.EventService;
@@ -150,13 +151,13 @@ public class NotificationController {
         return content;
     }
 
-    private String getHeaderColor(String severity) {
+    private String getHeaderColor(Severity severity) {
         String headerColor;
-        if (severity.equals("RED")) {
+        if (severity.equals(Severity.RED)) {
             headerColor = "<tr bgcolor=\"#DC143C\" style='color:white'>";
-        } else if (severity.equals("GREEN")) {
+        } else if (severity.equals(Severity.GREEN)) {
             headerColor = "<tr bgcolor=\"#3CB371\" style='color:white'>";
-        } else if (severity.equals("YELLOW")) {
+        } else if (severity.equals(Severity.YELLOW)) {
             headerColor = "<tr bgcolor=\"#FFDF00\" style='color:white'>";
         } else {
             headerColor = "<tr bgcolor=\" #FF7F50\" style='color:white'>";
@@ -165,7 +166,7 @@ public class NotificationController {
 
     }
 
-    private String getSeverityColor(String severity) {
+    private String getSeverityColor(Severity severity) {
         String severityColor;
         if (severity.equals("RED")) {
             severityColor = "Severity: <font color='#DC143C'><b>RED</b></font>";
