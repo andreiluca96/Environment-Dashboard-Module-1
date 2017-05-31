@@ -74,6 +74,6 @@ public class EventBuilderTests {
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setUserIdIsCalled_then_shouldThrowException(){
         String invalidUserId = null;
-        eventBuilder.setHints(invalidUserId);
+        eventBuilder.setUserId(invalidUserId);
     }
 }

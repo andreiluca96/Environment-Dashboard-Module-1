@@ -16,6 +16,8 @@ import java.util.Date;
 @SpringBootTest
 public class TsunamiBuilderTests {
 
+    private TsunamiBuilder tsunamiBuilder = new TsunamiBuilder();
+
     @Test
     public void loadContext(){
 
@@ -23,65 +25,61 @@ public class TsunamiBuilderTests {
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setNameIsCalled_then_shouldThrowException(){
-        TsunamiBuilder tsunamiBuilder = new TsunamiBuilder();
         String invalidName = null;
         tsunamiBuilder.setName(invalidName);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setLatitudeIsCalled_then_shouldThrowException(){
-        TsunamiBuilder tsunamiBuilder = new TsunamiBuilder();
         double invalidLatitude = -1000;
         tsunamiBuilder.setLatitude(invalidLatitude);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setLongitudeIsCalled_then_shouldThrowException(){
-        TsunamiBuilder tsunamiBuilder = new TsunamiBuilder();
         double invalidLongitude = -1000;
         tsunamiBuilder.setLongitude(invalidLongitude);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setStartingTimeIsCalled_then_shouldThrowException(){
-        TsunamiBuilder tsunamiBuilder = new TsunamiBuilder();
         Date invalidStartingTime = null;
         tsunamiBuilder.setStartingTime(invalidStartingTime);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setEndingTimeIsCalled_then_shouldThrowException(){
-        TsunamiBuilder tsunamiBuilder = new TsunamiBuilder();
         Date invalidEndingTime = null;
         tsunamiBuilder.setEndingTime(invalidEndingTime);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setDescriptionTimeIsCalled_then_shouldThrowException(){
-        TsunamiBuilder tsunamiBuilder = new TsunamiBuilder();
         String invalidDescription = null;
         tsunamiBuilder.setDescription(invalidDescription);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setHintsTimeIsCalled_then_shouldThrowException(){
-        TsunamiBuilder tsunamiBuilder = new TsunamiBuilder();
         String invalidHints = null;
         tsunamiBuilder.setHints(invalidHints);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setRadiusIsCalled_then_shouldThrowException(){
-        TsunamiBuilder tsunamiBuilder = new TsunamiBuilder();
         double invalidRadius = -1000;
         tsunamiBuilder.setRadius(invalidRadius);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setWindSpeedIsCalled_then_shouldThrowException(){
-        TsunamiBuilder tsunamiBuilder = new TsunamiBuilder();
         double invalidMaxWaveHeight = -1000;
         tsunamiBuilder.setMaxWaveHeight(invalidMaxWaveHeight);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void given_anInvalidValue_when_setUserIdIsCalled_then_shouldThrowException(){
+        String invalidUserId = null;
+        tsunamiBuilder.setUserId(invalidUserId);
+    }
 }

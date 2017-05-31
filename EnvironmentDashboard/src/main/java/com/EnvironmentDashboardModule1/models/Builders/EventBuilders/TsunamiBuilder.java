@@ -73,8 +73,8 @@ public class TsunamiBuilder extends EventBuilder{
     }
 
     public TsunamiBuilder setUserId(String userId) {
+        validateString(userId);
         this.userId = userId;
-
         return this;
     }
 

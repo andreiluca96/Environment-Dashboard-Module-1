@@ -81,6 +81,6 @@ public class FloodBuilderTests {
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setUserIdIsCalled_then_shouldThrowException(){
         String invalidUserId = null;
-        floodBuilder.setHints(invalidUserId);
+        floodBuilder.setUserId(invalidUserId);
     }
 }

@@ -73,8 +73,8 @@ public class TornadoBuilder extends EventBuilder {
     }
 
     public TornadoBuilder setUserId(String userId) {
+        validateString(userId);
         this.userId = userId;
-
         return this;
     }
 
@@ -95,5 +95,4 @@ public class TornadoBuilder extends EventBuilder {
 
         return tornado;
     }
-
 }

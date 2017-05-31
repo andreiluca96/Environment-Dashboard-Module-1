@@ -32,8 +32,8 @@ public class EventBuilder {
     protected String userId;
 
     public EventBuilder setUserId(String userId) {
+        validateString(userId);
         this.userId = userId;
-
         return this;
     }
 
@@ -132,14 +132,14 @@ public class EventBuilder {
     //Dragos -> validate name
     protected void validateString(String name) {
         if (name == null) {
-            throw new IllegalArgumentException(name);
+            throw new IllegalArgumentException("Null string");
         }
     }
 
     //Dragos -> validate time
     protected void validateTime(Date time) {
         if (time == null) {
-            throw new IllegalArgumentException("null time");
+            throw new IllegalArgumentException("Null time");
         }
     }
 

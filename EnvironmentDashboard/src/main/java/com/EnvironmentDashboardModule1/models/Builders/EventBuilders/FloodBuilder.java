@@ -73,8 +73,8 @@ public class FloodBuilder extends EventBuilder{
     }
 
     public FloodBuilder setUserId(String userId) {
+        validateString(userId);
         this.userId = userId;
-
         return this;
     }
 

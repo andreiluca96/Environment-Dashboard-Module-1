@@ -82,6 +82,6 @@ public class TerroristAttackBuilderTests {
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setUserIdIsCalled_then_shouldThrowException(){
         String invalidUserId = null;
-        terroristAttackBuilder.setHints(invalidUserId);
+        terroristAttackBuilder.setUserId(invalidUserId);
     }
 }

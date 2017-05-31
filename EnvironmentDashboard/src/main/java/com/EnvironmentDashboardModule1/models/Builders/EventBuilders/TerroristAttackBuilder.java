@@ -73,8 +73,8 @@ public class TerroristAttackBuilder extends EventBuilder{
     }
 
     public TerroristAttackBuilder setUserId(String userId) {
+        validateString(userId);
         this.userId = userId;
-
         return this;
     }
 

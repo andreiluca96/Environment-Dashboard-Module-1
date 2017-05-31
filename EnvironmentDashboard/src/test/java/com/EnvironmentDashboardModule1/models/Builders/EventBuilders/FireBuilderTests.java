@@ -80,6 +80,6 @@ public class FireBuilderTests {
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setUserIdIsCalled_then_shouldThrowException(){
         String invalidUserId = null;
-        fireBuilder.setHints(invalidUserId);
+        fireBuilder.setUserId(invalidUserId);
     }
 }

@@ -16,6 +16,8 @@ import java.util.Date;
 @SpringBootTest
 public class TornadoBuilderTests {
 
+    private TornadoBuilder tornadoBuilder = new TornadoBuilder();
+
     @Test
     public void loadContext(){
 
@@ -23,65 +25,61 @@ public class TornadoBuilderTests {
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setNameIsCalled_then_shouldThrowException(){
-        TornadoBuilder tornadoBuilder = new TornadoBuilder();
         String invalidName = null;
         tornadoBuilder.setName(invalidName);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setLatitudeIsCalled_then_shouldThrowException(){
-        TornadoBuilder tornadoBuilder = new TornadoBuilder();
         double invalidLatitude = -1000;
         tornadoBuilder.setLatitude(invalidLatitude);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setLongitudeIsCalled_then_shouldThrowException(){
-        TornadoBuilder tornadoBuilder = new TornadoBuilder();
         double invalidLongitude = -1000;
         tornadoBuilder.setLongitude(invalidLongitude);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setStartingTimeIsCalled_then_shouldThrowException(){
-        TornadoBuilder tornadoBuilder = new TornadoBuilder();
         Date invalidStartingTime = null;
         tornadoBuilder.setStartingTime(invalidStartingTime);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setEndingTimeIsCalled_then_shouldThrowException(){
-        TornadoBuilder tornadoBuilder = new TornadoBuilder();
         Date invalidEndingTime = null;
         tornadoBuilder.setEndingTime(invalidEndingTime);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setDescriptionTimeIsCalled_then_shouldThrowException(){
-        TornadoBuilder tornadoBuilder = new TornadoBuilder();
         String invalidDescription = null;
         tornadoBuilder.setDescription(invalidDescription);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setHintsTimeIsCalled_then_shouldThrowException(){
-        TornadoBuilder tornadoBuilder = new TornadoBuilder();
         String invalidHints = null;
         tornadoBuilder.setHints(invalidHints);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setRadiusIsCalled_then_shouldThrowException(){
-        TornadoBuilder tornadoBuilder = new TornadoBuilder();
         double invalidRadius = -1000;
         tornadoBuilder.setRadius(invalidRadius);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setWindSpeedIsCalled_then_shouldThrowException(){
-        TornadoBuilder tornadoBuilder = new TornadoBuilder();
         double invalidWindSpeed = -1000;
         tornadoBuilder.setWindspeed(invalidWindSpeed);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void given_anInvalidValue_when_setUserIdIsCalled_then_shouldThrowException(){
+        String invalidUserId = null;
+        tornadoBuilder.setUserId(invalidUserId);
+    }
 }
