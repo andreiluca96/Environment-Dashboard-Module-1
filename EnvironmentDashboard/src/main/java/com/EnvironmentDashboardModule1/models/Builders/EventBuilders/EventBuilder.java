@@ -28,6 +28,14 @@ public class EventBuilder {
 
     protected Double radius;
 
+    protected String userId;
+
+    public EventBuilder setUserId(String userId) {
+        this.userId = userId;
+
+        return this;
+    }
+
     public EventBuilder setName(String name) {
         validateString(name);
         this.name = name;
@@ -85,6 +93,7 @@ public class EventBuilder {
     public Event getEvent(){
         Event event = new Event();
 
+        event.setUserId(userId);
         event.setLatitude(latitude);
         event.setLongitude(longitude);
         event.setDescription(description);

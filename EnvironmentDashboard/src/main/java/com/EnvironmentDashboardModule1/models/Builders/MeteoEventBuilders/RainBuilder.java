@@ -88,9 +88,17 @@ public class RainBuilder extends MeteoEventBuilder{
         return this;
     }
 
+    public RainBuilder setUserId(String userId) {
+        this.userId = userId;
+
+        return this;
+    }
+
 
     public Rain getRain() {
         Rain rain=new Rain();
+
+        rain.setUserId(userId);
         rain.setLatitude(latitude);
         rain.setLongitude(longitude);
         rain.setDescription(description);

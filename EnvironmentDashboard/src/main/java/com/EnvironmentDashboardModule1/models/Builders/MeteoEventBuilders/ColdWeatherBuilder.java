@@ -88,9 +88,17 @@ public class ColdWeatherBuilder extends MeteoEventBuilder{
         return this;
     }
 
+    public ColdWeatherBuilder setUserId(String userId) {
+        this.userId = userId;
+
+        return this;
+    }
+
 
     public ColdWeather getColdWeather() {
         ColdWeather coldWeather=new ColdWeather();
+
+        coldWeather.setUserId(userId);
         coldWeather.setLatitude(latitude);
         coldWeather.setLongitude(longitude);
         coldWeather.setDescription(description);

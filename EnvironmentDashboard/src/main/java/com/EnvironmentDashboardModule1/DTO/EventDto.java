@@ -20,7 +20,7 @@ public class EventDto extends CreatingEventDto {
 
     protected EventDto() {};
 
-    public static class Builder implements IId, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude {
+    public static class Builder implements IUserId, IId, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude {
         private EventDto eventDto = new EventDto();
 
         @Override
@@ -80,6 +80,12 @@ public class EventDto extends CreatingEventDto {
         @Override
         public IName id(Long id) {
             eventDto.id = id;
+            return this;
+        }
+
+        @Override
+        public IId userId(String userId) {
+            eventDto.userId = userId;
             return this;
         }
     }

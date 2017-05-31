@@ -15,6 +15,7 @@ public class CreatingEventDto {
     protected String description;
     protected String hints;
     protected Double radius;
+    protected String userId;
 
     public String getName() {
         return name;
@@ -86,5 +87,13 @@ public class CreatingEventDto {
 
     public double getRadius() {
         return radius;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }

@@ -89,9 +89,16 @@ public class MeteoEventBuilder extends EventBuilder{
         return this;
     }
 
+    public MeteoEventBuilder setUserId(String userId) {
+        this.userId = userId;
+
+        return this;
+    }
 
     public MeteoEvent getMeteoEvent() {
         MeteoEvent meteoEvent=new MeteoEvent();
+
+        meteoEvent.setUserId(userId);
         meteoEvent.setLatitude(latitude);
         meteoEvent.setLongitude(longitude);
         meteoEvent.setDescription(description);

@@ -88,9 +88,17 @@ public class FogBuilder extends MeteoEventBuilder{
         return this;
     }
 
+    public FogBuilder setUserId(String userId) {
+        this.userId = userId;
+
+        return this;
+    }
+
 
     public Fog getFog() {
         Fog fog=new Fog();
+
+        fog.setUserId(userId);
         fog.setLatitude(latitude);
         fog.setLongitude(longitude);
         fog.setDescription(description);

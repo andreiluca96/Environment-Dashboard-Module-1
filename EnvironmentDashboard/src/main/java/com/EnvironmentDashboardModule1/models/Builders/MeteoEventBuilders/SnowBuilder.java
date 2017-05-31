@@ -70,9 +70,16 @@ public class SnowBuilder extends EventBuilder{
         return this;
     }
 
+    public SnowBuilder setUserId(String userId) {
+        this.userId = userId;
+
+        return this;
+    }
+
     public Snow getSnow(){
         Snow snow = new Snow();
 
+        snow.setUserId(userId);
         snow.setLatitude(latitude);
         snow.setLongitude(longitude);
         snow.setDescription(description);

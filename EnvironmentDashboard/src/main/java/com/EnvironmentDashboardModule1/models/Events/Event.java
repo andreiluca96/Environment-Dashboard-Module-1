@@ -34,6 +34,16 @@ public class Event implements Serializable {
 
     protected Double radius;
 
+    protected String userId;
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
     public String getSeverity() {
         return this.severity;
     }
@@ -189,6 +199,7 @@ public class Event implements Serializable {
                 ", latitude=" + latitude +
                 ", longitude=" + longitude +
                 ", radius=" + radius +
+                ", userId='" + userId + '\'' +
                 '}';
     }
 }

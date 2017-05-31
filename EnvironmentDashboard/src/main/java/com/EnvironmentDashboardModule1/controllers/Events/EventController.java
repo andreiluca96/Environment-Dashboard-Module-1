@@ -98,6 +98,7 @@ public class EventController {
 
     public EventDto toDto(Event event) {
         return new EventDto.Builder()
+                .userId(event.getUserId())
                 .id(event.getId())
                 .name(event.getName())
                 .latitude(event.getLatitude())
@@ -112,6 +113,7 @@ public class EventController {
 
     private Event toCreatingModel(CreatingEventDto dto) {
         return new EventBuilder()
+                .setUserId(dto.getUserId())
                 .setName(dto.getName())
                 .setLongitude(dto.getLongitude())
                 .setLatitude(dto.getLatitude())

@@ -82,6 +82,12 @@ public class CanicularWeatherBuilder extends MeteoEventBuilder{
         return this;
     }
 
+    public CanicularWeatherBuilder setUserId(String userId) {
+        this.userId = userId;
+
+        return this;
+    }
+
     public CanicularWeatherBuilder setPrecipitationLevel(Integer precipitationLevel) {
         validateNonNegativeValue(precipitationLevel);
         this.precipitationLevel = precipitationLevel;
@@ -91,6 +97,8 @@ public class CanicularWeatherBuilder extends MeteoEventBuilder{
 
     public CanicularWeather getCanicularWeather() {
         CanicularWeather canicularWeather=new CanicularWeather();
+
+        canicularWeather.setUserId(userId);
         canicularWeather.setLatitude(latitude);
         canicularWeather.setLongitude(longitude);
         canicularWeather.setDescription(description);
