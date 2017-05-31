@@ -12,6 +12,8 @@ import com.EnvironmentDashboardModule1.services.Event.EventMappingService;
 import com.EnvironmentDashboardModule1.services.Event.EventService;
 import com.EnvironmentDashboardModule1.services.Event.FireService;
 import com.EnvironmentDashboardModule1.services.Mail.NotificationService;
+import org.quartz.*;
+import org.quartz.impl.StdSchedulerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -108,6 +110,17 @@ public class NotificationController {
         }).start();
     }
 
+    @RequestMapping(value = "/notification-scheduler", method = RequestMethod.GET)
+    public void startScheduler() {
+        try {
+            Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();
+        } catch (SchedulerException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
     private String getContent(Event event){
         String content="";
         String eventType = eventMappingService.getById(event.getId()).getEventType();
@@ -123,15 +136,15 @@ public class NotificationController {
         headerColor = getHeaderColor(event.getSeverity());
         severityColor = getSeverityColor(event.getSeverity());
 
-        message.append("<table style='margin: 0px auto; width:500px'>");
+        message.append("<table style='margin: 0px auto; width:500px;font-family: Arial, Helvetica, sans-serif;'>");
         message.append(headerColor);
-        message.append("<td style='padding:30px 30px 0px;text-align:center;font-family: Arial, Helvetica, sans-serif;color:white'>");
+        message.append("<th style='color:white;font-size:22px; padding:40px;text-align:center'>");
         message.append(header);
-        message.append("</td>");
+        message.append("</th>");
         message.append("</tr>");
         content = "";
         content += severityColor;
-        message.append("<tr bgcolor='#F5F5F5' style='font-family: Arial, Helvetica, sans-serif;'>");
+        message.append("<tr bgcolor='#F5F5F5'>");
 
         content += specialAttributes;
         content += "<br><strong>Description: </strong>" + event.getDescription();
@@ -184,10 +197,10 @@ public class NotificationController {
         String header="";
         switch (eventType) {
             case "Event":
-                header = "<p style=\"font-size:22px\"><b>There's a new event in your area</b></p><br>";
+                header = "There's a new event in your area<br>";
                 break;
             case "Fire":
-                header = "<p style=\"font-size:22px\"><b>There's a fire in your area</b></p><br>";
+                header = "There's a fire in your area<br>";
                 break;
 
         }
@@ -225,6 +238,34 @@ public class NotificationController {
         User[] users = restTemplate.getForObject("http://localhost:8100/v1/users/" + event.getLatitude() + "/" + event.getLongitude() + "/" + event.getRadius(), User[].class);
 
         return users;
+    }
+
+    public class NotificationJob implements Job {
+        private Map<Long, Boolean> notifiedEvent = new HashMap<>();
+
+        public NotificationJob() {
+            for (Event event : eventService.getAll()) {
+                notifiedEvent.put(event.getId(), Boolean.FALSE);
+            }
+        }
+
+        @Override
+        public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
+            List<Event> events = eventService.getAll();
+            for (Event event : events) {
+                Date currentDate = new Date();
+                if ((notifiedEvent.get(event.getId()) == null || notifiedEvent.get(event.getId()).equals(Boolean.FALSE)) &&
+                        event.getStartingTime().before(currentDate) &&
+                        event.getEndingTime().after(currentDate)) {
+                    try {
+                        notifyUsersForEvent(event.getId());
+                    } catch (MessagingException e) {
+                        e.printStackTrace();
+                    }
+                    notifiedEvent.put(event.getId(), Boolean.TRUE);
+                }
+            }
+        }
     }
 
 }
