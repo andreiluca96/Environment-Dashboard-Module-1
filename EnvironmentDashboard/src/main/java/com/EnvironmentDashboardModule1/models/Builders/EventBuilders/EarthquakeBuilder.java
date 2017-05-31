@@ -18,59 +18,6 @@ public class EarthquakeBuilder extends EventBuilder{
     private Integer depth;
 
 
-    public EarthquakeBuilder setName(String name) {
-        validateString(name);
-        this.name = name;
-        return this;
-    }
-
-    public EarthquakeBuilder setLatitude(Double latitude) {
-        validateLatitude(latitude);
-        this.latitude = latitude;
-        return this;
-    }
-
-    public EarthquakeBuilder setLongitude(Double longitude) {
-        validateLongitude(longitude);
-        this.longitude = longitude;
-        return this;
-    }
-
-    public EarthquakeBuilder setStartingTime(Date startingTime) {
-        validateTime(startingTime);
-        this.startingTime = startingTime;
-        return this;
-    }
-
-    public EarthquakeBuilder setEndingTime(Date endingTime) {
-        validateTime(endingTime);
-        this.endingTime = endingTime;
-        return this;
-    }
-
-    public EarthquakeBuilder setSeverity(Severity severity) {
-        this.severity = severity;
-        return this;
-    }
-
-    public EarthquakeBuilder setDescription(String description) {
-        validateString(description);
-        this.description = description;
-        return this;
-    }
-
-    public EarthquakeBuilder setHints(String hints) {
-        validateString(hints);
-        this.hints = hints;
-        return this;
-    }
-
-    public EarthquakeBuilder setRadius(Double radius) {
-        validateNonNegativeValue(radius);
-        this.radius = radius;
-        return this;
-    }
-
     public EarthquakeBuilder setRichterDegree(Double richterDegree) {
         validateNonNegativeValue(richterDegree);
         this.richterDegree = richterDegree;
@@ -88,12 +35,7 @@ public class EarthquakeBuilder extends EventBuilder{
         this.depth = depth;
         return this;
     }
-
-    public EarthquakeBuilder setUserId(String userId) {
-        this.userId = userId;
-
-        return this;
-    }
+    
 
     public Earthquake getEarthquake(){
         Earthquake earthquake = new Earthquake();
