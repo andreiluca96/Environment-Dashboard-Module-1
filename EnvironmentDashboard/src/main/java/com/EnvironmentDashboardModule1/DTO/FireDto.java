@@ -1,6 +1,7 @@
 package com.EnvironmentDashboardModule1.DTO;
 
 import com.EnvironmentDashboardModule1.DTO.Interfaces.FireInterfaces.*;
+import com.EnvironmentDashboardModule1.models.Severity;
 
 import java.util.Date;
 
@@ -57,7 +58,7 @@ public class FireDto extends CreatingFireDto {
         }
 
         @Override
-        public IDescription severity(String severity) {
+        public IDescription severity(Severity severity) {
             fireDto.severity=severity;
             return this;
         }

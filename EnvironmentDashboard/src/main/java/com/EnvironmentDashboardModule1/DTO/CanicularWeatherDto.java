@@ -2,6 +2,7 @@ package com.EnvironmentDashboardModule1.DTO;
 
 
 import com.EnvironmentDashboardModule1.DTO.Interfaces.CanicularWeatherInterfaces.*;
+import com.EnvironmentDashboardModule1.models.Severity;
 
 
 import java.util.Date;
@@ -71,7 +72,7 @@ public class CanicularWeatherDto extends CreatingMeteoEventDto{
         }
 
         @Override
-        public IDescription severity(String severity) {
+        public IDescription severity(Severity severity) {
             canicularWeatherDto.severity=severity;
             return this;
         }

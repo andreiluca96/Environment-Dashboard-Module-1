@@ -2,6 +2,7 @@ package com.EnvironmentDashboardModule1.DTO;
 
 import com.EnvironmentDashboardModule1.DTO.Interfaces.TerroristAttackInterfaces.*;
 import com.EnvironmentDashboardModule1.models.Events.TerroristAttack;
+import com.EnvironmentDashboardModule1.models.Severity;
 
 import java.util.Date;
 
@@ -55,7 +56,7 @@ public class TerroristAttackDto extends CreatingTerroristAttackDto {
         }
 
         @Override
-        public IDescription severity(String severity) {
+        public IDescription severity(Severity severity) {
             terroristAttackDto.severity = severity;
             return this;
         }

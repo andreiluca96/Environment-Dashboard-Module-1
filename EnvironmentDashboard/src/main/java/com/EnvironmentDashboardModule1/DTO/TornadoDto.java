@@ -1,6 +1,7 @@
 package com.EnvironmentDashboardModule1.DTO;
 
 import com.EnvironmentDashboardModule1.DTO.Interfaces.TornadoInterfaces.*;
+import com.EnvironmentDashboardModule1.models.Severity;
 
 
 import java.util.Date;
@@ -55,7 +56,7 @@ public class TornadoDto extends CreatingTornadoDto {
         }
 
         @Override
-        public IDescription severity(String severity) {
+        public IDescription severity(Severity severity) {
             tornadoDto.severity = severity;
             return this;
         }

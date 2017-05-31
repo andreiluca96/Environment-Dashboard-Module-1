@@ -1,6 +1,7 @@
 package com.EnvironmentDashboardModule1.DTO;
 
 import com.EnvironmentDashboardModule1.DTO.Interfaces.TsunamiInterfaces.*;
+import com.EnvironmentDashboardModule1.models.Severity;
 
 import java.util.Date;
 
@@ -48,7 +49,7 @@ public class TsunamiDto extends CreatingTsunamiDto {
         }
 
         @Override
-        public IDescription severity(String severity) {
+        public IDescription severity(Severity severity) {
             tsunamiDto.severity = severity;
             return this;
         }

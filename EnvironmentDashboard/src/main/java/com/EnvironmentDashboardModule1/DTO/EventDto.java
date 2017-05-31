@@ -1,6 +1,7 @@
 package com.EnvironmentDashboardModule1.DTO;
 
 import com.EnvironmentDashboardModule1.DTO.Interfaces.EventInterfaces.*;
+import com.EnvironmentDashboardModule1.models.Severity;
 
 import java.util.Date;
 
@@ -54,7 +55,7 @@ public class EventDto extends CreatingEventDto {
         }
 
         @Override
-        public IDescription severity(String severity) {
+        public IDescription severity(Severity severity) {
             eventDto.severity = severity;
             return this;
         }

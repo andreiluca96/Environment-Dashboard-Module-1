@@ -6,6 +6,8 @@
 package com.EnvironmentDashboardModule1.DTO;
 
 import com.EnvironmentDashboardModule1.DTO.Interfaces.SnowInterfaces.*;
+import com.EnvironmentDashboardModule1.models.Severity;
+
 import java.util.Date;
 
 /**
@@ -56,7 +58,7 @@ public class SnowDto extends CreatingSnowDto {
         }
 
         @Override
-        public IDescription severity(String severity) {
+        public IDescription severity(Severity severity) {
             snowDto.severity=severity;
             return this;
         }

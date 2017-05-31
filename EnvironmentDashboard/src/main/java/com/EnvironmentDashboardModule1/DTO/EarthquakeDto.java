@@ -1,6 +1,7 @@
 package com.EnvironmentDashboardModule1.DTO;
 
 import com.EnvironmentDashboardModule1.DTO.Interfaces.Earthquake.*;
+import com.EnvironmentDashboardModule1.models.Severity;
 
 import java.util.Date;
 
@@ -49,7 +50,7 @@ public class EarthquakeDto extends CreatingEarthquakeDto {
         }
 
         @Override
-        public IDescription severity(String severity) {
+        public IDescription severity(Severity severity) {
             earthquakeDto.severity = severity;
             return this;
         }

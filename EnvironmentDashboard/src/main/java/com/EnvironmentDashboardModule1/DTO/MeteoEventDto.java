@@ -4,6 +4,7 @@ import com.EnvironmentDashboardModule1.DTO.Interfaces.MeteoEventInterface.IHumid
 import com.EnvironmentDashboardModule1.DTO.Interfaces.MeteoEventInterface.*;
 import com.EnvironmentDashboardModule1.DTO.Interfaces.MeteoEventInterface.IPrecipitationLevel;
 import com.EnvironmentDashboardModule1.DTO.Interfaces.MeteoEventInterface.ITemperature;
+import com.EnvironmentDashboardModule1.models.Severity;
 import javafx.util.Builder;
 
 import java.util.Date;
@@ -73,7 +74,7 @@ public class MeteoEventDto extends CreatingMeteoEventDto{
         }
 
         @Override
-        public IDescription severity(String severity) {
+        public IDescription severity(Severity severity) {
             meteoEventDto.severity=severity;
             return this;
         }
