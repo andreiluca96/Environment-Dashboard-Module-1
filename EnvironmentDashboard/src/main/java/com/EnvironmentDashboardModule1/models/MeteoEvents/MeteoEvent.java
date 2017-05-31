@@ -43,12 +43,4 @@ public class MeteoEvent extends Event{
         this.precipitationLevel = precipitationLevel;
     }
 
-    //Dragos -> validate integer values
-    protected void validateNonNegativeValue(Integer value) {
-        if (value < 0) {
-            throw new IllegalArgumentException(Integer.toString(value));
-        }
-    }
-
-
 }
