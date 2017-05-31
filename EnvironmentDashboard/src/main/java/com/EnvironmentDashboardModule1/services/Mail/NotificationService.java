@@ -55,17 +55,4 @@ public class NotificationService {
 
         Transport.send(mail);
     }
-
-    /*@Autowired
-    private JavaMailSender javaMailSender;
-    public void sendMail(String email, String subject, String content) {
-        SimpleMailMessage mail = new SimpleMailMessage();
-        mail.setTo(email);
-        mail.setFrom("environment.dashboard@gmail.com");
-        mail.setSubject(subject);
-        mail.setText(content);
-
-        javaMailSender.send(mail);
-    }*/
-
 }
