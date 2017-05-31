@@ -22,7 +22,7 @@ public class RainDto extends CreatingMeteoEventDto{
 
     protected RainDto() {};
 
-    public static class Builder implements IId, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude,ITemperature, IHumidity, IPrecipitationLevel {
+    public static class Builder implements IUserId, IId, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude,ITemperature, IHumidity, IPrecipitationLevel {
         private RainDto rainDto = new RainDto();
 
 
@@ -103,6 +103,12 @@ public class RainDto extends CreatingMeteoEventDto{
         @Override
         public IName id(Long id) {
             rainDto.id = id;
+            return this;
+        }
+
+        @Override
+        public IId userId(String userId) {
+            rainDto.userId = userId;
             return this;
         }
     }

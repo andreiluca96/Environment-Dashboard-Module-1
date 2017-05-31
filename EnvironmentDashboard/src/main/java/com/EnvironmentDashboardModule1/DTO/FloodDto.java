@@ -23,7 +23,7 @@ public class FloodDto extends CreatingFloodDto {
         super();
     };
 
-    public static class Builder implements IId, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude,IPrecipitationLevel {
+    public static class Builder implements IUserId, IId, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude,IPrecipitationLevel {
         private FloodDto floodDto = new FloodDto();
 
         @Override
@@ -89,6 +89,12 @@ public class FloodDto extends CreatingFloodDto {
         @Override
         public IName id(Long id) {
             floodDto.id = id;
+            return this;
+        }
+
+        @Override
+        public IId userId(String userId) {
+            floodDto.userId = userId;
             return this;
         }
     }

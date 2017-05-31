@@ -21,7 +21,7 @@ public class TornadoDto extends CreatingTornadoDto {
 
     private TornadoDto() { super(); }
 
-    public static class Builder implements IId, IWindspeed, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude {
+    public static class Builder implements IUserId, IId, IWindspeed, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude {
         private TornadoDto tornadoDto = new TornadoDto();
 
         @Override
@@ -87,6 +87,12 @@ public class TornadoDto extends CreatingTornadoDto {
         @Override
         public IName id(Long id) {
             tornadoDto.id = id;
+            return this;
+        }
+
+        @Override
+        public IId userId(String userId) {
+            tornadoDto.userId = userId;
             return this;
         }
     }

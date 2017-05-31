@@ -22,7 +22,7 @@ public class FogDto extends CreatingMeteoEventDto{
 
     protected FogDto() {};
 
-    public static class Builder implements IId, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude,ITemperature, IHumidity, IPrecipitationLevel {
+    public static class Builder implements IUserId, IId, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude,ITemperature, IHumidity, IPrecipitationLevel {
         private FogDto fogDto = new FogDto();
 
 
@@ -103,6 +103,12 @@ public class FogDto extends CreatingMeteoEventDto{
         @Override
         public IName id(Long id) {
             fogDto.id = id;
+            return this;
+        }
+
+        @Override
+        public IId userId(String userId) {
+            fogDto.userId = userId;
             return this;
         }
     }

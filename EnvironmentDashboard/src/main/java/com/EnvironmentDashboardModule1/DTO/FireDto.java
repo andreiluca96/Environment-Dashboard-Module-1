@@ -23,7 +23,7 @@ public class FireDto extends CreatingFireDto {
         super();
     };
 
-    public static class Builder implements IId, ISpeed, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude {
+    public static class Builder implements IUserId, IId, ISpeed, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude {
         private FireDto fireDto = new FireDto();
 
         @Override
@@ -89,6 +89,12 @@ public class FireDto extends CreatingFireDto {
         @Override
         public IName id(Long id) {
             fireDto.id = id;
+            return this;
+        }
+
+        @Override
+        public IId userId(String userId) {
+            fireDto.userId = userId;
             return this;
         }
     }

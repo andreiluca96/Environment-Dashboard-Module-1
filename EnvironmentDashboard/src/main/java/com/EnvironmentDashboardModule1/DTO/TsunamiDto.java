@@ -20,7 +20,7 @@ public class TsunamiDto extends CreatingTsunamiDto {
 
     private TsunamiDto() { super(); }
 
-    public static class Builder implements IId, IMaxWaveHeight, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude {
+    public static class Builder implements IUserId, IId, IMaxWaveHeight, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude {
         private TsunamiDto tsunamiDto = new TsunamiDto();
 
         @Override
@@ -86,6 +86,12 @@ public class TsunamiDto extends CreatingTsunamiDto {
         @Override
         public IName id(Long id) {
             tsunamiDto.id = id;
+            return this;
+        }
+
+        @Override
+        public IId userId(String userId) {
+            tsunamiDto.userId = userId;
             return this;
         }
     }

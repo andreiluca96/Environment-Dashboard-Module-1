@@ -22,7 +22,7 @@ public class CanicularWeatherDto extends CreatingMeteoEventDto{
 
     protected CanicularWeatherDto() {};
 
-    public static class Builder implements IId, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude,ITemperature, IHumidity, IPrecipitationLevel {
+    public static class Builder implements IUserId, IId, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude,ITemperature, IHumidity, IPrecipitationLevel {
         private CanicularWeatherDto canicularWeatherDto = new CanicularWeatherDto();
 
 
@@ -103,6 +103,12 @@ public class CanicularWeatherDto extends CreatingMeteoEventDto{
         @Override
         public IName id(Long id) {
             canicularWeatherDto.id = id;
+            return this;
+        }
+
+        @Override
+        public IId userId(String userId) {
+            canicularWeatherDto.userId = userId;
             return this;
         }
     }

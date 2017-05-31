@@ -22,7 +22,7 @@ public class ColdWeatherDto extends CreatingMeteoEventDto{
 
     protected ColdWeatherDto() {};
 
-    public static class Builder implements IId, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude,ITemperature, IHumidity, IPrecipitationLevel {
+    public static class Builder implements IUserId, IId, IName, IDescription, IEndingDate, IHints, IRadius, ISeverity, IStartingDate, ILatitude, ILongitude,ITemperature, IHumidity, IPrecipitationLevel {
         private ColdWeatherDto coldWeatherDto = new ColdWeatherDto();
 
 
@@ -103,6 +103,12 @@ public class ColdWeatherDto extends CreatingMeteoEventDto{
         @Override
         public IName id(Long id) {
             coldWeatherDto.id = id;
+            return this;
+        }
+
+        @Override
+        public IId userId(String userId) {
+            coldWeatherDto.userId = userId;
             return this;
         }
     }

@@ -21,7 +21,7 @@ public class EarthquakeDto extends CreatingEarthquakeDto {
 
     private EarthquakeDto() { super(); };
 
-    public static class Builder implements IId, IName, IDepth, IDescription, IEndingDate, IHints, ILatitude, ILongitude, IMercaliDegree, IRadius, IRichterDegree, ISeverity, IStartingDate {
+    public static class Builder implements IUserId, IId, IName, IDepth, IDescription, IEndingDate, IHints, ILatitude, ILongitude, IMercaliDegree, IRadius, IRichterDegree, ISeverity, IStartingDate {
         private EarthquakeDto earthquakeDto = new EarthquakeDto();
 
         @Override
@@ -99,6 +99,12 @@ public class EarthquakeDto extends CreatingEarthquakeDto {
         @Override
         public IName id(Long id) {
             earthquakeDto.id = id;
+            return this;
+        }
+
+        @Override
+        public IId userId(String userId) {
+            earthquakeDto.userId = userId;
             return this;
         }
     }
