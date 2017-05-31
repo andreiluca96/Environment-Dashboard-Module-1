@@ -73,6 +73,7 @@ public class MeteoEventBuilder extends EventBuilder{
     }
 
     public MeteoEventBuilder setTemperature(Integer temperature) {
+        validateTemperature(temperature);
         this.temperature = temperature;
         return this;
     }
@@ -90,8 +91,8 @@ public class MeteoEventBuilder extends EventBuilder{
     }
 
     public MeteoEventBuilder setUserId(String userId) {
+        validateString(userId);
         this.userId = userId;
-
         return this;
     }
 
@@ -114,10 +115,10 @@ public class MeteoEventBuilder extends EventBuilder{
         return meteoEvent;
     }
 
-    //Dragos -> validate integer values
-    protected void validateNonNegativeValue(Integer value) {
-        if (value < 0) {
-            throw new IllegalArgumentException(Integer.toString(value));
+    //Dragos -> validate temperature, integer values between -100 and +100
+    protected void validateTemperature(Integer temperature){
+        if(temperature < -100 || temperature > 100){
+            throw new IllegalArgumentException(Integer.toString(temperature));
         }
     }
 }

@@ -16,6 +16,7 @@ import java.util.Date;
 @SpringBootTest
 public class CanicularWeatherBuilderTests {
 
+    private CanicularWeatherBuilder canicularWeatherBuilder = new CanicularWeatherBuilder();
     @Test
     public void contextLoads(){
 
@@ -23,79 +24,68 @@ public class CanicularWeatherBuilderTests {
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setNameIsCalled_then_shouldThrowException(){
-        CanicularWeatherBuilder canicularWeatherBuilder = new CanicularWeatherBuilder();
         String invalidName = null;
         canicularWeatherBuilder.setName(invalidName);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setLatitudeIsCalled_then_shouldThrowException(){
-        CanicularWeatherBuilder canicularWeatherBuilder = new CanicularWeatherBuilder();
         double invalidLatitude = -1000;
         canicularWeatherBuilder.setLatitude(invalidLatitude);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setLongitudeIsCalled_then_shouldThrowException(){
-        CanicularWeatherBuilder canicularWeatherBuilder = new CanicularWeatherBuilder();
         double invalidLongitude = -1000;
         canicularWeatherBuilder.setLongitude(invalidLongitude);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setStartingTimeIsCalled_then_shouldThrowException(){
-        CanicularWeatherBuilder canicularWeatherBuilder = new CanicularWeatherBuilder();
         Date invalidStartingTime = null;
         canicularWeatherBuilder.setStartingTime(invalidStartingTime);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setEndingTimeIsCalled_then_shouldThrowException(){
-        CanicularWeatherBuilder canicularWeatherBuilder = new CanicularWeatherBuilder();
         Date invalidEndingTime = null;
         canicularWeatherBuilder.setEndingTime(invalidEndingTime);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setDescriptionTimeIsCalled_then_shouldThrowException(){
-        CanicularWeatherBuilder canicularWeatherBuilder = new CanicularWeatherBuilder();
         String invalidDescription = null;
         canicularWeatherBuilder.setDescription(invalidDescription);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setHintsTimeIsCalled_then_shouldThrowException(){
-        CanicularWeatherBuilder canicularWeatherBuilder = new CanicularWeatherBuilder();
         String invalidHints = null;
         canicularWeatherBuilder.setHints(invalidHints);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setRadiusIsCalled_then_shouldThrowException(){
-        CanicularWeatherBuilder canicularWeatherBuilder = new CanicularWeatherBuilder();
         double invalidRadius = -1000;
         canicularWeatherBuilder.setRadius(invalidRadius);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void given_anInvalidValue_when_setTemperatureIsCalled_then_shouldThrowException(){
-        CanicularWeatherBuilder canicularWeatherBuilder = new CanicularWeatherBuilder();
-        Integer invalidTemperature = -1000;
-        canicularWeatherBuilder.setTemperature(invalidTemperature);
-    }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setHumidityIsCalled_then_shouldThrowException(){
-        CanicularWeatherBuilder canicularWeatherBuilder = new CanicularWeatherBuilder();
         Integer invalidHumidity = -1000;
         canicularWeatherBuilder.setHumidity(invalidHumidity);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setPrecipitationLevelIsCalled_then_shouldThrowException(){
-        CanicularWeatherBuilder canicularWeatherBuilder = new CanicularWeatherBuilder();
         Integer invalidPrecipitationLevel = -1000;
         canicularWeatherBuilder.setPrecipitationLevel(invalidPrecipitationLevel);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void given_anInvalidValue_when_setUserIdIsCalled_then_shouldThrowException(){
+        String invalidUserId = null;
+        canicularWeatherBuilder.setUserId(invalidUserId);
+    }
 }

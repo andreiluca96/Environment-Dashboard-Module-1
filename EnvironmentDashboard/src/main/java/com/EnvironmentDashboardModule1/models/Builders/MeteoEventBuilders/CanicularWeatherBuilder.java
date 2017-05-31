@@ -83,8 +83,8 @@ public class CanicularWeatherBuilder extends MeteoEventBuilder{
     }
 
     public CanicularWeatherBuilder setUserId(String userId) {
+        validateString(userId);
         this.userId = userId;
-
         return this;
     }
 
@@ -112,12 +112,5 @@ public class CanicularWeatherBuilder extends MeteoEventBuilder{
         canicularWeather.setPrecipitationLevel(precipitationLevel);
         canicularWeather.setTemperature(temperature);
         return canicularWeather;
-    }
-
-    
-    protected void validateNonNegativeValue(Integer value) {
-        if (value < 0) {
-            throw new IllegalArgumentException(Integer.toString(value));
-        }
     }
 }
