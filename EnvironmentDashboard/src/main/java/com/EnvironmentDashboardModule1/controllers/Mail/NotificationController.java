@@ -12,6 +12,8 @@ import com.EnvironmentDashboardModule1.services.Event.EventMappingService;
 import com.EnvironmentDashboardModule1.services.Event.EventService;
 import com.EnvironmentDashboardModule1.services.Event.FireService;
 import com.EnvironmentDashboardModule1.services.Mail.NotificationService;
+import org.quartz.*;
+import org.quartz.impl.StdSchedulerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -106,6 +108,17 @@ public class NotificationController {
                 }
             }
         }).start();
+    }
+
+    @RequestMapping(value = "/notification-scheduler", method = RequestMethod.GET)
+    public void startScheduler() {
+        try {
+            Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();
+        } catch (SchedulerException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     private String getContent(Event event){
@@ -225,6 +238,34 @@ public class NotificationController {
         User[] users = restTemplate.getForObject("http://localhost:8100/v1/users/" + event.getLatitude() + "/" + event.getLongitude() + "/" + event.getRadius(), User[].class);
 
         return users;
+    }
+
+    public class NotificationJob implements Job {
+        private Map<Long, Boolean> notifiedEvent = new HashMap<>();
+
+        public NotificationJob() {
+            for (Event event : eventService.getAll()) {
+                notifiedEvent.put(event.getId(), Boolean.FALSE);
+            }
+        }
+
+        @Override
+        public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
+            List<Event> events = eventService.getAll();
+            for (Event event : events) {
+                Date currentDate = new Date();
+                if ((notifiedEvent.get(event.getId()) == null || notifiedEvent.get(event.getId()).equals(Boolean.FALSE)) &&
+                        event.getStartingTime().before(currentDate) &&
+                        event.getEndingTime().after(currentDate)) {
+                    try {
+                        notifyUsersForEvent(event.getId());
+                    } catch (MessagingException e) {
+                        e.printStackTrace();
+                    }
+                    notifiedEvent.put(event.getId(), Boolean.TRUE);
+                }
+            }
+        }
     }
 
 }
