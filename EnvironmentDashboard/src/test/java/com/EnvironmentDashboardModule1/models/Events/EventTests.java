@@ -27,23 +27,6 @@ public class EventTests {
 
     }
 
-//    @Test
-//    public void given_differentValues_when_getSeverityIsCalled_then_assertEquality(){
-//        Event event = new Event();
-//        String severity = "GREEN";
-//        event.setSeverity(severity);
-//
-//        Assert.assertEquals(event.getSeverity(), severity);
-//    }
-
-//    @Test(expected = IllegalArgumentException.class)
-//    public void given_anInvalidValue_when_setSeverityIsCalled_then_shouldThrowException(){
-//        Event event = new Event();
-//        String severity = "BLUE";
-//
-//        event.setSeverity(severity);
-//    }
-
     @Test
     public void given_differentValues_when_getLatitudeIsCalled_then_assertEquality(){
         Event event = new Event();

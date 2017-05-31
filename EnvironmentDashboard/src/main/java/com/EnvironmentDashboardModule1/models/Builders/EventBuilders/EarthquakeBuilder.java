@@ -90,8 +90,8 @@ public class EarthquakeBuilder extends EventBuilder{
     }
 
     public EarthquakeBuilder setUserId(String userId) {
+        validateString(userId);
         this.userId = userId;
-
         return this;
     }
 

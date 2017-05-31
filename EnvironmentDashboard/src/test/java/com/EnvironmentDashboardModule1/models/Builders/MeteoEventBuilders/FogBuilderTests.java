@@ -56,13 +56,6 @@ public class FogBuilderTests {
         fogBuilder.setEndingTime(invalidEndingTime);
     }
 
-//    @Test(expected = IllegalArgumentException.class)
-//    public void given_anInvalidValue_when_setSeverityIsCalled_then_shouldThrowException(){
-//        FogBuilder fogBuilder = new FogBuilder();
-//        String invalidSeverity = "BLUE";
-//        fogBuilder.setSeverity(invalidSeverity);
-//    }
-
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setDescriptionTimeIsCalled_then_shouldThrowException(){
         FogBuilder fogBuilder = new FogBuilder();

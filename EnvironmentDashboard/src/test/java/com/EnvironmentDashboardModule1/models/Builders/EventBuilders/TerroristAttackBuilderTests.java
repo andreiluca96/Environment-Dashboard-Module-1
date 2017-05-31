@@ -17,6 +17,8 @@ import java.util.Date;
 @SpringBootTest
 public class TerroristAttackBuilderTests {
 
+    private TerroristAttackBuilder terroristAttackBuilder = new TerroristAttackBuilder();
+
     @Test
     public void contextLoads(){
 
@@ -24,71 +26,62 @@ public class TerroristAttackBuilderTests {
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setNameIsCalled_then_shouldThrowException(){
-        TerroristAttackBuilder terroristAttackBuilder = new TerroristAttackBuilder();
         String invalidName = null;
         terroristAttackBuilder.setName(invalidName);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setLatitudeIsCalled_then_shouldThrowException(){
-        TerroristAttackBuilder terroristAttackBuilder = new TerroristAttackBuilder();
         double invalidLatitude = -1000;
         terroristAttackBuilder.setLatitude(invalidLatitude);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setLongitudeIsCalled_then_shouldThrowException(){
-        TerroristAttackBuilder terroristAttackBuilder = new TerroristAttackBuilder();
         double invalidLongitude = -1000;
         terroristAttackBuilder.setLongitude(invalidLongitude);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setStartingTimeIsCalled_then_shouldThrowException(){
-        TerroristAttackBuilder terroristAttackBuilder = new TerroristAttackBuilder();
         Date invalidStartingTime = null;
         terroristAttackBuilder.setStartingTime(invalidStartingTime);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setEndingTimeIsCalled_then_shouldThrowException(){
-        TerroristAttackBuilder terroristAttackBuilder = new TerroristAttackBuilder();
         Date invalidEndingTime = null;
         terroristAttackBuilder.setEndingTime(invalidEndingTime);
     }
 
-//    @Test(expected = IllegalArgumentException.class)
-//    public void given_anInvalidValue_when_setSeverityIsCalled_then_shouldThrowException(){
-//        TerroristAttackBuilder terroristAttackBuilder = new TerroristAttackBuilder();
-//        Severity invalidSeverity = BLUE;
-//        terroristAttackBuilder.setSeverity(invalidSeverity);
-//    }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setDescriptionTimeIsCalled_then_shouldThrowException(){
-        TerroristAttackBuilder terroristAttackBuilder = new TerroristAttackBuilder();
         String invalidDescription = null;
         terroristAttackBuilder.setDescription(invalidDescription);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setHintsTimeIsCalled_then_shouldThrowException(){
-        TerroristAttackBuilder terroristAttackBuilder = new TerroristAttackBuilder();
         String invalidHints = null;
         terroristAttackBuilder.setHints(invalidHints);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setRadiusIsCalled_then_shouldThrowException(){
-        TerroristAttackBuilder terroristAttackBuilder = new TerroristAttackBuilder();
         double invalidRadius = -1000;
         terroristAttackBuilder.setRadius(invalidRadius);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setNumberOfTerroristsIsCalled_then_shouldThrowException(){
-        TerroristAttackBuilder terroristAttackBuilder = new TerroristAttackBuilder();
         Integer invalidNumberOfTerrorists = -1000;
         terroristAttackBuilder.setNumberOfTerrorists(invalidNumberOfTerrorists);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void given_anInvalidValue_when_setUserIdIsCalled_then_shouldThrowException(){
+        String invalidUserId = null;
+        terroristAttackBuilder.setHints(invalidUserId);
     }
 }

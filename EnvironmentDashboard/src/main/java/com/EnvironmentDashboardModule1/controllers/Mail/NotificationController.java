@@ -136,23 +136,22 @@ public class NotificationController {
         headerColor = getHeaderColor(event.getSeverity());
         severityColor = getSeverityColor(event.getSeverity());
 
-        message.append("<table style=\"margin: 0px auto; width:500px\">");
+        message.append("<table style='margin: 0px auto; width:500px'>");
         message.append(headerColor);
-        message.append("<td style='padding:30px 30px 0px;text-align:center;font-family: Arial, Helvetica, sans-serif;'>");
-        //content = "<p style=\"font-size:22px\"><b>A new event just happened in one of your locations</b></p><br>";
+        message.append("<td style='padding:30px 30px 0px;text-align:center;font-family: Arial, Helvetica, sans-serif;color:white'>");
         message.append(header);
         message.append("</td>");
         message.append("</tr>");
         content = "";
         content += severityColor;
-        message.append("<tr bgcolor=\"#F5F5F5\" style='font-family: Arial, Helvetica, sans-serif;'>");
+        message.append("<tr bgcolor='#F5F5F5' style='font-family: Arial, Helvetica, sans-serif;'>");
 
         content += specialAttributes;
-        content += "<br>Description: " + event.getDescription();
-        content += "<br>We recommend you to: " + event.getHints();
-        content += "<br>Starting time: " + event.getStartingTime();
-        content += "<br>Ending time: " + event.getEndingTime();
-        content += "<br><br>Stay safe.<br><i>Environment Dashboard Team</i>";
+        content += "<br><strong>Description: </strong>" + event.getDescription();
+        content += "<br><strong>We recommend you to: </strong>" + event.getHints();
+        content += "<br><strong>Starting time: </strong>" + event.getStartingTime();
+        content += "<br><strong>Ending time: </strong>" + event.getEndingTime();
+        content += "<br><br>Stay safe,<br><i>Environment Dashboard Team</i>";
 
         message.append("<td style='padding:30px;font-size:14px'>");
         message.append(content);
@@ -167,30 +166,29 @@ public class NotificationController {
     private String getHeaderColor(Severity severity) {
         String headerColor;
         if (severity.equals(Severity.RED)) {
-            headerColor = "<tr bgcolor=\"#DC143C\" style='color:white'>";
+            headerColor = "<tr bgcolor='#DC143C'>";
         } else if (severity.equals(Severity.GREEN)) {
-            headerColor = "<tr bgcolor=\"#3CB371\" style='color:white'>";
+            headerColor = "<tr bgcolor='#3CB371'>";
         } else if (severity.equals(Severity.YELLOW)) {
-            headerColor = "<tr bgcolor=\"#FFDF00\" style='color:white'>";
+            headerColor = "<tr bgcolor='#FFDF00'>";
         } else {
-            headerColor = "<tr bgcolor=\" #FF7F50\" style='color:white'>";
+            headerColor = "<tr bgcolor='#FF7F50'>";
         }
         return headerColor;
 
     }
 
     private String getSeverityColor(Severity severity) {
-        String severityColor;
-        if (severity.equals("RED")) {
-            severityColor = "Severity: <font color='#DC143C'><b>RED</b></font>";
-        } else if (severity.equals("GREEN")) {
-            severityColor = "Severity: <font color='#3CB371'><b>GREEN</b></font>";
-        } else if (severity.equals("YELLOW")) {
-            severityColor = "Severity: <font color='#FFDF00'><b>YELLOW</b></font>";
+        String severityColor = "<strong>Severity: </strong>";
+        if (severity.equals(Severity.RED)) {
+            severityColor += "<font color='#DC143C'><b>RED</b></font>";
+        } else if (severity.equals(Severity.GREEN)) {
+            severityColor += "<font color='#3CB371'><b>GREEN</b></font>";
+        } else if (severity.equals(Severity.YELLOW)) {
+            severityColor += "<font color='#FFDF00'><b>YELLOW</b></font>";
         } else {
-            severityColor = "Severity: <font color= '#FF7F50'><b>ORANGE</b></font>";
+            severityColor += "<font color= '#FF7F50'><b>ORANGE</b></font>";
         }
-
         return severityColor;
     }
 
@@ -214,7 +212,7 @@ public class NotificationController {
         switch (eventType) {
             case "Fire":
                 Fire fire = fireService.getById(event.getId());
-                specialAttributes += "<br>Speed: " + fire.getSpeed();
+                specialAttributes += "<br><strong>Speed: </strong>" + fire.getSpeed();
                 break;
 
         }
@@ -225,7 +223,6 @@ public class NotificationController {
 
 
     private void sendEmailToUsersWithEvent(User[] users, Event event) throws MessagingException {
-        String eventType = eventMappingService.getById(event.getId()).getEventType();
         String title = "";
         String content;
         title = "New event alert!";
