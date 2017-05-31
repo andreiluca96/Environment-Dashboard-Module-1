@@ -101,6 +101,7 @@ public class ColdWeatherController {
 
     private ColdWeatherDto toDto(ColdWeather coldWeather) {
         return new ColdWeatherDto.Builder()
+                .userId(coldWeather.getUserId())
                 .id(coldWeather.getId())
                 .name(coldWeather.getName())
                 .latitude(coldWeather.getLatitude())
@@ -118,6 +119,7 @@ public class ColdWeatherController {
 
     private ColdWeather toCreatingModel(CreatingColdWeatherDto dto) {
         return new ColdWeatherBuilder()
+                .setUserId(dto.getUserId())
                 .setName(dto.getName())
                 .setLongitude(dto.getLongitude())
                 .setLatitude(dto.getLatitude())

@@ -104,6 +104,7 @@ public class EarthquakeController {
 
     private EarthquakeDto toDto(Earthquake earthquake) {
         return new EarthquakeDto.Builder()
+                .userId(earthquake.getUserId())
                 .id(earthquake.getId())
                 .name(earthquake.getName())
                 .latitude(earthquake.getLatitude())
@@ -121,6 +122,7 @@ public class EarthquakeController {
 
     private Earthquake toCreatingModel(CreatingEarthquakeDto dto) {
         return new EarthquakeBuilder()
+                .setUserId(dto.getUserId())
                 .setName(dto.getName())
                 .setLongitude(dto.getLongitude())
                 .setLatitude(dto.getLatitude())

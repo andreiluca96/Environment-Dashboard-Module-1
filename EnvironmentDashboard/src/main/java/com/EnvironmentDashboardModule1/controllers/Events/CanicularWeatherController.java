@@ -103,6 +103,7 @@ public class CanicularWeatherController {
 
     private CanicularWeatherDto toDto(CanicularWeather canicularWeather) {
         return new CanicularWeatherDto.Builder()
+                .userId(canicularWeather.getUserId())
                 .id(canicularWeather.getId())
                 .name(canicularWeather.getName())
                 .latitude(canicularWeather.getLatitude())
@@ -120,6 +121,7 @@ public class CanicularWeatherController {
 
     private CanicularWeather toCreatingModel(CreatingCanicularWeatherDto dto) {
         return new CanicularWeatherBuilder()
+                .setUserId(dto.getUserId())
                 .setName(dto.getName())
                 .setLongitude(dto.getLongitude())
                 .setLatitude(dto.getLatitude())

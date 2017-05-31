@@ -102,6 +102,7 @@ public class RainController {
 
     private RainDto toDto(Rain rain) {
         return new RainDto.Builder()
+                .userId(rain.getUserId())
                 .id(rain.getId())
                 .name(rain.getName())
                 .latitude(rain.getLatitude())
@@ -119,6 +120,7 @@ public class RainController {
 
     private Rain toCreatingModel(CreatingRainDto dto) {
         return new RainBuilder()
+                .setUserId(dto.getUserId())
                 .setName(dto.getName())
                 .setLongitude(dto.getLongitude())
                 .setLatitude(dto.getLatitude())

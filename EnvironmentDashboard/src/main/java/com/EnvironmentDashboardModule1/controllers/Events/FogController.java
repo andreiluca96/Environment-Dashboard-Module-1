@@ -104,6 +104,7 @@ public class FogController {
 
     private FogDto toDto(Fog fog) {
         return new FogDto.Builder()
+                .userId(fog.getUserId())
                 .id(fog.getId())
                 .name(fog.getName())
                 .latitude(fog.getLatitude())
@@ -121,6 +122,7 @@ public class FogController {
 
     private Fog toCreatingModel(CreatingFogDto dto) {
         return new FogBuilder()
+                .setUserId(dto.getUserId())
                 .setName(dto.getName())
                 .setLongitude(dto.getLongitude())
                 .setLatitude(dto.getLatitude())

@@ -105,6 +105,7 @@ public class TsunamiController {
 
     private TsunamiDto toDto(Tsunami tsunami) {
         return new TsunamiDto.Builder()
+                .userId(tsunami.getUserId())
                 .id(tsunami.getId())
                 .name(tsunami.getName())
                 .latitude(tsunami.getLatitude())
@@ -120,6 +121,7 @@ public class TsunamiController {
 
     private Tsunami toCreatingModel(CreatingTsunamiDto dto) {
         return new TsunamiBuilder()
+                .setUserId(dto.getUserId())
                 .setName(dto.getName())
                 .setLongitude(dto.getLongitude())
                 .setLatitude(dto.getLatitude())

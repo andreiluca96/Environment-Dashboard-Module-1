@@ -105,6 +105,7 @@ public class FloodController {
 
     private FloodDto toDto(Flood flood) {
         return new FloodDto.Builder()
+                .userId(flood.getUserId())
                 .id(flood.getId())
                 .name(flood.getName())
                 .latitude(flood.getLatitude())
@@ -120,6 +121,7 @@ public class FloodController {
 
     private Flood toCreatingModel(CreatingFloodDto dto) {
         return new FloodBuilder()
+                .setUserId(dto.getUserId())
                 .setName(dto.getName())
                 .setLongitude(dto.getLongitude())
                 .setLatitude(dto.getLatitude())

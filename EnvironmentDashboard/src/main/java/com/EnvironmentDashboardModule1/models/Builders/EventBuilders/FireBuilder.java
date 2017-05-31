@@ -72,6 +72,11 @@ public class FireBuilder extends EventBuilder{
         return this;
     }
 
+    public FireBuilder setUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+
     public Fire getFire(){
         Fire fire = new Fire();
 

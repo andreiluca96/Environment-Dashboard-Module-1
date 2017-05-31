@@ -103,6 +103,7 @@ import java.util.List;
 
         private TerroristAttackDto toDto(TerroristAttack terroristAttack) {
             return new TerroristAttackDto.Builder()
+                    .userId(terroristAttack.getUserId())
                     .id(terroristAttack.getId())
                     .name(terroristAttack.getName())
                     .latitude(terroristAttack.getLatitude())
@@ -118,6 +119,7 @@ import java.util.List;
 
         private TerroristAttack toCreatingModel(CreatingTerroristAttackDto dto) {
             return new TerroristAttackBuilder()
+                    .setUserId(dto.getUserId())
                     .setName(dto.getName())
                     .setLongitude(dto.getLongitude())
                     .setLatitude(dto.getLatitude())

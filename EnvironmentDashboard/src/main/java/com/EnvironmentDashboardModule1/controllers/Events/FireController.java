@@ -105,6 +105,7 @@ public class FireController {
 
     private FireDto toDto(Fire fire) {
         return new FireDto.Builder()
+                .userId(fire.getUserId())
                 .id(fire.getId())
                 .name(fire.getName())
                 .latitude(fire.getLatitude())
@@ -120,6 +121,7 @@ public class FireController {
 
     private Fire toCreatingModel(CreatingFireDto dto) {
         return new FireBuilder()
+                .setUserId(dto.getUserId())
                 .setName(dto.getName())
                 .setLongitude(dto.getLongitude())
                 .setLatitude(dto.getLatitude())

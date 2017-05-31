@@ -103,6 +103,7 @@ public class TornadoController {
 
     private TornadoDto toDto(Tornado tornado) {
         return new TornadoDto.Builder()
+                .userId(tornado.getUserId())
                 .id(tornado.getId())
                 .name(tornado.getName())
                 .latitude(tornado.getLatitude())
@@ -118,6 +119,7 @@ public class TornadoController {
 
     private Tornado toCreatingModel(CreatingTornadoDto dto) {
         return new TornadoBuilder()
+                .setUserId(dto.getUserId())
                 .setName(dto.getName())
                 .setLongitude(dto.getLongitude())
                 .setLatitude(dto.getLatitude())

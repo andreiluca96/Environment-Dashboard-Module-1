@@ -103,6 +103,7 @@ public class FloodController {
 
     private SnowDto toDto(Snow snow) {
         return new SnowDto.Builder()
+                .userId(snow.getUserId())
                 .id(snow.getId())
                 .name(snow.getName())
                 .latitude(snow.getLatitude())
@@ -118,6 +119,7 @@ public class FloodController {
 
     private Snow toCreatingModel(CreatingSnowDto dto) {
         return new SnowBuilder()
+                .setUserId(dto.getUserId())
                 .setName(dto.getName())
                 .setLongitude(dto.getLongitude())
                 .setLatitude(dto.getLatitude())
