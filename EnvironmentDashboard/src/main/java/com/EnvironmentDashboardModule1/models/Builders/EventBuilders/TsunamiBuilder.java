@@ -72,9 +72,16 @@ public class TsunamiBuilder extends EventBuilder{
         return this;
     }
 
+    public TsunamiBuilder setUserId(String userId) {
+        this.userId = userId;
+
+        return this;
+    }
+
     public Tsunami getTsunami(){
         Tsunami tsunami = new Tsunami();
 
+        tsunami.setUserId(userId);
         tsunami.setLatitude(latitude);
         tsunami.setLongitude(longitude);
         tsunami.setDescription(description);

@@ -72,9 +72,16 @@ public class FloodBuilder extends EventBuilder{
         return this;
     }
 
+    public FloodBuilder setUserId(String userId) {
+        this.userId = userId;
+
+        return this;
+    }
+
     public Flood getFlood(){
         Flood flood = new Flood();
 
+        flood.setUserId(userId);
         flood.setLatitude(latitude);
         flood.setLongitude(longitude);
         flood.setDescription(description);

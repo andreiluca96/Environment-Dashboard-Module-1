@@ -72,9 +72,16 @@ public class TerroristAttackBuilder extends EventBuilder{
         return this;
     }
 
+    public TerroristAttackBuilder setUserId(String userId) {
+        this.userId = userId;
+
+        return this;
+    }
+
     public TerroristAttack getTerroristAttack(){
         TerroristAttack terroristAttack = new TerroristAttack();
 
+        terroristAttack.setUserId(userId);
         terroristAttack.setLatitude(latitude);
         terroristAttack.setLongitude(longitude);
         terroristAttack.setDescription(description);

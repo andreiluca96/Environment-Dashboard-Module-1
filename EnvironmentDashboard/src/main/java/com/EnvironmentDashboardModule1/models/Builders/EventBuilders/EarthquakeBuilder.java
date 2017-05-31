@@ -89,10 +89,16 @@ public class EarthquakeBuilder extends EventBuilder{
         return this;
     }
 
+    public EarthquakeBuilder setUserId(String userId) {
+        this.userId = userId;
+
+        return this;
+    }
 
     public Earthquake getEarthquake(){
         Earthquake earthquake = new Earthquake();
 
+        earthquake.setUserId(userId);
         earthquake.setLatitude(latitude);
         earthquake.setLongitude(longitude);
         earthquake.setDescription(description);

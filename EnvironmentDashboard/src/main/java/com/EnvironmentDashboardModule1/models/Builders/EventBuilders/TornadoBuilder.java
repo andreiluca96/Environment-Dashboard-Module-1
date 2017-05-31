@@ -72,9 +72,16 @@ public class TornadoBuilder extends EventBuilder {
         return this;
     }
 
+    public TornadoBuilder setUserId(String userId) {
+        this.userId = userId;
+
+        return this;
+    }
+
     public Tornado getTornado(){
         Tornado tornado = new Tornado();
 
+        tornado.setUserId(userId);
         tornado.setLatitude(latitude);
         tornado.setLongitude(longitude);
         tornado.setDescription(description);

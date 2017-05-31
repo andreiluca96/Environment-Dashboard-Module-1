@@ -75,6 +75,7 @@ public class FireBuilder extends EventBuilder{
     public Fire getFire(){
         Fire fire = new Fire();
 
+        fire.setUserId(userId);
         fire.setLatitude(latitude);
         fire.setLongitude(longitude);
         fire.setDescription(description);
