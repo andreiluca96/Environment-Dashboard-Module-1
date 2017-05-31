@@ -4,13 +4,11 @@ package com.EnvironmentDashboardModule1.controllers.Mail;
  * Created by Luca Andrei on 5/25/2017.
  */
 
-import com.EnvironmentDashboardModule1.models.Events.Event;
-import com.EnvironmentDashboardModule1.models.Events.Fire;
+import com.EnvironmentDashboardModule1.models.Events.*;
+import com.EnvironmentDashboardModule1.models.MeteoEvents.MeteoEvent;
 import com.EnvironmentDashboardModule1.models.Severity;
 import com.EnvironmentDashboardModule1.models.Users.User;
-import com.EnvironmentDashboardModule1.services.Event.EventMappingService;
-import com.EnvironmentDashboardModule1.services.Event.EventService;
-import com.EnvironmentDashboardModule1.services.Event.FireService;
+import com.EnvironmentDashboardModule1.services.Event.*;
 import com.EnvironmentDashboardModule1.services.Mail.NotificationService;
 //import org.quartz.*;
 //import org.quartz.impl.StdSchedulerFactory;
@@ -30,13 +28,22 @@ import java.util.*;
 public class NotificationController {
     @Autowired
     private NotificationService notificationService;
-
     @Autowired
     private EventService eventService;
-
     @Autowired
     private FireService fireService;
-
+    @Autowired
+    private EarthquakeService earthquakeService;
+    @Autowired
+    private FloodService floodService;
+    @Autowired
+    private TsunamiService tsunamiService;
+    @Autowired
+    private TerroristAttackService terroristAttackService;
+    @Autowired
+    private TornadoService tornadoService;
+    @Autowired
+    private MeteoEventService meteoEventService;
     @Autowired
     private EventMappingService eventMappingService;
 
@@ -44,12 +51,12 @@ public class NotificationController {
     @RequestMapping(value = "/test/{id}", method = RequestMethod.GET)
     public void sendTestMail(@PathVariable Long id) throws MessagingException {
         Event event = eventService.getById(id);
-        String title = "";
+        String subject;
         String content;
-        title = "New event alert!";
+        subject=getSubject(event);
         content=getContent(event);
 
-        notificationService.sendMail("sabisav@yahoo.com", title, content);
+        notificationService.sendMail("sabisav@yahoo.com", subject, content);
     }
 
     @RequestMapping(value = "/current-event-notification", method = RequestMethod.GET)
@@ -165,6 +172,51 @@ public class NotificationController {
         return content;
     }
 
+    private String getSubject(Event event){
+        String eventType = eventMappingService.getById(event.getId()).getEventType();
+        String subject="";
+        switch (eventType) {
+            case "Event":
+                subject = "New Event Alert!";
+                break;
+            case "Fire":
+                subject = "Fire Alert!";
+                break;
+            case "Earthquake":
+                subject = "Earthquake Alert!";
+                break;
+            case "Flood":
+                subject = "Flood Alert!";
+                break;
+            case "Tsunami":
+                subject = "Tsunami Alert!";
+                break;
+            case "Tornado":
+                subject = "Tornado Alert!";
+                break;
+            case "TerroristAttack":
+                subject = "Terrorist Attack Alert!";
+                break;
+            case "CanicularWeather":
+                subject = "Canicular Weather Warning!";
+                break;
+            case "ColdWeather":
+                subject = "Cold Weather Warning!";
+                break;
+            case "Fog":
+                subject = "Fog Warning!";
+                break;
+            case "Snow":
+                subject = "Snow Warning!";
+                break;
+            case "Rain":
+                subject = "Rain Warning!";
+                break;
+        }
+        return subject;
+    }
+
+
     private String getHeaderColor(Severity severity) {
         String headerColor;
         if (severity.equals(Severity.RED)) {
@@ -199,12 +251,41 @@ public class NotificationController {
         String header="";
         switch (eventType) {
             case "Event":
-                header = "There's a new event in your area<br>";
+                header = "There's a new event in your area!";
                 break;
             case "Fire":
-                header = "There's a fire in your area<br>";
+                header = "There's a fire in your area!";
                 break;
-
+            case "Earthquake":
+                header = "There's an earthquake in your area!";
+                break;
+            case "Flood":
+                header = "There's a flood in your area!";
+                break;
+            case "Tsunami":
+                header = "There's a tsunami in your area!";
+                break;
+            case "Tornado":
+                header = "There's a tornado in your area!";
+                break;
+            case "TerroristAttack":
+                header = "There's a terrorist attack in your area!";
+                break;
+            case "CanicularWeather":
+                header = "Canicular Weather warning!";
+                break;
+            case "ColdWeather":
+                header = "Cold Weather warning!";
+                break;
+            case "Fog":
+                header = "Fog warning!";
+                break;
+            case "Snow":
+                header = "Snow warning!";
+                break;
+            case "Rain":
+                header = "Rain warning!";
+                break;
         }
         return header;
     }
@@ -216,7 +297,33 @@ public class NotificationController {
                 Fire fire = fireService.getById(event.getId());
                 specialAttributes += "<br><strong>Speed: </strong>" + fire.getSpeed();
                 break;
-
+            case "Earthquake":
+                Earthquake earthquake = earthquakeService.getById(event.getId());
+                specialAttributes += "<br><strong>Depth: </strong>" + earthquake.getDepth();
+                specialAttributes += "<br><strong>Mercalli degree: </strong>" + earthquake.getMercalliDegree();
+                specialAttributes += "<br><strong>Richter degree: </strong>" + earthquake.getRichterDegree();
+                break;
+            case "Flood":
+                Flood flood = floodService.getById(event.getId());
+                specialAttributes += "<br><strong>Precipitation level: </strong>" + flood.getPrecipitationLevel();
+                break;
+            case "Tsunami":
+                Tsunami tsunami = tsunamiService.getById(event.getId());
+                specialAttributes += "<br><strong>Max wave height: </strong>" + tsunami.getMaxWaveHeight();
+                break;
+            case "Tornado":
+                Tornado tornado = tornadoService.getById(event.getId());
+                specialAttributes += "<br><strong>Wind speed: </strong>" + tornado.getWindSpeed();
+                break;
+            case "TerroristAttack":
+                TerroristAttack terroristAttack = terroristAttackService.getById(event.getId());
+                specialAttributes += "<br><strong>Number of terrorists: </strong>" + terroristAttack.getNumberOfTerrorists();
+                break;
+            default:
+                MeteoEvent meteoEvent = meteoEventService.getById(event.getId());
+                specialAttributes += "<br><strong>Humidity: </strong>" + meteoEvent.getHumidity();
+                specialAttributes += "<br><strong>Precipitation level: </strong>" + meteoEvent.getPrecipitationLevel();
+                specialAttributes += "<br><strong>Temperature: </strong>" + meteoEvent.getTemperature();
         }
         return specialAttributes;
 
@@ -225,13 +332,13 @@ public class NotificationController {
 
 
     private void sendEmailToUsersWithEvent(User[] users, Event event) throws MessagingException {
-        String title = "";
+        String subject;
         String content;
-        title = "New event alert!";
+        subject=getSubject(event);
         content=getContent(event);
 
         for (User user : users) {
-            notificationService.sendMail(user.getEmail(), title, content);
+            notificationService.sendMail(user.getEmail(), subject, content);
         }
     }
 
