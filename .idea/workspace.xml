@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c704553-a875-4a7c-a296-770372eff31d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/EventBuilder.java" afterPath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/EventBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/FireBuilder.java" afterPath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/FireBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/FloodBuilder.java" afterPath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/FloodBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TerroristAttackBuilder.java" afterPath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TerroristAttackBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TornadoBuilder.java" afterPath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TornadoBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TsunamiBuilder.java" afterPath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TsunamiBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/EventBuilderTests.java" afterPath="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/EventBuilderTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/FireBuilderTests.java" afterPath="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/FireBuilderTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/FloodBuilderTests.java" afterPath="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/FloodBuilderTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TerroristAttackBuilderTests.java" afterPath="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TerroristAttackBuilderTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TornadoBuilderTests.java" afterPath="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TornadoBuilderTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TsunamiBuilderTests.java" afterPath="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TsunamiBuilderTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/controllers/Mail/NotificationController.java" afterPath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/controllers/Mail/NotificationController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/EnvironmentDashboard/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,11 +22,11 @@
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="FireBuilderTests.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/FireBuilderTests.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="492">
+                <state relative-caret-position="1292">
                   <caret line="82" column="30" lean-forward="false" selection-start-line="82" selection-start-column="30" selection-end-line="82" selection-end-column="30" />
                   <folding />
                 </state>
@@ -47,7 +36,7 @@
           <file leaf-file-name="TornadoBuilderTests.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TornadoBuilderTests.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="478">
+                <state relative-caret-position="1292">
                   <caret line="82" column="33" lean-forward="false" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
                   <folding />
                 </state>
@@ -57,7 +46,7 @@
           <file leaf-file-name="FloodBuilderTests.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/FloodBuilderTests.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="492">
+                <state relative-caret-position="1309">
                   <caret line="83" column="31" lean-forward="false" selection-start-line="83" selection-start-column="31" selection-end-line="83" selection-end-column="31" />
                   <folding />
                 </state>
@@ -67,7 +56,7 @@
           <file leaf-file-name="TerroristAttackBuilderTests.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TerroristAttackBuilderTests.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="478">
+                <state relative-caret-position="1309">
                   <caret line="84" column="41" lean-forward="false" selection-start-line="84" selection-start-column="41" selection-end-line="84" selection-end-column="41" />
                   <folding />
                 </state>
@@ -77,8 +66,8 @@
           <file leaf-file-name="TsunamiBuilderTests.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TsunamiBuilderTests.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="512">
-                  <caret line="84" column="1" lean-forward="true" selection-start-line="84" selection-start-column="1" selection-end-line="84" selection-end-column="1" />
+                <state relative-caret-position="-491">
+                  <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
                   <folding />
                 </state>
               </provider>
@@ -87,12 +76,12 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="FireBuilder.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/FireBuilder.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="407">
-                  <caret line="91" column="29" lean-forward="true" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
+                <state relative-caret-position="1479">
+                  <caret line="91" column="29" lean-forward="false" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
@@ -101,7 +90,7 @@
           <file leaf-file-name="FloodBuilder.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/FloodBuilder.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
+                <state relative-caret-position="1224">
                   <caret line="75" column="29" lean-forward="false" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
                   <folding />
                 </state>
@@ -111,19 +100,31 @@
           <file leaf-file-name="TerroristAttackBuilder.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TerroristAttackBuilder.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
+                <state relative-caret-position="1224">
                   <caret line="75" column="30" lean-forward="false" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="30" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="TsunamiBuilder.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="TsunamiBuilder.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TsunamiBuilder.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="390">
+                <state relative-caret-position="479">
                   <caret line="75" column="29" lean-forward="false" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="NotificationController.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/controllers/Mail/NotificationController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="529">
+                  <caret line="273" column="0" lean-forward="true" selection-start-line="273" selection-start-column="0" selection-end-line="273" selection-end-column="0" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -131,7 +132,7 @@
           <file leaf-file-name="CanicularWeatherBuilder.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/CanicularWeatherBuilder.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1276">
+                <state relative-caret-position="153">
                   <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
                   <folding />
                 </state>
@@ -141,8 +142,8 @@
           <file leaf-file-name="EarthquakeBuilderTests.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/EarthquakeBuilderTests.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-780">
-                  <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+                <state relative-caret-position="238">
+                  <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
                   <folding />
                 </state>
               </provider>
@@ -151,8 +152,8 @@
           <file leaf-file-name="EventBuilderTests.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/EventBuilderTests.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="87">
-                  <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+                <state relative-caret-position="799">
+                  <caret line="53" column="5" lean-forward="false" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
@@ -161,18 +162,8 @@
           <file leaf-file-name="EventBuilder.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/EventBuilder.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1920">
-                  <caret line="134" column="32" lean-forward="true" selection-start-line="134" selection-start-column="32" selection-end-line="134" selection-end-column="32" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="TornadoBuilder.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TornadoBuilder.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="509">
-                  <caret line="96" column="5" lean-forward="false" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
+                <state relative-caret-position="2227">
+                  <caret line="134" column="32" lean-forward="false" selection-start-line="134" selection-start-column="32" selection-end-line="134" selection-end-column="32" />
                   <folding />
                 </state>
               </provider>
@@ -181,8 +172,8 @@
           <file leaf-file-name="EarthquakeBuilder.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/EarthquakeBuilder.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1089">
-                  <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+                <state relative-caret-position="323">
+                  <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
                   <folding />
                 </state>
               </provider>
@@ -226,6 +217,7 @@
         <option value="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/FloodBuilderTests.java" />
         <option value="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TerroristAttackBuilderTests.java" />
         <option value="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TsunamiBuilderTests.java" />
+        <option value="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/controllers/Mail/NotificationController.java" />
       </list>
     </option>
   </component>
@@ -257,6 +249,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -810,9 +803,80 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Environment-Dashboard-Module-1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Environment-Dashboard-Module-1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvironmentDashboard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvironmentDashboardModule1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Mail" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Environment-Dashboard-Module-1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Environment-Dashboard-Module-1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvironmentDashboard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvironmentDashboardModule1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -826,7 +890,7 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
-  <component name="RunManager" selected="JUnit.TsunamiBuilderTests">
+  <component name="RunManager" selected="JUnit.All in EnvironmentDashboard">
     <configuration default="false" name="TornadoBuilderTests.given_anInvalidValue_when_setUserIdIsCalled_then_shouldThrowException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1359,8 +1423,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.TsunamiBuilderTests" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.All in EnvironmentDashboard" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.All in EnvironmentDashboard" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TsunamiBuilderTests" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.TornadoBuilderTests.given_anInvalidValue_when_setUserIdIsCalled_then_shouldThrowException" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.TornadoBuilderTests.given_anInvalidValue_when_setStartingTimeIsCalled_then_shouldThrowException" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.TornadoBuilderTests" />
@@ -1382,11 +1446,12 @@
       <workItem from="1496229538378" duration="99000" />
       <workItem from="1496229736087" duration="38000" />
       <workItem from="1496229794646" duration="7265000" />
+      <workItem from="1496237911255" duration="209000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_EnvironmentDashboard - 2017.05.31 at 16h 26m 19s.xml">
+    <history-entry file="All_in_EnvironmentDashboard - 2017.05.31 at 16h 40m 57s.xml">
       <configuration name="All in EnvironmentDashboard" configurationId="JUnit" />
     </history-entry>
     <history-entry file="FloodBuilderTests - 2017.05.31 at 15h 57m 37s.xml">
@@ -1418,7 +1483,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7452000" />
+    <option name="totallyTimeSpent" value="7661000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1176" extended-state="6" />
@@ -1437,16 +1502,16 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32981783" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32981783" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32981783" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20202559" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20415778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1482,14 +1547,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Events/Fire.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Events/Flood.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1582,7 +1639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1590,7 +1646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1598,7 +1653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1606,7 +1660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1772,7 +1825,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TornadoBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
+        <state relative-caret-position="1581">
           <caret line="96" column="5" lean-forward="false" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
           <folding />
         </state>
@@ -1780,31 +1833,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/EarthquakeBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1089">
-          <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        <state relative-caret-position="323">
+          <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/EventBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1920">
-          <caret line="134" column="32" lean-forward="true" selection-start-line="134" selection-start-column="32" selection-end-line="134" selection-end-column="32" />
+        <state relative-caret-position="2227">
+          <caret line="134" column="32" lean-forward="false" selection-start-line="134" selection-start-column="32" selection-end-line="134" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/FireBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="91" column="29" lean-forward="true" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
+        <state relative-caret-position="1479">
+          <caret line="91" column="29" lean-forward="false" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/FloodBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
+        <state relative-caret-position="1224">
           <caret line="75" column="29" lean-forward="false" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
           <folding />
         </state>
@@ -1812,7 +1865,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TerroristAttackBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
+        <state relative-caret-position="1224">
           <caret line="75" column="30" lean-forward="false" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="30" />
           <folding />
         </state>
@@ -1820,7 +1873,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/CanicularWeatherBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1276">
+        <state relative-caret-position="153">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding />
         </state>
@@ -1828,15 +1881,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/EarthquakeBuilderTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-780">
-          <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+        <state relative-caret-position="238">
+          <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TerroristAttackBuilderTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
+        <state relative-caret-position="1309">
           <caret line="84" column="41" lean-forward="false" selection-start-line="84" selection-start-column="41" selection-end-line="84" selection-end-column="41" />
           <folding />
         </state>
@@ -1844,15 +1897,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/EventBuilderTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+        <state relative-caret-position="799">
+          <caret line="53" column="5" lean-forward="false" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/FireBuilderTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
+        <state relative-caret-position="1292">
           <caret line="82" column="30" lean-forward="false" selection-start-line="82" selection-start-column="30" selection-end-line="82" selection-end-column="30" />
           <folding />
         </state>
@@ -1860,7 +1913,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/FloodBuilderTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
+        <state relative-caret-position="1309">
           <caret line="83" column="31" lean-forward="false" selection-start-line="83" selection-start-column="31" selection-end-line="83" selection-end-column="31" />
           <folding />
         </state>
@@ -1868,7 +1921,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TsunamiBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
+        <state relative-caret-position="479">
           <caret line="75" column="29" lean-forward="false" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
           <folding />
         </state>
@@ -1876,7 +1929,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TornadoBuilderTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
+        <state relative-caret-position="1292">
           <caret line="82" column="33" lean-forward="false" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
           <folding />
         </state>
@@ -1884,9 +1937,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TsunamiBuilderTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="84" column="1" lean-forward="true" selection-start-line="84" selection-start-column="1" selection-end-line="84" selection-end-column="1" />
+        <state relative-caret-position="-491">
+          <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/controllers/Mail/NotificationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="273" column="0" lean-forward="true" selection-start-line="273" selection-start-column="0" selection-end-line="273" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

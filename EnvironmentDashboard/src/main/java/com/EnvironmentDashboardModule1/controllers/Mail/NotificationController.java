@@ -12,8 +12,8 @@ import com.EnvironmentDashboardModule1.services.Event.EventMappingService;
 import com.EnvironmentDashboardModule1.services.Event.EventService;
 import com.EnvironmentDashboardModule1.services.Event.FireService;
 import com.EnvironmentDashboardModule1.services.Mail.NotificationService;
-import org.quartz.*;
-import org.quartz.impl.StdSchedulerFactory;
+//import org.quartz.*;
+//import org.quartz.impl.StdSchedulerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -110,6 +110,7 @@ public class NotificationController {
         }).start();
     }
 
+    /*
     @RequestMapping(value = "/notification-scheduler", method = RequestMethod.GET)
     public void startScheduler() {
         try {
@@ -120,6 +121,7 @@ public class NotificationController {
 
 
     }
+*/
 
     private String getContent(Event event){
         String content="";
@@ -239,7 +241,7 @@ public class NotificationController {
 
         return users;
     }
-
+/*
     public class NotificationJob implements Job {
         private Map<Long, Boolean> notifiedEvent = new HashMap<>();
 
@@ -267,5 +269,5 @@ public class NotificationController {
             }
         }
     }
-
+    */
 }
