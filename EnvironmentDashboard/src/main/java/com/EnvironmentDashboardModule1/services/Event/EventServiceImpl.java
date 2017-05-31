@@ -1,4 +1,4 @@
-package com.EnvironmentDashboardModule1.services;
+package com.EnvironmentDashboardModule1.services.Event;
 
 import com.EnvironmentDashboardModule1.models.Events.Event;
 import com.EnvironmentDashboardModule1.repositories.EventRepository;

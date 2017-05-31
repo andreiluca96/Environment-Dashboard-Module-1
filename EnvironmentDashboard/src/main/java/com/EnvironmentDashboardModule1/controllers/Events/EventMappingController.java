@@ -1,7 +1,7 @@
 package com.EnvironmentDashboardModule1.controllers.Events;
 
 import com.EnvironmentDashboardModule1.models.EventMapping;
-import com.EnvironmentDashboardModule1.services.EventMappingService;
+import com.EnvironmentDashboardModule1.services.Event.EventMappingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
