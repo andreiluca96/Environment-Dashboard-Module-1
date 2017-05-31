@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c704553-a875-4a7c-a296-770372eff31d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/FogBuilderTests.java" afterPath="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/FogBuilderTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/RainBuilderTests.java" afterPath="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/RainBuilderTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/SnowBuilderTests.java" afterPath="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/SnowBuilderTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Events/Event.java" afterPath="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Events/Event.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Events/EventTests.java" afterPath="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Events/EventTests.java" />
     </list>
     <ignored path="$PROJECT_DIR$/EnvironmentDashboard/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,53 +24,21 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="CanicularWeatherBuilderTests.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/CanicularWeatherBuilderTests.java">
+          <file leaf-file-name="EventTests.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Events/EventTests.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-749">
-                  <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ColdWeatherBuilderTests.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/ColdWeatherBuilderTests.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="186">
-                  <caret line="75" column="39" lean-forward="false" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
+                <state relative-caret-position="272">
+                  <caret line="63" column="24" lean-forward="true" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="FogBuilderTests.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/FogBuilderTests.java">
+          <file leaf-file-name="FireTests.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Events/FireTests.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="461">
-                  <caret line="94" column="55" lean-forward="true" selection-start-line="94" selection-start-column="55" selection-end-line="94" selection-end-column="55" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="RainBuilderTests.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/RainBuilderTests.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1394">
-                  <caret line="94" column="30" lean-forward="false" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SnowBuilderTests.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/SnowBuilderTests.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1496">
-                  <caret line="94" column="42" lean-forward="false" selection-start-line="94" selection-start-column="42" selection-end-line="94" selection-end-column="42" />
+                <state relative-caret-position="170">
+                  <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
@@ -81,55 +48,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="CanicularWeatherBuilder.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/CanicularWeatherBuilder.java">
+          <file leaf-file-name="Event.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Events/Event.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="186">
-                  <caret line="68" column="41" lean-forward="true" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="41" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="FogBuilder.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/FogBuilder.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="169">
-                  <caret line="88" column="20" lean-forward="true" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="20" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="RainBuilder.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/RainBuilder.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1123">
-                  <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SnowBuilder.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/SnowBuilder.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="841">
-                  <caret line="104" column="5" lean-forward="false" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ColdWeatherBuilder.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/ColdWeatherBuilder.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-936">
-                  <caret line="23" column="18" lean-forward="true" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+                <state relative-caret-position="-1948">
+                  <caret line="45" column="29" lean-forward="false" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
@@ -152,7 +75,6 @@
       <list>
         <option value="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/EnvironmentDashboardApplication.java" />
         <option value="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/DTO/CanicularWeatherDto.java" />
-        <option value="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Events/EventTests.java" />
         <option value="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/EarthquakeBuilder.java" />
         <option value="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/EarthquakeBuilderTests.java" />
         <option value="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TerroristAttackBuilder.java" />
@@ -180,6 +102,8 @@
         <option value="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/FogBuilderTests.java" />
         <option value="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/RainBuilderTests.java" />
         <option value="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/SnowBuilderTests.java" />
+        <option value="$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Events/Event.java" />
+        <option value="$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Events/EventTests.java" />
       </list>
     </option>
   </component>
@@ -852,33 +776,7 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
-  <component name="RunManager" selected="JUnit.SnowBuilderTests">
-    <configuration default="false" name="CanicularWeatherBuilderTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.EnvironmentDashboardModule1.models.Builders.MeteoEventBuilders.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="EnvironmentDashboard" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.EnvironmentDashboardModule1.models.Builders.MeteoEventBuilders" />
-      <option name="MAIN_CLASS_NAME" value="com.EnvironmentDashboardModule1.models.Builders.MeteoEventBuilders.CanicularWeatherBuilderTests" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.EventTests">
     <configuration default="false" name="ColdWeatherBuilderTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -969,6 +867,32 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.EnvironmentDashboardModule1.models.Builders.MeteoEventBuilders" />
       <option name="MAIN_CLASS_NAME" value="com.EnvironmentDashboardModule1.models.Builders.MeteoEventBuilders.SnowBuilderTests" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="EventTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.EnvironmentDashboardModule1.models.Events.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="EnvironmentDashboard" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.EnvironmentDashboardModule1.models.Events" />
+      <option name="MAIN_CLASS_NAME" value="com.EnvironmentDashboardModule1.models.Events.EventTests" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -1382,19 +1306,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Spring Boot.EnvironmentDashboardApplication" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.CanicularWeatherBuilderTests" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.ColdWeatherBuilderTests" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.FogBuilderTests" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.RainBuilderTests" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.SnowBuilderTests" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ColdWeatherBuilderTests" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.FogBuilderTests" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.RainBuilderTests" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.SnowBuilderTests" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.EventTests" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.SnowBuilderTests" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.RainBuilderTests" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.FogBuilderTests" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ColdWeatherBuilderTests" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.CanicularWeatherBuilderTests" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.EventTests" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.SnowBuilderTests" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.RainBuilderTests" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.FogBuilderTests" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ColdWeatherBuilderTests" />
       </list>
     </recent_temporary>
   </component>
@@ -1413,7 +1337,7 @@
       <workItem from="1496229538378" duration="99000" />
       <workItem from="1496229736087" duration="38000" />
       <workItem from="1496229794646" duration="7265000" />
-      <workItem from="1496237911255" duration="2536000" />
+      <workItem from="1496237911255" duration="3655000" />
     </task>
     <servers />
   </component>
@@ -1433,6 +1357,9 @@
     <history-entry file="ColdWeatherBuilderTests - 2017.05.31 at 17h 13m 20s.xml">
       <configuration name="ColdWeatherBuilderTests" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="EventTests - 2017.05.31 at 17h 38m 59s.xml">
+      <configuration name="EventTests" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="FogBuilderTests - 2017.05.31 at 17h 15m 40s.xml">
       <configuration name="FogBuilderTests" configurationId="JUnit" />
     </history-entry>
@@ -1442,15 +1369,12 @@
     <history-entry file="SnowBuilderTests - 2017.05.31 at 17h 20m 45s.xml">
       <configuration name="SnowBuilderTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TornadoBuilderTests_given_anInvalidValue_when_setWindSpeedIsCalled_then_shouldThrowException - 2017.05.31 at 16h 07m 15s.xml">
-      <configuration name="TornadoBuilderTests.given_anInvalidValue_when_setWindSpeedIsCalled_then_shouldThrowException" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TsunamiBuilderTests - 2017.05.31 at 16h 29m 38s.xml">
       <configuration name="TsunamiBuilderTests" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9988000" />
+    <option name="totallyTimeSpent" value="11107000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1176" extended-state="6" />
@@ -1474,7 +1398,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32981783" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32981783" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2249467" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1514,78 +1438,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Events/TerroristAttackTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Events/TsunamiTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/MeteoEvents/MeteoEventTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/MeteoEvents/RainTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/MeteoEvents/SnowTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Events/TornadoTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Events/EarthquakeTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Events/EventTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/EarthquakeBuilderTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/TerroristAttackBuilderTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1309">
@@ -1631,7 +1483,7 @@
         <state relative-caret-position="529">
           <caret line="273" column="0" lean-forward="true" selection-start-line="273" selection-start-column="0" selection-end-line="273" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1700,114 +1552,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Events/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1955">
-          <caret line="141" column="19" lean-forward="false" selection-start-line="141" selection-start-column="19" selection-end-line="141" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Events/Earthquake.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Events/Fire.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Events/Flood.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Events/TerroristAttack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Events/Tornado.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Events/Tsunami.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/MeteoEvents/ColdWeather.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/MeteoEvents/CanicularWeather.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/MeteoEvents/Fog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/MeteoEvents/Snow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Users/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/EventMapping.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Severity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -1820,31 +1568,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/MeteoEvents/Rain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/EventBuilders/EventBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2380">
           <caret line="143" column="5" lean-forward="true" selection-start-line="143" selection-start-column="5" selection-end-line="143" selection-end-column="5" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/MeteoEvents/MeteoEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1882,34 +1610,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/FogBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="88" column="20" lean-forward="true" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/SnowBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="841">
-          <caret line="104" column="5" lean-forward="false" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/RainBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1123">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/FogBuilderTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="461">
@@ -1928,8 +1628,230 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/SnowBuilderTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1496">
-          <caret line="94" column="42" lean-forward="false" selection-start-line="94" selection-start-column="42" selection-end-line="94" selection-end-column="42" />
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/MeteoEvents/SnowTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/MeteoEvents/RainTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/MeteoEvents/MeteoEventTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Severity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/EventMapping.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/MeteoEvents/Snow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/MeteoEvents/Rain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/MeteoEvents/MeteoEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/MeteoEvents/Fog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/MeteoEvents/ColdWeather.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/MeteoEvents/CanicularWeather.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Events/Fire.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Events/TsunamiTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Events/TornadoTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Events/TerroristAttackTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Events/FloodTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/RainBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1072">
+          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/SnowBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="841">
+          <caret line="104" column="5" lean-forward="false" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Builders/MeteoEventBuilders/FogBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Events/Earthquake.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Events/Flood.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Events/TerroristAttack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Events/Tornado.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Events/Tsunami.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Events/FireTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/main/java/com/EnvironmentDashboardModule1/models/Events/Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1948">
+          <caret line="45" column="29" lean-forward="false" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvironmentDashboard/src/test/java/com/EnvironmentDashboardModule1/models/Events/EventTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="63" column="24" lean-forward="true" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
           <folding />
         </state>
       </provider>

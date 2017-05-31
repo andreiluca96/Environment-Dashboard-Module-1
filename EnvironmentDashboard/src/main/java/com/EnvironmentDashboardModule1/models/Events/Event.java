@@ -43,6 +43,7 @@ public class Event implements Serializable {
     }
 
     public void setUserId(String userId) {
+        validateString(userId);
         this.userId = userId;
     }
 

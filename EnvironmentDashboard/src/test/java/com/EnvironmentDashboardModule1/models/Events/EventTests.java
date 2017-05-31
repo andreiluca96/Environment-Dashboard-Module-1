@@ -21,6 +21,9 @@ public class EventTests {
     public static final String EVENT_DESCRIPTION = "Terrorist attack on New Jersey";
     public static final String EVENT_NAME = "Fukushima";
     public static final String EVENT_HINTS = "Stay in your home";
+    public static final String EVENT_USER_ID = "USER-TOKEN";
+
+    private Event event = new Event();
 
     @Test
     public void contextLoad(){
@@ -29,7 +32,6 @@ public class EventTests {
 
     @Test
     public void given_differentValues_when_getLatitudeIsCalled_then_assertEquality(){
-        Event event = new Event();
         double latitude = 10;
         event.setLatitude(latitude);
 
@@ -38,15 +40,12 @@ public class EventTests {
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setLatitudeIsCalled_then_shouldThrowException(){
-        Event event = new Event();
         double latitude = -1000;
-
         event.setLatitude(latitude);
     }
 
     @Test
     public void given_differentValues_when_getLongitudeIsCalled_then_assertEquality(){
-        Event event = new Event();
         double longitude = 10;
         event.setLongitude(longitude);
 
@@ -55,15 +54,12 @@ public class EventTests {
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setLongitudeIsCalled_then_shouldThrowException(){
-        Event event = new Event();
         double longitude = -1000;
-
         event.setLongitude(longitude);
     }
 
     @Test
     public void given_differentValues_when_getIdIsCalled_then_assertEquality(){
-        Event event = new Event();
         Long id = new Long(10);
         event.setId(id);
 
@@ -72,15 +68,12 @@ public class EventTests {
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setIdIsCalled_then_shouldThrowException(){
-        Event event = new Event();
         Long id = new Long(-1000);
-
         event.setId(id);
     }
 
     @Test
     public void given_differentValues_when_getNameIsCalled_then_assertEquality(){
-        Event event = new Event();
         String name = EVENT_NAME;
         event.setName(name);
 
@@ -89,15 +82,12 @@ public class EventTests {
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setNameIsCalled_then_shouldThrowException(){
-        Event event = new Event();
         String name = null;
-
         event.setName(name);
     }
 
     @Test
     public void given_differentValues_when_getStartingTimeIsCalled_then_assertEquality(){
-        Event event = new Event();
         Date startingTime = new Date();
         event.setStartingTime(startingTime);
 
@@ -106,15 +96,12 @@ public class EventTests {
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setStartingTime_then_shouldThrowException(){
-        Event event = new Event();
         Date startingTime = null;
-
         event.setStartingTime(startingTime);
     }
 
     @Test
     public void given_differentValues_when_getEndingTimeIsCalled_then_assertEquality(){
-        Event event = new Event();
         Date endingTime = new Date();
         event.setEndingTime(endingTime);
 
@@ -123,15 +110,12 @@ public class EventTests {
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setEndingTime_then_shouldThrowException(){
-        Event event = new Event();
         Date endingTime = null;
-
         event.setEndingTime(endingTime);
     }
 
     @Test
     public void given_differentValues_when_getDescriptionIsCalled_then_assertEquality(){
-        Event event = new Event();
         String description = EVENT_DESCRIPTION;
         event.setDescription(description);
 
@@ -140,15 +124,12 @@ public class EventTests {
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setDescriptionIsCalled_then_shouldThrowException(){
-        Event event = new Event();
         String description = null;
-
         event.setDescription(description);
     }
 
     @Test
     public void given_differentValues_when_getHintsIsCalled_then_assertEquality(){
-        Event event = new Event();
         String hints = EVENT_HINTS;
         event.setHints(hints);
 
@@ -157,15 +138,12 @@ public class EventTests {
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setHintsIsCalled_then_shouldThrowException(){
-        Event event = new Event();
         String hints = null;
-
         event.setHints(hints);
     }
 
     @Test
     public void given_differentValues_when_getRadiusIsCalled_then_assertEquality(){
-        Event event = new Event();
         double radius = 10;
         event.setRadius(radius);
 
@@ -174,15 +152,26 @@ public class EventTests {
 
     @Test(expected = IllegalArgumentException.class)
     public void given_anInvalidValue_when_setRadiusIsCalled_then_shouldThrowException(){
-        Event event = new Event();
         double radius = -1000;
-
         event.setRadius(radius);
     }
 
     @Test
+    public void given_differentValues_when_getUserIdIsCalled_then_assertEquality(){
+        String userId = EVENT_USER_ID;
+        event.setUserId(userId);
+
+        Assert.assertEquals(event.getUserId(), userId);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void given_anInvalidValue_when_setUserIdIsCalled_then_shouldThrowException(){
+        String invalidUserId = null;
+        event.setUserId(invalidUserId);
+    }
+
+    @Test
     public void given_aValidEventWithId_when_createEventDTO_then_shouldGetDto_Id() {
-        Event event = new Event();
         event.setId(new Long(10));
 
         EventController eventController = new EventController();
