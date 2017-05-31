@@ -123,15 +123,15 @@ public class NotificationController {
         headerColor = getHeaderColor(event.getSeverity());
         severityColor = getSeverityColor(event.getSeverity());
 
-        message.append("<table style='margin: 0px auto; width:500px'>");
+        message.append("<table style='margin: 0px auto; width:500px;font-family: Arial, Helvetica, sans-serif;'>");
         message.append(headerColor);
-        message.append("<td style='padding:30px 30px 0px;text-align:center;font-family: Arial, Helvetica, sans-serif;color:white'>");
+        message.append("<th style='color:white;font-size:22px; padding:40px;text-align:center'>");
         message.append(header);
-        message.append("</td>");
+        message.append("</th>");
         message.append("</tr>");
         content = "";
         content += severityColor;
-        message.append("<tr bgcolor='#F5F5F5' style='font-family: Arial, Helvetica, sans-serif;'>");
+        message.append("<tr bgcolor='#F5F5F5'>");
 
         content += specialAttributes;
         content += "<br><strong>Description: </strong>" + event.getDescription();
@@ -184,10 +184,10 @@ public class NotificationController {
         String header="";
         switch (eventType) {
             case "Event":
-                header = "<p style=\"font-size:22px\"><b>There's a new event in your area</b></p><br>";
+                header = "There's a new event in your area<br>";
                 break;
             case "Fire":
-                header = "<p style=\"font-size:22px\"><b>There's a fire in your area</b></p><br>";
+                header = "There's a fire in your area<br>";
                 break;
 
         }
