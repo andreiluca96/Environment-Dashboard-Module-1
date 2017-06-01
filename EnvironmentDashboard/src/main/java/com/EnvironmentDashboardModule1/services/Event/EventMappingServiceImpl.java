@@ -10,6 +10,10 @@ import java.util.List;
 /**
  * Created by Luca Andrei on 5/18/2017.
  */
+
+/**
+ * Event mapping CRUD methods implementation.
+ */
 @Service
 public class EventMappingServiceImpl implements  EventMappingService {
     @Autowired

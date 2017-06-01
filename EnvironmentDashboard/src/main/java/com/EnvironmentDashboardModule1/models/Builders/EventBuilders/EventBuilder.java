@@ -9,6 +9,11 @@ import java.util.Date;
  * Created by Ariana on 5/3/2017.
  */
 
+/**
+ * For the creation of objects, we used the Builder Creational Pattern. This is the parent class for the events
+ * and is extended by other classes: earthquake, fire, flood etc. This class also includes validations for the 
+ * attributes of the objects.
+ */
 public class EventBuilder {
 
     protected String name;

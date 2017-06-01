@@ -7,6 +7,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Meteo Event CRUD methods implementation.
+ */
 @Service
 public class MeteoEventServiceImpl implements MeteoEventService {
     @Autowired

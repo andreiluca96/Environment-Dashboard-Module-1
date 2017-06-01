@@ -7,6 +7,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Fire CRUD methods implementation.
+ */
 @Service
 public class FireServiceImpl implements FireService {
     @Autowired

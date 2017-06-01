@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * Created by Sfarghiu Andrei on 5/4/2017.
+ * Earthquake CRUD methods implementation.
  */
 @Service
 public class EarthquakeServiceImpl implements EarthquakeService {

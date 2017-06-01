@@ -7,6 +7,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Terrorist Attack CRUD methods implementation.
+ */
 @Service
 public class TerroristAttackServiceImpl implements TerroristAttackService {
     @Autowired

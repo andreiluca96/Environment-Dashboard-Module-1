@@ -7,6 +7,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Snow CRUD methods implementation.
+ */
 @Service
 public class SnowServiceImpl implements SnowService {
     @Autowired

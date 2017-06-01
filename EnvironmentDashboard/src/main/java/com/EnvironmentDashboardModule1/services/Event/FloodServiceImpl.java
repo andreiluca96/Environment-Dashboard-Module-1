@@ -7,6 +7,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Flood CRUD methods implementation.
+ */
 @Service
 public class FloodServiceImpl implements FloodService {
     @Autowired

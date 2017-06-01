@@ -7,6 +7,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Canicular Weather CRUD methods implementation.
+ */
 @Service
 public class CanicularWeatherServiceImpl implements CanicularWeatherService {
     @Autowired

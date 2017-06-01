@@ -7,6 +7,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Fog CRUD methods implementation.
+ */
 @Service
 public class FogServiceImpl implements FogService {
     @Autowired

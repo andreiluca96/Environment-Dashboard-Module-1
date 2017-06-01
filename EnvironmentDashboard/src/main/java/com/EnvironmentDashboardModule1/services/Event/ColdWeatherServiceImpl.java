@@ -7,6 +7,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Cold Weather CRUD methods implementation.
+ */
 @Service
 public class ColdWeatherServiceImpl implements ColdWeatherService {
     @Autowired

@@ -7,6 +7,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Rain CRUD methods implementation.
+ */
 @Service
 public class RainServiceImpl implements RainService {
     @Autowired

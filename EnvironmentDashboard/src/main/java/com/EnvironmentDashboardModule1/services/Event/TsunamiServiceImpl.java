@@ -7,6 +7,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Tsunami CRUD methods implementation.
+ */
 @Service
 public class TsunamiServiceImpl implements TsunamiService {
     @Autowired
