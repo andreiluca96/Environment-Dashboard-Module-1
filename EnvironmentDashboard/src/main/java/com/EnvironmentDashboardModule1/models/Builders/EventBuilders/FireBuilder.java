@@ -74,7 +74,7 @@ public class FireBuilder extends EventBuilder{
     }
 
     public FireBuilder setUserId(String userId) {
-        validateString(null);
+        validateString(userId);
         this.userId = userId;
         return this;
     }

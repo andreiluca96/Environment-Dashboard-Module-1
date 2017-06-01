@@ -179,6 +179,9 @@ public class NotificationController {
             case "Event":
                 subject = "New Event Alert!";
                 break;
+            case "MeteoEvent":
+                subject = "New Meteo Event Alert!";
+                break;
             case "Fire":
                 subject = "Fire Alert!";
                 break;
@@ -253,6 +256,9 @@ public class NotificationController {
             case "Event":
                 header = "There's a new event in your area!";
                 break;
+            case "MeteoEvent":
+                header = "There's a new meteo event in your area!";
+                break;
             case "Fire":
                 header = "There's a fire in your area!";
                 break;
@@ -293,6 +299,9 @@ public class NotificationController {
     private String getSpecialAttributes(String eventType, Event event) {
         String specialAttributes="";
         switch (eventType) {
+            case "Event":
+                specialAttributes = "";
+                break;
             case "Fire":
                 Fire fire = fireService.getById(event.getId());
                 specialAttributes += "<br><strong>Speed: </strong>" + fire.getSpeed();
