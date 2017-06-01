@@ -1,10 +1,15 @@
 package com.EnvironmentDashboardModule1.controllers.Events;
 
 import com.EnvironmentDashboardModule1.DTO.CreatingEventDto;
+import com.EnvironmentDashboardModule1.DTO.EarthquakeDto;
 import com.EnvironmentDashboardModule1.DTO.EventDto;
 import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.EventBuilder;
 import com.EnvironmentDashboardModule1.models.EventMapping;
+import com.EnvironmentDashboardModule1.models.Events.Earthquake;
 import com.EnvironmentDashboardModule1.models.Events.Event;
+import com.EnvironmentDashboardModule1.models.Severity;
+import com.EnvironmentDashboardModule1.services.Event.EarthquakeService;
+import com.EnvironmentDashboardModule1.services.Event.EarthquakeServiceImpl;
 import com.EnvironmentDashboardModule1.services.Event.EventMappingService;
 import com.EnvironmentDashboardModule1.services.Event.EventService;
 import com.google.common.collect.Lists;
@@ -13,6 +18,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -174,5 +183,37 @@ public class EventController {
                 .setRadius(dto.getRadius())
                 .setSeverity(dto.getSeverity())
                 .getEvent();
+    }
+
+    public void eventGeneration(){
+        Calendar calendar = Calendar.getInstance();
+
+        Date startingDate = new Date();
+        Date endingDate = new Date();
+
+        calendar.setTime(endingDate);
+        calendar.add(Calendar.DATE, 5);
+
+        endingDate = calendar.getTime();
+
+
+        Earthquake earthquake = new Earthquake();
+        earthquake.setId((long)1);
+        earthquake.setUserId("User current");
+        earthquake.setName("Cutremur Jimmy");
+        earthquake.setStartingTime(startingDate);
+        earthquake.setEndingTime(endingDate);
+        earthquake.setSeverity(Severity.ORANGE);
+        earthquake.setDescription("Cutremur foarte periculos.");
+        earthquake.setHints("Nu va panicati. Ramaneti sub grinda.");
+        earthquake.setLatitude(20.3);
+        earthquake.setLongitude(20.4);
+        earthquake.setRadius(40.3);
+        earthquake.setMercalliDegree(5.3);
+        earthquake.setRichterDegree(7.4);
+        earthquake.setDepth(600);
+
+        EarthquakeService earthquakeService = new EarthquakeServiceImpl();
+        earthquakeService.
     }
 }
