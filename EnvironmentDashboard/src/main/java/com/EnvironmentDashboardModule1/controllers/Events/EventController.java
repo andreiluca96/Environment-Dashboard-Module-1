@@ -214,6 +214,6 @@ public class EventController {
         earthquake.setDepth(600);
 
         EarthquakeService earthquakeService = new EarthquakeServiceImpl();
-        earthquakeService.
+        earthquakeService.save()
     }
 }
