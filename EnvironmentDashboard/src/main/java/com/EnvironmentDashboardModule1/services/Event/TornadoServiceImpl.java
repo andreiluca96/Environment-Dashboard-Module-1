@@ -10,6 +10,10 @@ import java.util.List;
 /**
  * Created by Luca Andrei on 5/4/2017.
  */
+
+/**
+ * Tornado CRUD methods implementation.
+ */
 @Service
 public class TornadoServiceImpl implements TornadoService {
     @Autowired
