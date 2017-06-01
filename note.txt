@@ -1,0 +1,53 @@
+Opariuc Ariana
+-> Andrei Luca       10
+-> Opariuc Ariana    9
+-> Aioanei Dragos    8.5
+-> Savescu Sabina    9
+-> Cojocariu Vladut   7.5
+-> Lungu Radu         7.5
+-> Sfarghiu Andrei    8
+
+Dragos Aioanei
+-> Andrei Luca       10
+-> Opariuc Ariana     8
+-> Aioanei Dragos   7.5
+-> Savescu Sabina     7
+-> Cojocariu Vladut   6
+-> Lungu Radu         5
+-> Sfarghiu Andrei    5
+
+Andrei Sfarghiu
+-> Andrei Luca       10
+-> Opariuc Ariana     9
+-> Aioanei Dragos     9
+-> Savescu Sabina     9
+-> Cojocariu Vladut   8
+-> Lungu Radu         8
+-> Sfarghiu Andrei    8
+
+Sabina Savescu
+-> Andrei Luca       10
+-> Opariuc Ariana     9
+-> Aioanei Dragos    10
+-> Savescu Sabina     9
+-> Cojocariu Vladut   9
+-> Lungu Radu         9
+-> Sfarghiu Andrei    9
+
+Vladut Cojocariu
+-> Andrei Luca       10
+-> Opariuc Ariana     9
+-> Aioanei Dragos     9
+-> Savescu Sabina     8
+-> Cojocariu Vladut   8
+-> Lungu Radu         8
+-> Sfarghiu Andrei    8
+
+Radu Lungu
+-> Andrei Luca       10
+-> Opariuc Ariana     9
+-> Aioanei Dragos     9
+-> Savescu Sabina     9
+-> Cojocariu Vladut   8
+-> Lungu Radu         8
+-> Sfarghiu Andrei    8
