@@ -11,6 +11,9 @@ import java.util.Date;
  * Created by Luca Andrei on 5/3/2017.
  */
 
+/**
+ * Domain entity for events. Each event will extend this class and have further methods concerning their type.
+ */
 @Entity
 @Table(name = "EventMapping")
 public class Event implements Serializable {

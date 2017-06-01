@@ -18,6 +18,10 @@ import java.util.List;
 /**
  * Created by Luca Andrei on 5/4/2017.
  */
+
+/**
+ * Controller for event, similar usage in earthquake, fire, flood etc.
+ */
 @RestController
 @RequestMapping("v1/events")
 public class EventController {
@@ -28,6 +32,13 @@ public class EventController {
     @Autowired
     private EventMappingService eventMappingService;
 
+    /**
+     * Response Entity is an extension of HttpEntity that adds a HttpStatus status code.
+     * Used in RestTemplate as well @Controller methods. This method adds an event and saves it in a list.
+     * The status code which will print will be CREATED if operation was successful and BAD_REQUEST if not.
+     * @param eventDto
+     * @return void
+     */
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Event> addEvent(@RequestBody CreatingEventDto eventDto) {
         Event event = toCreatingModel(eventDto);
@@ -41,6 +52,11 @@ public class EventController {
         return new ResponseEntity<>(savedEvent, HttpStatus.CREATED);
     }
 
+    /**
+     * This method returns the list of events.
+     * The status code which will print will be OK if operation was successful and NO_CONTENT if not.
+     * @return events
+     */
     @RequestMapping(method = RequestMethod.GET)
     @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<List<EventDto>> get() {
@@ -51,6 +67,12 @@ public class EventController {
         return new ResponseEntity<>(Lists.transform(events, event -> toDto(event)), HttpStatus.OK);
     }
 
+    /**
+     * This method returns an event from the list given its id as a parameter.
+     * The status code which will print will be OK if operation was successful and NO_CONTENT if not.
+     * @param id
+     * @return event
+     */
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<EventDto> getById(@PathVariable("id") Long id) {
         Event event = this.eventService.getById(id);
@@ -61,6 +83,13 @@ public class EventController {
         return new ResponseEntity<>(toDto(event), HttpStatus.OK);
     }
 
+    /**
+     * This method updates an event given its id and the dto and returns it with the modified values.
+     * The status code which will print will be CREATED if operation was successful and NO_CONTENT if not.
+     * @param id
+     * @param eventDto
+     * @return events
+     */
     @RequestMapping(value = "/event/{id}", method = RequestMethod.PUT)
     public ResponseEntity<EventDto> updateEvent(@PathVariable("id") Long id, @RequestBody CreatingEventDto eventDto) {
         Event event = toCreatingModel(eventDto);
@@ -72,6 +101,11 @@ public class EventController {
         return new ResponseEntity<>(toDto(updatedEvent), HttpStatus.CREATED);
     }
 
+    /**
+     * This method deletes all events from the list.
+     * The status code which will print will be OK if operation was successful and NOT_FOUND if not.
+     * @return void
+     */
     @RequestMapping(method = RequestMethod.DELETE)
     public ResponseEntity<List<EventDto>> delete() {
         List<Event> eventList = this.eventService.getAll();
@@ -85,6 +119,12 @@ public class EventController {
         return new ResponseEntity<>(Lists.transform(eventList, event -> toDto(event)), HttpStatus.OK);
     }
 
+    /**
+     * This method deletes an event from the list given its id as a parameter.
+     * The status code which will print will be OK if operation was successful and NOT_FOUND if not.
+     * @param id
+     * @return void
+     */
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<EventDto> deleteById(@PathVariable("id") Long id) {
@@ -96,6 +136,11 @@ public class EventController {
         return new ResponseEntity<>(toDto(event), HttpStatus.OK);
     }
 
+    /**
+     * This method converts an event into a dto.
+     * @param event
+     * @return dto
+     */
     public EventDto toDto(Event event) {
         return new EventDto.Builder()
                 .userId(event.getUserId())
@@ -111,6 +156,11 @@ public class EventController {
                 .radius(event.getRadius());
     }
 
+    /**
+     * This method converts a dto into an event.
+     * @param dto
+     * @return event
+     */
     private Event toCreatingModel(CreatingEventDto dto) {
         return new EventBuilder()
                 .setUserId(dto.getUserId())

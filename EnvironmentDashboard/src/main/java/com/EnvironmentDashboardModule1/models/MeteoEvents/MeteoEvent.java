@@ -7,6 +7,10 @@ import javax.persistence.*;
 /**
  * Created by Ariana on 5/3/2017.
  */
+/**
+ * Domain entity for meteo events. Each event will extend this class and have further methods concerning their type.
+ */
+
 @Entity
 public class MeteoEvent extends Event{
 

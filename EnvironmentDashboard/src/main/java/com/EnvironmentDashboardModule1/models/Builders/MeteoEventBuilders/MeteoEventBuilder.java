@@ -10,6 +10,11 @@ import java.util.Date;
  * Created by Ariana on 5/3/2017.
  */
 
+/**
+ * For the creation of objects, we used the Builder Creational Pattern. This is the parent class for the other meteo
+ * events and is also extended by their classes: fog, rain, snow etc. Furthermore, it includes validations for
+ * attributes which will help unit tests work properly.
+ */
 //Dragos -> refactorization: renamed from MeteoBuilder to MeteoEventBuilder
 public class MeteoEventBuilder extends EventBuilder{
 

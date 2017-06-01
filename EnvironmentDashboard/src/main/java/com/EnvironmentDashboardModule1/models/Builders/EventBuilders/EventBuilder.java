@@ -10,9 +10,9 @@ import java.util.Date;
  */
 
 /**
- * For the creation of objects, we used the Builder Creational Pattern. This is the parent class for the events
- * and is extended by other classes: earthquake, fire, flood etc. This class also includes validations for the 
- * attributes of the objects.
+ * For the creation of objects, we used the Builder Creational Pattern. This is the parent class for the other events
+ * and is also extended by their classes: earthquake, fire, flood etc. Furthermore, it includes validations for
+ * attributes which will help the unit tests work properly.
  */
 public class EventBuilder {
 
