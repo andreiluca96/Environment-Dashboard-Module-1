@@ -1,25 +1,21 @@
 package com.EnvironmentDashboardModule1.controllers.Events;
 
 import com.EnvironmentDashboardModule1.DTO.CreatingEventDto;
-import com.EnvironmentDashboardModule1.DTO.EarthquakeDto;
 import com.EnvironmentDashboardModule1.DTO.EventDto;
 import com.EnvironmentDashboardModule1.models.Builders.EventBuilders.EventBuilder;
 import com.EnvironmentDashboardModule1.models.EventMapping;
 import com.EnvironmentDashboardModule1.models.Events.Earthquake;
 import com.EnvironmentDashboardModule1.models.Events.Event;
+import com.EnvironmentDashboardModule1.models.Events.TerroristAttack;
+import com.EnvironmentDashboardModule1.models.MeteoEvents.CanicularWeather;
 import com.EnvironmentDashboardModule1.models.Severity;
-import com.EnvironmentDashboardModule1.services.Event.EarthquakeService;
-import com.EnvironmentDashboardModule1.services.Event.EarthquakeServiceImpl;
-import com.EnvironmentDashboardModule1.services.Event.EventMappingService;
-import com.EnvironmentDashboardModule1.services.Event.EventService;
+import com.EnvironmentDashboardModule1.services.Event.*;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -130,7 +126,7 @@ public class EventController {
 
     /**
      * This method deletes an event from the list given its id as a parameter.
-     * The status code which will print will be OK if operation was successful and NOT_FOUND if not.
+     * The status code which will print will be OK if operation was su  ccessful and NOT_FOUND if not.
      * @param id
      * @return void
      */
@@ -185,7 +181,9 @@ public class EventController {
                 .getEvent();
     }
 
-    public void eventGeneration(){
+    // Dragos -> metoda demonstrativa
+    @RequestMapping(value = "/generate-events", method = RequestMethod.POST)
+    public ResponseEntity<List<Event>> eventGeneration(){
         Calendar calendar = Calendar.getInstance();
 
         Date startingDate = new Date();
@@ -214,6 +212,59 @@ public class EventController {
         earthquake.setDepth(600);
 
         EarthquakeService earthquakeService = new EarthquakeServiceImpl();
-        earthquakeService.
+        earthquakeService.save(earthquake);
+
+        TerroristAttack terroristAttack = new TerroristAttack();
+        terroristAttack.setId((long)2);
+        terroristAttack.setUserId("User current");
+        terroristAttack.setName("Charlie Hebdo");
+        terroristAttack.setStartingTime(startingDate);
+        terroristAttack.setStartingTime(endingDate);
+        terroristAttack.setSeverity(Severity.RED);
+        terroristAttack.setDescription("Atac terrorist la redactia unui ziar.");
+        terroristAttack.setHints("Ramaneti in casele dumneavoastra pana la eliminarea pericolului.");
+        terroristAttack.setLatitude(30.4);
+        terroristAttack.setLongitude(32.5);
+        terroristAttack.setRadius(5.3);
+        terroristAttack.setNumberOfTerrorists(5);
+
+        TerroristAttackService terroristAttackService = new TerroristAttackServiceImpl();
+        terroristAttackService.save(terroristAttack);
+
+        calendar.setTime(startingDate);
+        calendar.add(Calendar.DATE, 5);
+        startingDate = calendar.getTime();
+
+        calendar.setTime(endingDate);
+        calendar.add(Calendar.DATE, 5);
+        endingDate = calendar.getTime();
+
+        CanicularWeather canicularWeather = new CanicularWeather();
+        canicularWeather.setId((long)3);
+        canicularWeather.setUserId("User current");
+        canicularWeather.setName("Vreme caniculara");
+        canicularWeather.setStartingTime(startingDate);
+        canicularWeather.setEndingTime(endingDate);
+        canicularWeather.setSeverity(Severity.YELLOW);
+        canicularWeather.setDescription("Temperaturi relativ ridicate in aceste zile.");
+        canicularWeather.setHints("Nu iesiti la soare in intervalul orar 11:00-15:00");
+        canicularWeather.setLatitude(24.4);
+        canicularWeather.setLongitude(25.2);
+        canicularWeather.setRadius(30.1);
+        canicularWeather.setTemperature(35);
+        canicularWeather.setHumidity(25);
+        canicularWeather.setPrecipitationLevel(0);
+
+        CanicularWeatherService canicularWeatherService = new CanicularWeatherServiceImpl();
+        canicularWeatherService.save(canicularWeather);
+
+        List<Event> events = this.eventService.getAll();
+
+        if (events.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
+
